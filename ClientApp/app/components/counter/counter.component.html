@@ -1,0 +1,32 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav class="example-sidenav" mode="over">
+        My Menu
+    </mat-sidenav>
+    <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="sidenav.open()">
+            Open sidenav
+        </button>
+        <h1>This will be the create form!!!!!</h1>
+
+        <p #test>Form</p>
+
+        <p>Current count: <strong>{{ currentCount }}</strong></p>
+
+        <button class="aButton" (click)="incrementCounter(test)" mat-button color="primary">Increment</button>
+        <span>Rora being bad<mat-slide-toggle [(ngModel)]="checked" >Rora is being cute!!!!!!</mat-slide-toggle></span>
+        <!-- <div fxShow fxHide.xs="false" fxHide.lg="true"> Data is here</div> -->
+        <h2>{{Number}}</h2>
+
+<!-- 
+      <div fxLayout='column' class="zero">
+            <div fxFlex="33" [fxFlex.md]="box1Width" class="one" >1.0</div>
+            <div fxFlex="33" [fxLayout]="direction" fxLayout.md="row" class="two">
+                <div fxFlex="22"    fxFlex.md="10px" fxHide.lg                       class="two_one">1</div>
+                <div fxFlex="205px" fxFlex.md="65"                                    class="two_two">2</div>
+                <div fxFlex="30px"  fxFlex.md="25"   fxShow [fxHide.md]="hideBox"   class="two_three">3</div>
+            </div>
+            <div fxFlex class="three">3.110</div>
+        </div> -->
+    </div> 
+    <div>{{windowSize}}</div>
+</mat-sidenav-container>

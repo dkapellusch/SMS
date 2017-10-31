@@ -1,0 +1,25 @@
+<div class="toolBarContainer">
+    <mat-toolbar color="primary">
+            <span class="toolbarItem ">
+                <a class="toolBarLinkText" [routerLink]="['/home']">
+                    <span><mat-icon>home</mat-icon> <span>Home</span></span>
+                </a>
+            </span>
+        <span class="toolbarItem">
+                <a class="toolBarLinkText" [routerLink]="['/counter']">
+                    <span> <mat-icon>description</mat-icon> Counter </span>
+                </a>
+            </span>
+        <span class="toolbarItem">
+                <a class="toolBarLinkText" [routerLink]="['/ex-table']">
+                    <span> <mat-icon>description</mat-icon> Samples </span>
+                </a>
+            </span>
+        <span class="fill-remaining-space toolbarItem"></span>
+        <div>
+            <a class="toolBarLinkText" [routerLink]="['/fetch-data']">
+                <span> <mat-icon>account_circle</mat-icon> Login </span>
+            </a>
+        </div>
+    </mat-toolbar>
+</div>

@@ -1,0 +1,47 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title style="text-align:right">
+            <mat-icon>menu</mat-icon>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div style="float:right; margin-left: auto; margin-right: 50%; width:40%;">
+        <mat-icon color="primary">find_in_page</mat-icon>
+        <mat-form-field style="width:90%" floatPlaceholder="never">
+            <input matInput #filter placeholder="Search Samples">
+        </mat-form-field>
+    </div>
+    <button style="margin-left:.6%;" color="primary" selected="true" type="button" mat-icon-button>
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-expansion-panel>
+<div class="example-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="userId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Color</mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClickedHandler(row)"></mat-row>
+    </mat-table>
+    <span>
+        <mat-paginator #paginator [length]="exampleDatabase.data.length" [pageIndex]="0" [pageSize]="15" [pageSizeOptions]="[5, 10, 15, 25, 50]">
+        </mat-paginator>
+    </span>
+</div>

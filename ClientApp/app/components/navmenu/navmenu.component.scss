@@ -1,0 +1,41 @@
+.toolbarItem {
+    padding-right: 2%;
+}
+
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% !important;
+}
+
+.fill-remaining-space {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -o-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.toolBarContainer {
+    margin-bottom: 75px;
+}
+
+.toolBarLinkText {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: #FFc;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/*
+for side nav
+*/
