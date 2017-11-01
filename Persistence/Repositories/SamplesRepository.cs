@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using core2.Models;
+using SMS.Models;
 
-namespace core2.Persistence.Repositories
+namespace SMS.Persistence.Repositories
 {
     public class SamplesRepository : ISampleRespository
     {

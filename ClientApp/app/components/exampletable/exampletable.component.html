@@ -3,6 +3,7 @@
         <mat-panel-title style="text-align:right">
             <mat-icon>menu</mat-icon>
         </mat-panel-title>
+        <mat-panel-description>Filter, Search, or Add</mat-panel-description>
     </mat-expansion-panel-header>
     <div style="float:right; margin-left: auto; margin-right: 50%; width:40%;">
         <mat-icon color="primary">find_in_page</mat-icon>
@@ -15,7 +16,6 @@
     </button>
 </mat-expansion-panel>
 <div class="example-container mat-elevation-z8">
-
     <mat-table #table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="userId">
             <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>

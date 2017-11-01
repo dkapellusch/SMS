@@ -1,4 +1,4 @@
-﻿namespace core2.Models
+﻿namespace SMS.Models
 {
     public class Animal
     {

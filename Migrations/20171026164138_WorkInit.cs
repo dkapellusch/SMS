@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
-namespace core2.Migrations
+namespace SMS.Migrations
 {
     public partial class WorkInit : Migration
     {

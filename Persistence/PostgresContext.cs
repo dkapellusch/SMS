@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using core2.Models;
+using SMS.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace core2.Persistence
+namespace SMS.Persistence
 {
     public class PostgresqlContext : DbContext
     {

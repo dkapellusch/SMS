@@ -1,5 +1,5 @@
-using core2.Persistence;
-using core2.Persistence.Repositories;
+using SMS.Persistence;
+using SMS.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,18 +25,24 @@ namespace SMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //  services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            // services.AddTransient<ISampleRespository, SamplesRepository>();
-            // services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreWorkSQL")));
+             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<ISampleRespository, SamplesRepository>();
+            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
 
-            // services.AddDistributedMemoryCache();
-            // services.AddSession();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddNLog();
+            app.AddNLogWeb();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+            env.ConfigureNLog("nlog.Config");
+
             env.EnvironmentName = EnvironmentName.Development;
             if (env.IsDevelopment())
             {
@@ -52,6 +58,7 @@ namespace SMS
             }
 
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

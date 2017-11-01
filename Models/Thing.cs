@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace core2.Models
+namespace SMS.Models
 {
     public class Thing
     {
