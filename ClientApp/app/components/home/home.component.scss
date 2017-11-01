@@ -61,12 +61,15 @@
     0% {
       letter-spacing: -0.5em;
       opacity: 0;
+      margin-left:40%;
     }
     40% {
       opacity: 0.6;
+      
     }
     100% {
       opacity: 1;
+      margin-left:25%;
     }
   }
   
@@ -91,12 +94,14 @@
   @keyframes tracking-out-contract {
     0% {
         opacity: 1;
-        letter-spacing: .4em;
+        letter-spacing: 1.6em;
+        margin-left:25%;
       }
-      
       100% {
         letter-spacing: 0em;
         opacity: 1;
+        margin-left:40%;
+        
       }
     }
   
