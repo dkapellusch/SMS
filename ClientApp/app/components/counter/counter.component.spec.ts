@@ -2,12 +2,13 @@
 import { assert } from 'chai';
 import { CounterComponent } from './counter.component';
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-
+import MaterialComponent from "../../material.module";
+import {Renderer2} from "@angular/core";
 let fixture: ComponentFixture<CounterComponent>;
 
 describe('Counter component', () => {
     beforeEach(() => {
-        TestBed.configureTestingModule({ declarations: [CounterComponent] });
+        TestBed.configureTestingModule({ imports: [ MaterialComponent ], declarations: [CounterComponent],providers:[Renderer2] });
         fixture = TestBed.createComponent(CounterComponent);
         fixture.detectChanges();
     });

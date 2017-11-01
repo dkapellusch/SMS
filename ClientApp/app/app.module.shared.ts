@@ -12,7 +12,7 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import {ExampleTableComponent} from './components/exampletable/exampletable.component';
 import {SampleFormComponent} from "./components/sampleform/sampleform.component";
-
+import {InitializedService} from "./services/initalized.service";
 // import MaterialComponents from "./material.module";
 
 import {CdkTableModule} from "@angular/cdk/table";
@@ -58,7 +58,8 @@ let materialModules = [
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    entryComponents:[CounterComponent]
+    entryComponents:[CounterComponent],
+    providers:[InitializedService]
     // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModuleShared {
