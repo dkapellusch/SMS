@@ -24,7 +24,6 @@ const nonTreeShakableModules = [
     'es6-shim',
     'event-source-polyfill',
     'hammerjs',
-    'reflect-metadata',
     '@angular/material/prebuilt-themes/deeppurple-amber.css',
     "./wwwroot/styles/css/material-icons.css",
    
