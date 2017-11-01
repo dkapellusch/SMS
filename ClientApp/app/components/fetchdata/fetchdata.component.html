@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!forecasts"><mat-spinner></mat-spinner></p>
 
 <table class='table' *ngIf="forecasts">
     <thead>
@@ -22,3 +22,17 @@
         </tr>
     </tbody>
 </table>
+<mat-chip color="accent" selected="true">Accent color!</mat-chip>
+    <mat-chip-list>
+      <mat-chip>One fish!</mat-chip>
+      <mat-chip>Two fish!</mat-chip>
+      <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+      <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+    </mat-chip-list>
+<br>
+<!-- <md-input-container>
+    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+</md-input-container>
+<md-datepicker #picker></md-datepicker> -->
+
