@@ -26,7 +26,7 @@ const nonTreeShakableModules = [
     'hammerjs',
     '@angular/material/prebuilt-themes/deeppurple-amber.css',
     "./wwwroot/styles/css/material-icons.css",
-   
+
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
@@ -34,12 +34,17 @@ module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin('vendor.css');
     const isDevBuild = !(env && env.prod);
     const sharedConfig = {
-        stats: { modules: false },
-        resolve: { extensions: [ '.js' ] },
+        stats: {
+            modules: false
+        },
+        resolve: {
+            extensions: ['.js']
+        },
         module: {
-            rules: [
-                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
-            ]
+            rules: [{
+                test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
+                use: 'url-loader?limit=100000'
+            }]
         },
         output: {
             publicPath: 'dist/',
@@ -59,11 +64,16 @@ module.exports = (env) => {
             // But for production builds, leave the tree-shakable ones out so the AOT compiler can produce a smaller bundle.
             vendor: isDevBuild ? allModules : nonTreeShakableModules
         },
-        output: { path: path.join(__dirname, 'wwwroot', 'dist') },
+        output: {
+            path: path.join(__dirname, 'wwwroot', 'dist')
+        },
         module: {
-            rules: [
-                { test: /\.css(\?|$)/, use: extractCSS.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) }
-            ]
+            rules: [{
+                test: /\.css(\?|$)/,
+                use: extractCSS.extract({
+                    use: isDevBuild ? 'css-loader' : 'css-loader?minimize'
+                })
+            }]
         },
         plugins: [
             extractCSS,
@@ -75,20 +85,27 @@ module.exports = (env) => {
             new webpack.optimize.UglifyJsPlugin(),
             new CompressionPlugin({
                 asset: '[path].gz[query]'
-              })
+            })
         ])
     });
 
     const serverBundleConfig = merge(sharedConfig, {
         target: 'node',
-        resolve: { mainFields: ['main'] },
-        entry: { vendor: allModules.concat(['aspnet-prerendering']) },
+        resolve: {
+            mainFields: ['main']
+        },
+        entry: {
+            vendor: allModules.concat(['aspnet-prerendering'])
+        },
         output: {
             path: path.join(__dirname, 'ClientApp', 'dist'),
             libraryTarget: 'commonjs2',
         },
         module: {
-            rules: [ { test: /\.css(\?|$)/, use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] } ]
+            rules: [{
+                test: /\.css(\?|$)/,
+                use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize']
+            }]
         },
         plugins: [
             new webpack.DllPlugin({
