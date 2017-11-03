@@ -1,10 +1,10 @@
-<h1 
+<div 
   *ngIf="InitializedService.Initialized " 
   [class.tracking-in-expand]="Hovered" 
   [class.tracking-out-contract]="!Hovered" 
-   style="font-size:80px; height:200px; width:1500px; margin-left:40%; margin-top:3%;  color:rgb(25, 90, 30);"
+   style="font-size:80px; height:200px; width:auto; margin-left:40%; margin-top:3%;font-family: 'Roboto Condensed', sans-serif; color:rgb(107,131,108);"
   (mouseover)="SmsHovered($event)" 
   (mouseout)="SmsUnHovered($event)"
   >
     {{SmsText}}
-</h1>
+</div>

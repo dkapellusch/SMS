@@ -3,7 +3,6 @@
         <mat-panel-title style="text-align:right">
             <mat-icon>menu</mat-icon>
         </mat-panel-title>
-        <mat-panel-description>Filter, Search, or Add</mat-panel-description>
     </mat-expansion-panel-header>
     <mat-panel-description style="margin-left:1.2%;">
         <mat-icon style="margin-top: 1%; margin-right:.6%" color="primary">find_in_page</mat-icon>
@@ -41,7 +40,7 @@
         <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClickedHandler(row)"></mat-row>
     </mat-table>
     <span>
-        <mat-paginator #paginator [length]="exampleDatabase.data.length" [pageIndex]="0" [pageSize]="15" [pageSizeOptions]="[5, 10, 15, 25, 50]">
+        <mat-paginator #paginator [length]="exampleDatabase.data.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 15, 25, 50]">
         </mat-paginator>
     </span>
 </div>
