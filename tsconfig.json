@@ -1,21 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "module": "es2015",
-//     "moduleResolution": "node",
-//     "target": "es5",
-//     "sourceMap": true,
-//     "experimentalDecorators": true,
-//     "emitDecoratorMetadata": true,
-//     "skipDefaultLibCheck": true,
-//     "skipLibCheck": true, // Workaround for https://github.com/angular/angular/issues/17863. Remove this if you upgrade to a fixed version of Angular.
-//     "strict": true,
-//     "lib": [ "es6", "dom" ],
-//     "types": [ "webpack-env","node" ]
-//   },
-//   "exclude": [ "bin", "node_modules" ],
-//   "atom": { "rewriteTsconfig": false }
-// }
-
 {
   "compilerOptions": {
     "moduleResolution": "node",
@@ -24,9 +6,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipDefaultLibCheck": true,
-    "lib": [ "es6", "dom" ],
-    "types": ["webpack-env", "node" ]
+    "lib": ["es6", "dom"],
+    "types": ["webpack-env", "node"]
   },
-  "exclude": [ "bin", "node_modules" ],
-  "atom": { "rewriteTsconfig": false }
+  "exclude": ["bin", "node_modules"]
 }
