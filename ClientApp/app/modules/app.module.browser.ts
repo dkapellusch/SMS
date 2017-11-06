@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppModuleShared } from './app.module.shared';
-import { AppComponent } from './components/app/app.component';
+import { AppModuleShared } from '../app.module';
+import { AppComponent } from '../components/app/app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CounterComponent } from './components/counter/counter.component';
+import { CounterComponent } from '../components/counter/counter.component';
 import "hammerjs";
 
 @NgModule({
