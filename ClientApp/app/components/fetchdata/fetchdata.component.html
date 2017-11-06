@@ -1,21 +1,20 @@
-<h1>Weather forecast</h1>
+<h1 style="color:rgb(246, 246, 246);">Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p *ngIf="!forecasts">
+    <mat-spinner></mat-spinner>
+</p>
 
-<p *ngIf="!forecasts"><mat-spinner></mat-spinner></p>
-
-<table class='table' *ngIf="forecasts">
+<table class='table' *ngIf="forecasts" style="color:rgb(255, 255, 255);">
     <thead>
         <tr>
             <th>Date</th>
             <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
             <th>Summary</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.dateFormatted }}</td>
+            <td>{{ forecast.dateFormatted | date }}</td>
             <td>{{ forecast.temperatureC }}</td>
             <td>{{ forecast.temperatureF }}</td>
             <td>{{ forecast.summary }}</td>
@@ -23,16 +22,15 @@
     </tbody>
 </table>
 <mat-chip color="accent" selected="true">Accent color!</mat-chip>
-    <mat-chip-list>
-      <mat-chip>One fish!</mat-chip>
-      <mat-chip>Two fish!</mat-chip>
-      <mat-chip color="primary" selected="true">Primary fish</mat-chip>
-      <mat-chip color="accent" selected="true">Accent fish</mat-chip>
-    </mat-chip-list>
-<br>
-<!-- <md-input-container>
-    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-    <button mdSuffix [mdDatepickerToggle]="picker"></button>
-</md-input-container>
-<md-datepicker #picker></md-datepicker> -->
-
+<mat-chip-list>
+    <mat-chip>One fish!</mat-chip>
+    <mat-chip>Two fish!</mat-chip>
+    <mat-chip color="primary" selected="true">Primary fish</mat-chip>
+    <mat-chip color="accent" selected="true">Accent fish</mat-chip>
+</mat-chip-list>
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" style="color:white;" placeholder="Choose a date" (dateChange)="SelectedTime=$event.value" (dateChange)="onChange($event)">
+    <mat-datepicker-toggle style="color:white;" matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<button (click)="clicked($event)" mat-button color="primary">Test</button>

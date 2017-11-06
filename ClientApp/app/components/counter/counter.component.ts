@@ -14,14 +14,14 @@ export class CounterComponent {
     public t: ElementRef;
     private _checked = false; 
     public num: number = 0;
-   
+
     constructor(private renderer: Renderer2) {
         renderer.listen('window', 'resize', (event) => {
             // console.log(event.target.screen.width);
             // this.num = event.target.screen.width;
         });
     }
-    
+
     get Number(): number {
         return this.currentCount + 1; //?
     }
@@ -34,6 +34,7 @@ export class CounterComponent {
         this._checked = value;
     }
     public incrementCounter(el: ElementRef) {
+        let e = this.t;
          this.renderer.setProperty(el, 'innerHTML', 'my content is here ' + ++this.currentCount);
     }
 

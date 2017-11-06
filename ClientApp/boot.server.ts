@@ -1,3 +1,4 @@
+import { isNullOrUndefined } from 'util';
 import 'reflect-metadata';
 import 'zone.js';
 import 'rxjs/add/operator/first';
@@ -6,7 +7,6 @@ import { enableProdMode, ApplicationRef, NgZone, ValueProvider } from '@angular/
 import { platformDynamicServer, PlatformState, INITIAL_CONFIG } from '@angular/platform-server';
 import { createServerRenderer, RenderResult } from 'aspnet-prerendering';
 import { AppModule } from './app/app.module.server';
-
 enableProdMode();
 
 export default createServerRenderer(params => {
@@ -16,7 +16,7 @@ export default createServerRenderer(params => {
         { provide: 'BASE_URL', useValue: params.origin + params.baseUrl },
     ];
 
-    return platformDynamicServer(providers).bootstrapModule(AppModule).then(moduleRef => {
+    return isNullOrUndefined(platformDynamicServer(providers).bootstrapModule(AppModule)) ? {} as any: platformDynamicServer(providers).bootstrapModule(AppModule).then(moduleRef => {
         const appRef: ApplicationRef = moduleRef.injector.get(ApplicationRef);
         const state = moduleRef.injector.get(PlatformState);
         const zone :any = moduleRef.injector.get(NgZone);

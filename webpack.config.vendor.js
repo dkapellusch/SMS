@@ -17,7 +17,8 @@ const treeShakableModules = [
     '@angular/router',
     '@angular/cdk',
     '@angular/material',
-    'zone.js'
+    'zone.js',
+    'ng2-charts'
 ];
 const nonTreeShakableModules = [
     'es6-promise',
@@ -55,7 +56,7 @@ module.exports = (env) => {
         plugins: [
             new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
             new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
-            new webpack.IgnorePlugin(/^vertx$/) // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
+            new webpack.IgnorePlugin(/^vertx$/), // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
         ]
     };
 

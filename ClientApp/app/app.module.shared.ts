@@ -12,11 +12,13 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import {ExampleTableComponent} from './components/exampletable/exampletable.component';
 import {SampleFormComponent} from "./components/sampleform/sampleform.component";
+import {LineChartComponent} from "./components/linechart/linechart.component";
+
 import {InitializationService} from "./services/initialization.service";
 // import MaterialComponents from "./material.module";
 
 import {CdkTableModule} from "@angular/cdk/table";
-
+import { ChartsModule } from 'ng2-charts';
 import {
     MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
     MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
@@ -41,13 +43,15 @@ let materialModules = [
         FetchDataComponent,
         ExampleTableComponent,
         HomeComponent,
-        SampleFormComponent
+        SampleFormComponent,
+        LineChartComponent
     ],
     imports: [
         ...materialModules,
         CommonModule,
         HttpModule,
         FormsModule,
+        ChartsModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
@@ -55,6 +59,7 @@ let materialModules = [
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'ex-table', component: ExampleTableComponent },
+            { path: 'linechart', component: LineChartComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
