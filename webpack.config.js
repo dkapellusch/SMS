@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
@@ -36,7 +37,8 @@ module.exports = (env) => {
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
-            })
+            }),
+            new ManifestPlugin({path:clientBundleOutputDir})
         ].concat(isDevBuild ? [
             // Plugins that apply in development builds only
             new webpack.SourceMapDevToolPlugin({
@@ -52,6 +54,12 @@ module.exports = (env) => {
                 exclude: ['./**/*.server.ts']
             })
         ])
+    });
+
+    const serviceWorkerBundle = merge(sharedConfig, {
+        entry: { 'service-worker': './ClientApp/app/service-worker.ts' },
+        output: { path: path.join(__dirname, clientBundleOutputDir), },
+        plugins: []
     });
 
     // Configuration for server-side (prerendering) bundle suitable for running in Node
@@ -81,5 +89,5 @@ module.exports = (env) => {
         devtool: 'inline-source-map'
     });
 
-    return [clientBundleConfig, serverBundleConfig];
+    return [clientBundleConfig,serviceWorkerBundle, serverBundleConfig];
 };
