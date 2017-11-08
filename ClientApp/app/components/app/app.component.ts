@@ -1,4 +1,3 @@
-const serviceWorkerUrl = require('file-loader!../../../../wwwroot/dist/service-worker.js');
 
 import { Component, HostListener } from '@angular/core';
 @Component({
@@ -11,18 +10,18 @@ export class AppComponent {
 
     @HostListener('window:load', ['$event'])
 	private async onLoad(event) {
-        console.log(serviceWorkerUrl);
+        // console.log(serviceWorkerUrl);
         if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.addEventListener('message', event => console.log(event.data.msg, event.data.url));
-            navigator.serviceWorker.addEventListener('install', event => console.log("Installed!" + event.srcElement));
-           let r =  await navigator.serviceWorker.register(serviceWorkerUrl);
-           let reg :ServiceWorkerRegistration[] = await navigator.serviceWorker.getRegistrations();
-           let manager = reg[0].pushManager;
-           let state = await manager.permissionState();
-           
-           console.log(`Registered worker with scope ${r.scope} registrations are : ${reg}`);
-        }    
+             navigator.serviceWorker.register('/service-worker.js').then(res => console.log("Registered!"));
+             navigator.serviceWorker.ready.then(res => {
+                 console.log("Sending message");
+                 navigator.serviceWorker.controller.postMessage({message:"greetings"});
+                 console.log("Sent message");
+                }
+                ).catch(e => console.log(`Failed to post message ${e}`));
+        }        
     }
+
     sendMessage(message :string): Promise<{}>{
         return new Promise(function(resolve, reject) {
             var messageChannel = new MessageChannel();
