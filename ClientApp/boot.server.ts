@@ -15,7 +15,7 @@ export default createServerRenderer(params => {
         { provide: APP_BASE_HREF, useValue: params.baseUrl },
         { provide: 'BASE_URL', useValue: params.origin + params.baseUrl },
     ];
-
+    console.log("got some params" + params.data);
     return isNullOrUndefined(platformDynamicServer(providers).bootstrapModule(AppModule)) ? {} as any: platformDynamicServer(providers).bootstrapModule(AppModule).then(moduleRef => {
         const appRef: ApplicationRef = moduleRef.injector.get(ApplicationRef);
         const state = moduleRef.injector.get(PlatformState);

@@ -32,7 +32,6 @@ import "hammerjs";
     }]
 })
 export class AppModule {
-    
 }
 
 export function getBaseUrl() {
