@@ -4,6 +4,24 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/modules/app.module.browser';
 
+
+async function getServiceWorker(serviceWorkerUrl:string) : Promise<ServiceWorker> {
+	let registration = await navigator.serviceWorker.register(serviceWorkerUrl);
+	console.log("registered");
+    if(registration.installing){
+		console.log("Installing");
+		return registration.installing;
+	}
+	if (registration.waiting){
+		console.log("Waiting");
+		return registration.waiting;
+	}
+	if(registration.active){
+		console.log("Active");
+		return registration.active;
+	}
+}
+
 if (module.hot) {
 	module.hot.accept();
 	module.hot.dispose(() => {
@@ -11,7 +29,6 @@ if (module.hot) {
 		const newRootElem = document.createElement('app');
 		const snackBar = document.querySelector('mat-dialog-container');
 		const overlay = document.querySelector('.cdk-overlay-container');
-
 		oldRootElem!.parentNode!.insertBefore(newRootElem, oldRootElem);
 		modulePromise.then(appModule => {
 			appModule.destroy();
@@ -33,16 +50,9 @@ if (module.hot) {
 const modulePromise = platformBrowserDynamic().bootstrapModule(AppModule);
 
 if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('/service-worker.js').then(res => {
-		console.log('Registered!');
-		navigator.serviceWorker.ready
-			.then(res => {
-				console.log('Sending message');
-				navigator.serviceWorker.controller.postMessage({
-					message: 'greetings'
-				});
-				console.log('Sent message');
-			})
-			.catch(e => console.log(`Failed to post message ${e}`));
+	getServiceWorker('/service-worker.js').then(sw => {
+		console.log(`Got a service worker back ${sw}`);
+		sw.postMessage({message:"hello friend"});
 	});
+	
 }

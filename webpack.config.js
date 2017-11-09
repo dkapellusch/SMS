@@ -20,10 +20,10 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['awesome-typescript-loader?silent=true', 'angular2-template-loader'] : '@ngtools/webpack' },
-                { test: /\.html$/,exclude:path.join(__dirname,"ClientApp/app/service-workers/service-worker.ts"), use: 'html-loader?minimize=false' },
-                {test: /\.scss$/,exclude:path.join(__dirname,"ClientApp/app/service-workers/service-worker.ts"), use: ['to-string-loader', 'css-loader', 'sass-loader']},
-                { test: /\.css$/,exclude:path.join(__dirname,"ClientApp/app/service-workers/service-worker.ts"), use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/,exclude:path.join(__dirname,"ClientApp/app/service-workers/service-worker.ts"), use: 'url-loader?limit=25000' }
+                { test: /\.html$/, use: 'html-loader?minimize=false' },
+                {test: /\.scss$/, use: ['to-string-loader', 'css-loader', 'sass-loader']},
+                { test: /\.css$/, use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
+                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
         plugins: [new CheckerPlugin()]
@@ -84,11 +84,11 @@ module.exports = (env) => {
                 manifest: require('./ClientApp/dist/vendor-manifest.json'),
                 sourceType: 'commonjs2',
                 name: './vendor'
-            }),
-            new WebpackShellPlugin({ 
-                onBuildStart: [], 
-                onBuildEnd: ['del ' + path.join(__dirname,"ClientApp/service-worker.js")] 
-           })
+            })
+        //     ,new WebpackShellPlugin({ 
+        //         onBuildStart: [], 
+        //         onBuildEnd: ['del ' + path.join(__dirname,"ClientApp/service-worker.js")] 
+        //    })
         ].concat(isDevBuild ? [] : [
             // Plugins that apply in production builds only
             new AotPlugin({
@@ -104,5 +104,5 @@ module.exports = (env) => {
         target: 'node',
         devtool: 'inline-source-map'
     });
-    return [serviceWorkerBundle,serverBundleConfig,clientBundleConfig];
+    return [clientBundleConfig,serviceWorkerBundle,serverBundleConfig];
 };

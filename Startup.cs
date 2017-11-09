@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using SMS.Persistence;
 using SMS.Persistence.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -49,7 +50,13 @@ namespace SMS
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    HotModuleReplacement = true
+                    HotModuleReplacement = true,
+                    HotModuleReplacementClientOptions = new Dictionary<string, string> { 
+                        { "reload", "true" }, 
+                        { "overlay", "true" }, 
+                        { "quiet", "true" }, 
+                        { " noInfo", "true" }
+                    },
                 });
             }
             else
