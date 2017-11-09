@@ -1,10 +1,10 @@
 import { InitializationService } from './../../services/initialization.service';
-import { Component, HostListener, AfterViewInit, Input } from "@angular/core";
+import { Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild } from "@angular/core";
 
 @Component({
     selector: 'linechart',
     template:`
-<div style="width:80%;height:40%; margin:auto;">
+<div style="width:80%;height:40%; margin:auto; display:none;"  #chartElement>
     <div>
         <canvas baseChart  [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
             [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
@@ -21,6 +21,7 @@ export class LineChartComponent implements AfterViewInit {
 
   constructor(private _initializationService: InitializationService) {}
   @Input() public ShowButton: boolean = true;
+  @ViewChild('chartElement') public ChartElement :ElementRef
   _value = 5000;
   get Value(){
     return this._value;

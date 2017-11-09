@@ -53,9 +53,8 @@ namespace SMS
                     HotModuleReplacement = true,
                     HotModuleReplacementClientOptions = new Dictionary<string, string> { 
                         { "reload", "true" }, 
-                        { "overlay", "true" }, 
-                        { "quiet", "true" }, 
-                        { " noInfo", "true" }
+                        { "overlay", "true" }
+                       
                     },
                 });
             }

@@ -2,6 +2,8 @@ import {Component, ElementRef, HostListener, ViewChild, Output, Input} from '@an
 import {Renderer2} from '@angular/core'
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
+import {ObservableMedia} from '@angular/flex-layout';
+
 @Component({
     selector: 'counter',
     templateUrl: './counter.component.html',
@@ -14,11 +16,15 @@ export class CounterComponent {
     public t: ElementRef;
     private _checked = false; 
     public num: number = 0;
-
-    constructor(private renderer: Renderer2) {
+    public state = '';
+    constructor(private renderer: Renderer2, public media:ObservableMedia ) {
         renderer.listen('window', 'resize', (event) => {
             // console.log(event.target.screen.width);
             // this.num = event.target.screen.width;
+        });
+        media.asObservable()
+        .subscribe((change:any) => {
+          this.state = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : ""
         });
     }
 

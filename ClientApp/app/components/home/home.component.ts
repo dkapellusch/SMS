@@ -1,5 +1,8 @@
-import { Component, HostListener, AfterViewInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import {LineChartComponent} from '../linechart/linechart.component';
+import { Component, HostListener, AfterViewInit, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
 import { InitializationService } from '../../services/initialization.service';
+import {isNullOrUndefined} from 'util';
+
 @Component({
 	selector: 'home',
 	templateUrl: './home.component.html',
@@ -10,7 +13,8 @@ export class HomeComponent implements AfterViewInit {
 	private _originalText: string = 'S.M.S.';
 	private _transitionText = 'Sample. Management. System.';
 	public SmsText = this._transitionText;
-
+	@ViewChild('banner') private _banner :ElementRef;
+	@ViewChild('graph') private _graph :LineChartComponent;
 	constructor(private _initializationService: InitializationService, private _changeDetector: ChangeDetectorRef) {}
 
 	public SmsHovered(eventData: Event): void {
@@ -28,12 +32,16 @@ export class HomeComponent implements AfterViewInit {
 	}
 
 	ngAfterViewInit(): void {
-		this._initializationService.Initialized = true;
-		this._changeDetector.detectChanges();
-		//Only for development with HMR should not survive to production
-		if (this._initializationService.Development && window != undefined && window != null) {
-			window.dispatchEvent(new Event('load'));
-		}
+		setTimeout(()=>{
+			if(!isNullOrUndefined(this) && ! isNullOrUndefined(this._changeDetector)){
+			this._initializationService.Initialized = true;
+			
+			this._changeDetector.detectChanges();
+
+			this._banner.nativeElement.style.display = 'block';
+			this._graph.ChartElement.nativeElement.style.display = 'block';
+			}
+		}, 200);
 	}
 
 	@HostListener('window:load', ['$event'])

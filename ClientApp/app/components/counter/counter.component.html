@@ -18,4 +18,15 @@
         <h2>{{Number}}</h2>
     </div>
     <div>{{windowSize}}</div>
+    <div fxFlex class="fxClass-all" ngClass.xs="fxClass-xs" [ngClass.sm]="{'fxClass-sm': hasStyle}" [ngClass.md]="{'fxClass-md': hasStyle, 'fxClass-md2': hasStyle}"
+    [ngClass.lg]="['fxClass-lg', 'fxClass-lg2']">
+    This is something
+</div>
+
+<div *ngIf="media.isActive('xs')">
+    This content is only shown on Mobile devices
+ </div>
+ <footer>
+        Current state: {{state }}
+ </footer>
 </mat-sidenav-container>

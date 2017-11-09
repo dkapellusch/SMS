@@ -12,7 +12,7 @@ const treeShakableModules = [
     '@angular/forms',
     '@angular/http',
     '@angular/platform-browser',
-    // '@angular/flex-layout',
+    '@angular/flex-layout',
     '@angular/platform-browser-dynamic',
     '@angular/router',
     '@angular/cdk',

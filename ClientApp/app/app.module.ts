@@ -6,13 +6,8 @@ import { RouterModule } from '@angular/router';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {CdkTableModule} from "@angular/cdk/table";
 import { ChartsModule } from 'ng2-charts';
-import {
-    MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
-    MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
-    MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
-    MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule, MatPaginatorModule,
-    MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,MatExpansionModule
-} from  "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import MaterialComponents from "./modules/material.module";
 import {InitializationService} from "./services/initialization.service";
 
 import { AppComponent } from './components/app/app.component';
@@ -24,16 +19,6 @@ import {ExampleTableComponent} from './components/exampletable/exampletable.comp
 import {SampleFormComponent} from "./components/sampleform/sampleform.component";
 import {LineChartComponent} from "./components/linechart/linechart.component";
 
-// import MaterialComponents from "./material.module";
-
-let materialModules = [
-    MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
-    MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
-    MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
-    MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule, MatPaginatorModule,
-    MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,
-    CdkTableModule,MatExpansionModule
-];
 
 @NgModule({
     declarations: [
@@ -47,11 +32,12 @@ let materialModules = [
         LineChartComponent
     ],
     imports: [
-        ...materialModules,
+        MaterialComponents,
         CommonModule,
         HttpModule,
         FormsModule,
         ChartsModule,
+        FlexLayoutModule,
         RouterModule.forRoot([
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },

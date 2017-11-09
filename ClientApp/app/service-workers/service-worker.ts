@@ -1,3 +1,7 @@
+import {isNullOrUndefined} from "util";
+import {Component} from '@angular/core';
+console.log(Component);
+
 (async function(){
   let w = self as any;
   w.addEventListener('install', function(event:any) {
@@ -16,7 +20,7 @@
   });
 
   let manifest = await (await fetch("/dist/manifest.json")).json();
-  console.log(`I got the m  ${manifest[Object.keys(manifest)[0]]}`);
+  if(!isNullOrUndefined(manifest))   console.log(`I got the m  ${manifest[Object.keys(manifest)[0]]}`);
  
 })();
 
