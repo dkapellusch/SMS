@@ -69,6 +69,8 @@ dlldata.c
 *.svclog
 *.scc
 .cache-loader
+.awcache
+
 # Chutzpah Test files
 _Chutzpah*
 

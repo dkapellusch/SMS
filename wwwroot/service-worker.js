@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "42e4d8db61360225c9b4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "35d6c953e410afcd404c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2934,14 +2934,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         // fetch('/index.html').then(r => console.log(r.body));
                     });
                     w.addEventListener('message', function (event) {
-                        console.log("Got message from client! " + event.data.message);
+                        return __awaiter(this, void 0, void 0, function () {
+                            var myClients, windowClient;
+                            return __generator(this, function (_a) {
+                                switch (_a.label) {
+                                    case 0:
+                                        console.log("Got message from client:" + JSON.stringify(event, null, '\t') + " " + event.data.message);
+                                        return [4 /*yield*/, w.clients.matchAll()];
+                                    case 1:
+                                        myClients = _a.sent();
+                                        console.log(myClients);
+                                        windowClient = myClients.find(function (i) { return true; });
+                                        windowClient.postMessage("hello client");
+                                        return [2 /*return*/];
+                                }
+                            });
+                        });
                     });
                     return [4 /*yield*/, fetch("/dist/manifest.json")];
                 case 1: return [4 /*yield*/, (_a.sent()).json()];
                 case 2:
                     manifest = _a.sent();
                     if (manifest !== undefined)
-                        console.log("I got the m  " + manifest[Object.keys(manifest)[0]]);
+                        console.log("I got the manifest  " + JSON.stringify(manifest, null, '\t'));
                     return [2 /*return*/];
             }
         });

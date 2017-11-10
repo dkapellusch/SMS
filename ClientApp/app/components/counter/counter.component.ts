@@ -46,6 +46,6 @@ export class CounterComponent {
 
     get windowSize(): any
     {
-        return window.screen.width;
+        return this.media;
     }
 }

@@ -16,7 +16,8 @@ export default createServerRenderer(params => {
         { provide: 'BASE_URL', useValue: params.origin + params.baseUrl },
     ];
     console.log("got some params" + params.data);
-    return isNullOrUndefined(platformDynamicServer(providers).bootstrapModule(AppModule)) ? {} as any: platformDynamicServer(providers).bootstrapModule(AppModule).then(moduleRef => {
+    return isNullOrUndefined(platformDynamicServer(providers).bootstrapModule(AppModule)) ? {} as any: platformDynamicServer(providers)
+                                                             .bootstrapModule(AppModule).then(moduleRef => {
         const appRef: ApplicationRef = moduleRef.injector.get(ApplicationRef);
         const state = moduleRef.injector.get(PlatformState);
         const zone :any = moduleRef.injector.get(NgZone);
@@ -24,8 +25,6 @@ export default createServerRenderer(params => {
         return new Promise<RenderResult>((resolve, reject) => {
             zone.onError.subscribe((errorInfo: any) => reject(errorInfo));
             appRef.isStable.first(isStable => isStable).subscribe(() => {
-                // Because 'onStable' fires before 'onError', we have to delay slightly before
-                // completing the request in case there's an error to report
                 setImmediate(() => {
                     resolve({
                         html: state.renderToString()
