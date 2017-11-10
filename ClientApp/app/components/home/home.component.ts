@@ -41,7 +41,7 @@ export class HomeComponent implements AfterViewInit {
 			this._banner.nativeElement.style.display = 'block';
 			this._graph.ChartElement.nativeElement.style.display = 'block';
 			}
-		}, 200);
+		}, 1);
 	}
 
 	@HostListener('window:load', ['$event'])

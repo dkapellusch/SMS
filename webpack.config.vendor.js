@@ -18,7 +18,9 @@ const treeShakableModules = [
     '@angular/cdk',
     '@angular/material',
     'zone.js',
-    'ng2-charts'
+    'ng2-charts',
+    "isomorphic-fetch",
+    
 ];
 const nonTreeShakableModules = [
     'es6-promise',
@@ -28,6 +30,8 @@ const nonTreeShakableModules = [
     'reflect-metadata',
     '@angular/material/prebuilt-themes/purple-green.css',
     "./wwwroot/styles/css/material-icons.css",
+    'rxjs',
+    
 
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);

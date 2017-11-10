@@ -5,7 +5,7 @@ const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackShellPlugin = require('./WebpackPlugins/WebpackShellPlugin');
-
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const isDevBuild = !(env && env.prod);
@@ -19,14 +19,14 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['awesome-typescript-loader?silent=true', 'angular2-template-loader'] : '@ngtools/webpack' },
+                { test: /\.ts$/, include: /ClientApp/, use: ['cache-loader',`thread-loader?workers=${require('os').cpus().length - 1}`,'ts-loader?silent=true&happyPackMode=true', 'angular2-template-loader'] },
                 { test: /\.html$/, use: 'html-loader?minimize=false' },
                 {test: /\.scss$/, use: ['to-string-loader', 'css-loader', 'sass-loader']},
                 { test: /\.css$/, use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
-        plugins: [new CheckerPlugin()]
+        plugins: [new CheckerPlugin(), new ForkTsCheckerWebpackPlugin({ checkSyntacticErrors: true })]
     };
 
     // Configuration for client-side bundle suitable for running in browsers
@@ -38,8 +38,8 @@ module.exports = (env) => {
             new webpack.DllReferencePlugin({
                 context: __dirname,
                 manifest: require('./wwwroot/dist/vendor-manifest.json')
-            }),
-            new ManifestPlugin({path:clientBundleOutputDir})
+            })
+            // new ManifestPlugin({path:clientBundleOutputDir})
         ].concat(isDevBuild ? [
             // Plugins that apply in development builds only
             new webpack.SourceMapDevToolPlugin({
@@ -102,7 +102,7 @@ module.exports = (env) => {
             path: path.join(__dirname, './ClientApp/dist')
         },
         target: 'node',
-        devtool: 'inline-source-map'
+        devtool: 'eval-cheap-module-source-map'
     });
-    return [clientBundleConfig,serviceWorkerBundle,serverBundleConfig];
+    return [clientBundleConfig,serverBundleConfig,serviceWorkerBundle];
 };

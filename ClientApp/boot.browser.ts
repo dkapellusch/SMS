@@ -49,10 +49,10 @@ if (module.hot) {
 // builds. Don't change how this line looks, otherwise you may break tree-shaking.
 const modulePromise = platformBrowserDynamic().bootstrapModule(AppModule);
 
-if ('serviceWorker' in navigator) {
-	getServiceWorker('/service-worker.js').then(sw => {
-		console.log(`Got a service worker back ${sw}`);
-		sw.postMessage({message:"hello friend"});
-	});
+// if ('serviceWorker' in navigator) {
+// 	getServiceWorker('/service-worker.js').then(sw => {
+// 		console.log(`Got a service worker back ${sw}`);
+// 		sw.postMessage({message:"hello friend"});
+// 	});
 	
-}
+// }

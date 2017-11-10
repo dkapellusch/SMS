@@ -1,6 +1,3 @@
-import {isNullOrUndefined} from "util";
-import {Component} from '@angular/core';
-console.log(Component);
 
 (async function(){
   let w = self as any;
@@ -20,7 +17,7 @@ console.log(Component);
   });
 
   let manifest = await (await fetch("/dist/manifest.json")).json();
-  if(!isNullOrUndefined(manifest))   console.log(`I got the m  ${manifest[Object.keys(manifest)[0]]}`);
+  if(manifest !== undefined)   console.log(`I got the m  ${manifest[Object.keys(manifest)[0]]}`);
  
 })();
 
