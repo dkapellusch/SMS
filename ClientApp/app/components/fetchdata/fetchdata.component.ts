@@ -1,7 +1,7 @@
 import { Component, Inject, ViewChild, ElementRef, ValueProvider } from '@angular/core';
 import { Http } from '@angular/http';
 import { DatePipe } from '@angular/common';
-import {MatDatepicker} from "@angular/material";
+import {MatDatepicker, MatChipList} from "@angular/material";
 
 @Component({
     selector: 'fetchdata',
@@ -10,11 +10,14 @@ import {MatDatepicker} from "@angular/material";
 export class FetchDataComponent {
     public forecasts: WeatherForecast[];
     @ViewChild('picker') DatePicker :any;
+    @ViewChild('t') chips : MatChipList;
     public SelectedTime:Date;
     constructor(http: Http, @Inject('BASE_URL') baseUrl: string) {
         http.get(baseUrl + 'api/SampleData/WeatherForecasts').subscribe(result => {
             this.forecasts = result.json() as WeatherForecast[];
         }, error => console.error(error));
+
+        
     }
 
     public clicked(e:Event):void{

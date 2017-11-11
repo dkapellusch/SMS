@@ -40,6 +40,7 @@ export class HomeComponent implements AfterViewInit {
 
 			this._banner.nativeElement.style.display = 'block';
 			this._graph.ChartElement.nativeElement.style.display = 'block';
+			this.onLoad(null);
 			}
 		}, 1);
 	}

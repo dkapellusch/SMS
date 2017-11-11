@@ -4,7 +4,7 @@
     <mat-spinner></mat-spinner>
 </p>
 
-<table class='table' *ngIf="forecasts" style="color:rgb(255, 255, 255);">
+<table class='table' *ngIf="forecasts" style="color:rgb(255, 255, 255);" #magic>
     <thead>
         <tr>
             <th>Date</th>
@@ -22,7 +22,7 @@
     </tbody>
 </table>
 <mat-chip color="accent" selected="true">Accent color!</mat-chip>
-<mat-chip-list>
+<mat-chip-list #t>
     <mat-chip>One fish!</mat-chip>
     <mat-chip>Two fish!</mat-chip>
     <mat-chip color="primary" selected="true">Primary fish</mat-chip>

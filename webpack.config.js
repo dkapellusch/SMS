@@ -5,6 +5,8 @@ const AotPlugin = require('@ngtools/webpack').AotPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackShellPlugin = require('./WebpackPlugins/WebpackShellPlugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-webpack-plugin');
 
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
@@ -19,14 +21,16 @@ module.exports = (env) => {
         },
         module: {
             rules: [
-                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['awesome-typescript-loader?silent=true&useCache=true', 'angular2-template-loader', 'angular2-router-loader'] : '@ngtools/webpack' },
+                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader'] : '@ngtools/webpack' },
+                // Could also use awesome-typescript-loader?slient=true&cache=true
+                
                 { test: /\.html$/, use: 'html-loader?minimize=false' },
                 {test: /\.scss$/, use: ['to-string-loader', 'css-loader', 'sass-loader']},
                 { test: /\.css$/, use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
-        plugins: [new CheckerPlugin()]
+        plugins: [new ForkTsCheckerWebpackPlugin(), new ForkTsCheckerNotifierWebpackPlugin()]
     };
 
     // Configuration for client-side bundle suitable for running in browsers
@@ -69,7 +73,7 @@ module.exports = (env) => {
          },
         module: {
             rules: [
-                { test: /\.ts$/, include: path.resolve(__dirname,"ClientApp/app/service-workers"), use: ['awesome-typescript-loader?silent=true&useCache=true', 'angular2-template-loader', 'angular2-router-loader'] }]
+                { test: /\.ts$/, include: path.resolve(__dirname,"ClientApp/app/service-workers"), use: ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader'] }]
             },
         plugins: []
     };

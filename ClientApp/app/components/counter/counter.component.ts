@@ -10,42 +10,28 @@ import {ObservableMedia} from '@angular/flex-layout';
     styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent {
-
-    public currentCount = 0;
-    @ViewChild('test') 
-    public t: ElementRef;
-    private _checked = false; 
-    public num: number = 0;
+    @ViewChild('test') public t: ElementRef;
+    public currentCount = 8;
+    private _checked = false;
     public state = '';
-    constructor(private renderer: Renderer2, public media:ObservableMedia ) {
-        renderer.listen('window', 'resize', (event) => {
-            // console.log(event.target.screen.width);
-            // this.num = event.target.screen.width;
-        });
-        media.asObservable()
-        .subscribe((change:any) => {
-          this.state = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : ""
-        });
-    }
 
-    get Number(): number {
-        return this.currentCount + 1; //?
+    constructor(private renderer: Renderer2, public media:ObservableMedia ) {
+        media.asObservable()
+             .subscribe((change:any) => {
+                  this.state = change ? `'${change.mqAlias}' = (${change.mediaQuery})` : ""
+             });
     }
 
     public get checked():boolean{
         return this._checked;
     }
 
-    public set checked(value:boolean){
+    public set checked(value:boolean) {
         this._checked = value;
     }
-    public incrementCounter(el: ElementRef) {
-        let e = this.t;
-         this.renderer.setProperty(el, 'innerHTML', 'my content is here ' + ++this.currentCount);
-    }
 
-    get windowSize(): any
-    {
-        return this.media;
+    public incrementCounter(e:Event) {
+        this.t.nativeElement.innerHTML = "123";
+         this.renderer.setProperty(e.target, 'innerHTML', 'I changed the button! ' + ++this.currentCount);
     }
 }
