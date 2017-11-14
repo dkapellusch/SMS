@@ -22,7 +22,7 @@ import "hammerjs";
     bootstrap: [AppComponent],
     imports: [
         BrowserAnimationsModule,
-        BrowserModule,
+        BrowserModule.withServerTransition({appId:"SMS"}),
         AppModuleShared
     ],
     entryComponents: [CounterComponent],

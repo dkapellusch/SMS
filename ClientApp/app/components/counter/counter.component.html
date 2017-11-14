@@ -6,14 +6,14 @@
         <button type="button" mat-button (click)="sidenav.open()">
             Open sidenav
         </button>
-        <p #test>Form</p>
+        <p [myHidden] = 'checked' #test>Form</p>
         <span>{{test.innerHTML}}</span>
         <p>Current count:
             <strong>{{ currentCount }}</strong>
         </p>
         <button class="aButton" (click)="incrementCounter($event)" mat-button color="primary">Increment</button>
-        <span>Rora being bad
-            <mat-slide-toggle [(ngModel)]="checked">Rora is being cute!</mat-slide-toggle>
+        <span [class.red]="!checked" >Rora being bad
+            <mat-slide-toggle [style.color]="checked ? 'gold' : 'white' " [(ngModel)]="checked"  >Rora is being cute!</mat-slide-toggle>
         </span>
     </div>
     <div fxFlex class="fxClass-all" ngClass.xs="fxClass-xs" [ngClass.sm]="{'fxClass-sm': hasStyle}" [ngClass.md]="{'fxClass-md': hasStyle, 'fxClass-md2': hasStyle}"

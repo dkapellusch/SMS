@@ -3,7 +3,7 @@ import {Renderer2} from '@angular/core'
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import {ObservableMedia} from '@angular/flex-layout';
-
+import {HiddenDirective} from "../../directives/hidden.directive";
 @Component({
     selector: 'counter',
     templateUrl: './counter.component.html',
@@ -14,7 +14,6 @@ export class CounterComponent {
     public currentCount = 8;
     private _checked = false;
     public state = '';
-
     constructor(private renderer: Renderer2, public media:ObservableMedia ) {
         media.asObservable()
              .subscribe((change:any) => {
@@ -31,7 +30,6 @@ export class CounterComponent {
     }
 
     public incrementCounter(e:Event) {
-        this.t.nativeElement.innerHTML = "123";
          this.renderer.setProperty(e.target, 'innerHTML', 'I changed the button! ' + ++this.currentCount);
     }
 }

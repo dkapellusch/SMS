@@ -17,7 +17,7 @@
             <td>{{ forecast.dateFormatted | date }}</td>
             <td>{{ forecast.temperatureC }}</td>
             <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary }}</td>
+            <td>{{ forecast.summary | titleCase}}</td>
         </tr>
     </tbody>
 </table>

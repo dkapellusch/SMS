@@ -26,6 +26,9 @@ import {
     MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule, MatPaginatorModule,
     MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,MatExpansionModule
 } from  "@angular/material";
+import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { TitleCasePipe } from './pipes/titleCase.pipe';
+import { HiddenDirective } from './directives/hidden.directive';
 
 let materialModules = [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
@@ -45,7 +48,10 @@ let materialModules = [
         ExampleTableComponent,
         HomeComponent,
         SampleFormComponent,
-        LineChartComponent
+        LineChartComponent,
+        CapitalizePipe,
+        TitleCasePipe,
+        HiddenDirective
     ],
     imports: [
         ...materialModules,

@@ -2,6 +2,9 @@ import { Component, Inject, ViewChild, ElementRef, ValueProvider } from '@angula
 import { Http } from '@angular/http';
 import { DatePipe } from '@angular/common';
 import {MatDatepicker, MatChipList} from "@angular/material";
+import {TitleCasePipe} from "../../pipes/titleCase.pipe";
+import {CapitalizePipe} from "../../pipes/capitalize.pipe";
+import {HiddenDirective} from "../../directives/hidden.directive";
 
 @Component({
     selector: 'fetchdata',
