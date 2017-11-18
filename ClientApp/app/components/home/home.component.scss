@@ -1,57 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Fjalla+One|Monoton|Oxygen|Raleway|Roboto+Condensed|Titillium+Web|Ubuntu+Condensed|Yanone+Kaffeesatz');
-
- .text-pop-up-top {
-	-webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.text-pop-up-top {
+  -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
- @-webkit-keyframes text-pop-up-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
-      text-shadow: none;
-    }
-    100% {
-      -webkit-transform: translateY(-50px);
-              transform: translateY(-50px);
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
-      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
-    }
+@-webkit-keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
   }
-  @keyframes text-pop-up-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
-      text-shadow: none;
-    }
-    100% {
-      -webkit-transform: translateY(-50px);
-              transform: translateY(-50px);
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
-      text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
-    }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
   }
-  
-
-
-  .tracking-in-expand {
-	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	        animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
+@keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
 
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
 
 // ----------------- Variables -----------------
-$normal-margin:43.3%;
-$shrunk-margin:18%;
+$normal-margin:42.3%;
+$shrunk-margin:15%;
 //  --------------- End Variables ---------------
-
 @-webkit-keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
@@ -60,59 +55,56 @@ $shrunk-margin:18%;
   }
   40% {
     opacity: 0.6;
-    
   }
   100% {
     opacity: 1;
-    margin-left:$shrunk-margin;
+    margin-left: $shrunk-margin;
   }
-  }
-  @keyframes tracking-in-expand {
-    0% {
-      letter-spacing: -0.5em;
-      opacity: 0;
-      margin-left:$normal-margin;
-    }
-    40% {
-      opacity: 0.6;
-      
-    }
-    100% {
-      opacity: 1;
-      margin-left:$shrunk-margin;
-      letter-spacing: -0.01em;
-    }
-  }
-  
-  .tracking-out-contract {
-	-webkit-animation: tracking-out-contract 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: tracking-out-contract 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
- 
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+    margin-left: $normal-margin;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+    margin-left: $shrunk-margin;
+    letter-spacing: -0.01em;
+  }
+}
+
+.tracking-out-contract {
+  -webkit-animation: tracking-out-contract 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  animation: tracking-out-contract 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
 @-webkit-keyframes tracking-out-contract {
   0% {
     opacity: 1;
     letter-spacing: 1.6em;
-    margin-left:$shrunk-margin;
+    margin-left: $shrunk-margin;
   }
   100% {
     letter-spacing: 0em;
     opacity: 1;
-    margin-left:$normal-margin;
-    
+    margin-left: $normal-margin;
   }
-    }
-  @keyframes tracking-out-contract {
-    0% {
-        opacity: 1;
-        letter-spacing: 1.6em;
-        margin-left:$shrunk-margin
-      }
-      100% {
-        letter-spacing: 0em;
-        opacity: 1;
-        margin-left:$normal-margin;
-        
-      }
-    }
-  
+}
+
+@keyframes tracking-out-contract {
+  0% {
+    opacity: 1;
+    letter-spacing: 1.6em;
+    margin-left: $shrunk-margin
+  }
+  100% {
+    letter-spacing: 0em;
+    opacity: 1;
+    margin-left: $normal-margin;
+  }
+}

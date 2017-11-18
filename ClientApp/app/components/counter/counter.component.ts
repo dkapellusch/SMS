@@ -3,7 +3,7 @@ import {Renderer2} from '@angular/core'
 import {Observable} from "rxjs/Observable";
 import {Observer} from "rxjs/Observer";
 import {ObservableMedia} from '@angular/flex-layout';
-import {HiddenDirective} from "../../directives/hidden.directive";
+
 @Component({
     selector: 'counter',
     templateUrl: './counter.component.html',
@@ -30,6 +30,8 @@ export class CounterComponent {
     }
 
     public incrementCounter(e:Event) {
-         this.renderer.setProperty(e.target, 'innerHTML', 'I changed the button! ' + ++this.currentCount);
+        let lowerCase = 't';
+        let upperCase = '_'.charCodeAt(0) & lowerCase.charCodeAt(0);
+         this.renderer.setProperty(e.target, 'innerHTML', 'I changed the button! ' + String.fromCharCode(upperCase)+ +this.currentCount++);
     }
 }

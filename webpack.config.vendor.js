@@ -38,7 +38,7 @@ const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
 module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin('vendor.css');
-    const isDevBuild = !(env && env.prod);
+    const isDevBuild = true; //  !(env && env.prod);
     const sharedConfig = {
         stats: {
             modules: false

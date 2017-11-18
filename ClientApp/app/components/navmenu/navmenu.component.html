@@ -1,25 +1,41 @@
-<div class="toolBarContainer">
+<div style="margin-bottom:3%;" fxShow.lt-sm="false" class="toolBarContainer" #links>
     <mat-toolbar color="primary">
-            <span class="toolbarItem ">
-                <a class="toolBarLinkText" [routerLink]="['/home']">
-                    <span><mat-icon>home</mat-icon> <span>Home</span></span>
-                </a>
-            </span>
-        <span class="toolbarItem">
-                <a class="toolBarLinkText" [routerLink]="['/counter']">
-                    <span> <mat-icon>description</mat-icon> Counter </span>
-                </a>
-            </span>
-        <span class="toolbarItem">
-                <a class="toolBarLinkText" [routerLink]="['/ex-table']">
-                    <span> <mat-icon>description</mat-icon> Samples </span>
-                </a>
-            </span>
-        <span class="fill-remaining-space toolbarItem"></span>
-        <div>
-            <a class="toolBarLinkText" [routerLink]="['/fetch-data']">
-                <span> <mat-icon>account_circle</mat-icon> Login </span>
+        <span class="{{navLink.ItemClasses.join(' ')}}" *ngFor="let navLink of NavLinks">
+            <a class="{{navLink.AnchorClasses.join(' ')}}" [routerLink]="navLink.Link">
+                <span>
+                    <mat-icon>{{navLink.Icon}}</mat-icon>
+                    <span>{{navLink.LinkText}}</span>
+                </span>
             </a>
-        </div>
+        </span>
     </mat-toolbar>
 </div>
+
+<router-outlet fxShow.lt-sm="false"></router-outlet>
+
+<mat-sidenav-container fxShow.lt-sm="true">
+    <mat-sidenav #sidenav mode="over">
+        <button mat-icon-button (click)="sidenav.close()">
+            <mat-icon aria-label="Menu Icon">view_headline</mat-icon>
+        </button>
+        <button type="button" mat-button (click)="sidenav.open()">
+        </button>
+        <div style="margin-left:10%; margin-top:5%; margin-bottom:8%;
+        " class="{{navLink.ItemClasses.join(' ')}}" *ngFor="let navLink of NavLinks">
+            <a class="{{navLink.AnchorClasses.join(' ')}}" [routerLink]="navLink.Link">
+                <span>
+                    <mat-icon>{{navLink.Icon}}</mat-icon>
+                    <span>{{navLink.LinkText}}</span>
+                </span>
+            </a>
+        </div>
+    </mat-sidenav>
+    <div [ngStyle.lt-xl]="{paddingBottom:'6vh'}"  [ngStyle.lt-md]="{paddingBottom:'12vh'}" [ngStyle.xl]="{paddingBottom:'6vh'}" [ngStyle.md]="{paddingBottom:'9vh'}" >
+    <mat-toolbar class="toolBarContainer" color="primary">
+        <button type="button" mat-icon-button (click)="sidenav.open()">
+            <mat-icon aria-label="Menu Icon">view_headline</mat-icon>
+        </button>
+    </mat-toolbar>
+</div>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

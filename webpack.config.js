@@ -12,22 +12,41 @@ module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
     const isDevBuild = !(env && env.prod);
     const sharedConfig = {
-        stats: { modules: false },
+        stats: {
+            modules: false
+        },
         context: __dirname,
-        resolve: { extensions: [ '.js', '.ts','.scss' ] },
+        resolve: {
+            extensions: ['.js', '.ts', '.scss']
+        },
         output: {
             filename: '[name].js',
             publicPath: 'dist/' // Webpack dev middleware, if enabled, handles requests for this URL prefix
         },
         module: {
-            rules: [
-                { test: /\.ts$/, include: /ClientApp/, use: isDevBuild ? ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader'] : '@ngtools/webpack' },
+            rules: [{
+                    test: /\.ts$/,
+                    include: /ClientApp/,
+                    use: isDevBuild ? ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader'] : '@ngtools/webpack'
+                },
                 // Could also use awesome-typescript-loader?slient=true&cache=true
-                
-                { test: /\.html$/, use: 'html-loader?minimize=false' },
-                {test: /\.scss$/, use: ['to-string-loader', 'css-loader', 'sass-loader']},
-                { test: /\.css$/, use: [ 'to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize' ] },
-                { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
+
+                {
+                    test: /\.html$/,
+                    use: 'html-loader?minimize=false'
+                },
+                {
+                    test: /\.scss$/,
+                    use: ['to-string-loader', 'css-loader', 'sass-loader']
+                },
+                {
+                    test: /\.css$/,
+                    use: ['to-string-loader', isDevBuild ? 'css-loader' : 'css-loader?minimize']
+                },
+                {
+                    test: /\.(png|jpg|jpeg|gif|svg)$/,
+                    use: 'url-loader?limit=25000'
+                }
             ]
         },
         plugins: [new ForkTsCheckerWebpackPlugin(), new ForkTsCheckerNotifierWebpackPlugin()]
@@ -36,8 +55,12 @@ module.exports = (env) => {
     // Configuration for client-side bundle suitable for running in browsers
     const clientBundleOutputDir = './wwwroot/dist';
     const clientBundleConfig = merge(sharedConfig, {
-        entry: { 'main-client': './ClientApp/boot.browser.ts' },
-        output: { path: path.join(__dirname, clientBundleOutputDir) },
+        entry: {
+            'main-client': './ClientApp/boot.browser.ts'
+        },
+        output: {
+            path: path.join(__dirname, clientBundleOutputDir)
+        },
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,
@@ -62,26 +85,39 @@ module.exports = (env) => {
     });
 
     const serviceWorkerBundle = {
-        stats: { modules: false },
-        entry: { 'service-worker': './ClientApp/app/service-workers/service-worker.ts' },
+        stats: {
+            modules: false
+        },
+        entry: {
+            'service-worker': './ClientApp/app/service-workers/service-worker.ts'
+        },
         context: __dirname,
-        resolve: { extensions: [ '.js', '.ts','.scss' ] },
-        output: { 
+        resolve: {
+            extensions: ['.js', '.ts', '.scss']
+        },
+        output: {
             path: path.join(__dirname, './wwwroot'),
-            filename:'service-worker.js',
+            filename: 'service-worker.js',
             publicPath: 'dist/'
-         },
+        },
         module: {
-            rules: [
-                { test: /\.ts$/, include: path.resolve(__dirname,"ClientApp/app/service-workers"), use: ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader'] }]
-            },
+            rules: [{
+                test: /\.ts$/,
+                include: path.resolve(__dirname, "ClientApp/app/service-workers"),
+                use: ['ts-loader?happyPackMode=true', 'angular2-template-loader', 'angular2-router-loader']
+            }]
+        },
         plugins: []
     };
 
     // Configuration for server-side (prerendering) bundle suitable for running in Node
     const serverBundleConfig = merge(sharedConfig, {
-        resolve: { mainFields: ['main'] },
-        entry: { 'main-server': './ClientApp/boot.server.ts' },
+        resolve: {
+            mainFields: ['main']
+        },
+        entry: {
+            'main-server': './ClientApp/boot.server.ts'
+        },
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,
@@ -89,10 +125,10 @@ module.exports = (env) => {
                 sourceType: 'commonjs2',
                 name: './vendor'
             })
-        //     ,new WebpackShellPlugin({ 
-        //         onBuildStart: [], 
-        //         onBuildEnd: ['del ' + path.join(__dirname,"ClientApp/service-worker.js")] 
-        //    })
+            //     ,new WebpackShellPlugin({ 
+            //         onBuildStart: [], 
+            //         onBuildEnd: ['del ' + path.join(__dirname,"ClientApp/service-worker.js")] 
+            //    })
         ].concat(isDevBuild ? [] : [
             // Plugins that apply in production builds only
             new AotPlugin({
@@ -108,5 +144,5 @@ module.exports = (env) => {
         target: 'node',
         devtool: 'eval-cheap-module-source-map'
     });
-    return [clientBundleConfig,serverBundleConfig,serviceWorkerBundle];
+    return [clientBundleConfig, serverBundleConfig, serviceWorkerBundle];
 };

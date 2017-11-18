@@ -12,7 +12,7 @@
             <strong>{{ currentCount }}</strong>
         </p>
         <button class="aButton" (click)="incrementCounter($event)" mat-button color="primary">Increment</button>
-        <span [class.red]="!checked" >Rora being bad
+        <span [class.red]="!checked" >Rora being bad!
             <mat-slide-toggle [style.color]="checked ? 'gold' : 'white' " [(ngModel)]="checked"  >Rora is being cute!</mat-slide-toggle>
         </span>
     </div>

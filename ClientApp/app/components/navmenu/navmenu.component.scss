@@ -10,6 +10,10 @@ mat-toolbar {
     width: 100% !important;
 }
 
+.block {
+    display: block;
+}
+
 .fill-remaining-space {
     -webkit-flex: 1 1 auto;
     -ms-flex: 1 1 auto;
@@ -24,7 +28,7 @@ mat-toolbar {
 .toolBarLinkText {
     color: white;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
 }
 
 a {
@@ -36,6 +40,18 @@ a:active {
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
+
 /*
 for side nav
 */
+
+@media (max-width: 700px) {
+    mat-sidenav-container {
+        margin: 0;
+        padding-left: -25px;
+        height: 105vh;
+    }
+    mat-sidenav {
+        width: 38vw;
+    }
+}

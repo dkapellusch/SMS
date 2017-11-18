@@ -4,7 +4,7 @@ import { Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild } 
 @Component({
     selector: 'linechart',
     template:`
-<div style="width:80%;height:40%; margin:auto; display:none;"  #chartElement>
+<div style="width:80vw;height:90vh; margin:auto; display:none;"  #chartElement>
     <div>
         <canvas baseChart  [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
             [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
@@ -15,7 +15,7 @@ import { Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild } 
     <mat-slider thumbLabel tickInterval="250" style="width:40%; margin-left:30%;" min="0" max="10000" step="100" value="1500" (input)="test($event)" ></mat-slider>
     <ng-content></ng-content>
 </div>
-  `
+`
 })
 export class LineChartComponent implements AfterViewInit {
 
