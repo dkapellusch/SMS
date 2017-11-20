@@ -1,11 +1,4 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #sidenav class="example-sidenav" mode="over">
-        My Menu
-    </mat-sidenav>
-    <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="sidenav.open()">
-            Open sidenav
-        </button>
+<div>
         <p [myHidden] = 'checked' #test>Form</p>
         <span>{{test.innerHTML}}</span>
         <p>Current count:
@@ -15,8 +8,7 @@
         <span [class.red]="!checked" >Rora being bad!
             <mat-slide-toggle [style.color]="checked ? 'gold' : 'white' " [(ngModel)]="checked"  >Rora is being cute!</mat-slide-toggle>
         </span>
-    </div>
-    <div fxFlex class="fxClass-all" ngClass.xs="fxClass-xs" [ngClass.sm]="{'fxClass-sm': hasStyle}" [ngClass.md]="{'fxClass-md': hasStyle, 'fxClass-md2': hasStyle}"
+    <!-- <div fxFlex class="fxClass-all" ngClass.xs="fxClass-xs" [ngClass.sm]="{'fxClass-sm': hasStyle}" [ngClass.md]="{'fxClass-md': hasStyle, 'fxClass-md2': hasStyle}"
         [ngClass.lg]="['fxClass-lg', 'fxClass-lg2']">
         This is something
     </div>
@@ -29,5 +21,5 @@
     </footer>
     <div [ngStyle.md]="{color:'blue'}" [ngStyle.sm]="{'font-size': '16px', color: '#a63db8', 'text-align': 'center'}">
         Test
-    </div>
-</mat-sidenav-container>
+    </div> -->
+</div>

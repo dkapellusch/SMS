@@ -2,7 +2,7 @@
 using System.Linq;
 using SMS.Models;
 using Microsoft.EntityFrameworkCore;
-
+using SMS.Models.Animals;
 namespace SMS.Persistence
 {
     public class PostgresqlContext : DbContext
@@ -12,6 +12,7 @@ namespace SMS.Persistence
         }
 
         public DbSet<Thing> Things { get; set; }
+        public DbSet<Animal> Animals { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

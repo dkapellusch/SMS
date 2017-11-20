@@ -12,16 +12,22 @@ namespace SMS.Controllers
 {
     public class HomeController : Controller
     {
+        private ILogger _logger;
+        
         public HomeController(ILogger<HomeController> logger, ISampleRespository samples)
         {
-            samples.AddThing(new Thing{Name = "Something"});
-            var addedSample = samples.GetAllThings().LastOrDefault();
-            logger.LogWarning($"Just added a new sample with name {addedSample?.Name}, and id {addedSample?.Id}");
-            
+            _logger = logger;
+            Samples = samples;
+
         }
-        
-        public IActionResult Index()
+
+        private ISampleRespository Samples { get; }
+
+        public async Task<IActionResult> Index()
         {
+            await Samples.AddThingAsync(new Thing { Name = "Something" });
+            var addedSample = Samples.GetAllThings().LastOrDefault();
+            _logger.LogWarning($"Just added a new sample with name {addedSample?.Name}, and id {addedSample?.Id}");
             return View();
         }
 

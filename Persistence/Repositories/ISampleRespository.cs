@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SMS.Models;
 
 namespace SMS.Persistence.Repositories
@@ -7,8 +8,7 @@ namespace SMS.Persistence.Repositories
     {
         IEnumerable<Thing> GetAllThings();
         
-        void AddThing(Thing thing);
-        
+        Task AddThingAsync(Thing thing);
         
     }
 }

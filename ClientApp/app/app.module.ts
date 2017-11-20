@@ -29,6 +29,7 @@ import {
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TitleCasePipe } from './pipes/titleCase.pipe';
 import { HiddenDirective } from './directives/hidden.directive';
+import { LoggingService } from './services/logging.service';
 
 let materialModules = [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
@@ -72,7 +73,7 @@ let materialModules = [
         ])
     ],
     entryComponents:[CounterComponent],
-    providers:[InitializationService]
+    providers:[InitializationService, LoggingService]
     // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModuleShared {

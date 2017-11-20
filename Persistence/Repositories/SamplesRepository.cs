@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SMS.Models;
 
 namespace SMS.Persistence.Repositories
@@ -17,10 +18,10 @@ namespace SMS.Persistence.Repositories
             return Context.Things;
         }
 
-        public void AddThing(Thing thing)
+        public async Task AddThingAsync(Thing thing)
         {
-            Context.Things.Add(thing);
-            Context.SaveChanges();
+            await Context.Things.AddAsync(thing);
+            await Context.SaveChangesAsync();
         }
 
         public void RemoveAllThings()

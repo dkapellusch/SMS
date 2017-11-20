@@ -3,6 +3,7 @@ import 'zone.js';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/modules/app.module.browser';
+import { log } from 'util';
 
 
 async function getServiceWorker(serviceWorkerUrl:string) : Promise<ServiceWorker> {
@@ -48,7 +49,8 @@ if (module.hot) {
 // Note: @ng-tools/webpack looks for the following expression when performing production
 // builds. Don't change how this line looks, otherwise you may break tree-shaking.
 const modulePromise = platformBrowserDynamic().bootstrapModule(AppModule);
-
+modulePromise.then(m => {
+});
 // if ('serviceWorker' in navigator) {
 // 	getServiceWorker('/service-worker.js').then(sw => {
 // 		sw.postMessage({message:"hello friend"});

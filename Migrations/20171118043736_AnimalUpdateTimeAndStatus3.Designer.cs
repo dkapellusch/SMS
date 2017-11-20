@@ -12,9 +12,10 @@ using System;
 namespace SMS.Migrations
 {
     [DbContext(typeof(PostgresqlContext))]
-    partial class PostgresqlContextModelSnapshot : ModelSnapshot
+    [Migration("20171118043736_AnimalUpdateTimeAndStatus3")]
+    partial class AnimalUpdateTimeAndStatus3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

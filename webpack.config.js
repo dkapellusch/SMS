@@ -91,6 +91,7 @@ module.exports = (env) => {
         entry: {
             'service-worker': './ClientApp/app/service-workers/service-worker.ts'
         },
+        devtool:'none',
         context: __dirname,
         resolve: {
             extensions: ['.js', '.ts', '.scss']

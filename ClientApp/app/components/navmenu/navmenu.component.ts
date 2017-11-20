@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'nav-menu',
     templateUrl: './navmenu.component.html',
-    styleUrls: ['./navmenu.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: ['./navmenu.component.scss']
 })
 export class NavMenuComponent {
     private _navLinks: NavLink[] = [
