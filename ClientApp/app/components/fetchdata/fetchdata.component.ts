@@ -24,7 +24,6 @@ export class FetchDataComponent {
 
         
     }
-    
     public send(){
         this.logger.Log("Hello Server! {0}", {'isFine?':true})
     }

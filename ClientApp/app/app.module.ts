@@ -13,10 +13,9 @@ import { AppComponent } from './components/app/app.component';
 import { NavMenuComponent } from './components/navmenu/navmenu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-import { CounterComponent } from './components/counter/counter.component';
 import {ExampleTableComponent} from './components/exampletable/exampletable.component';
-import {SampleFormComponent} from "./components/sampleform/sampleform.component";
 import {LineChartComponent} from "./components/linechart/linechart.component";
+import { SampleFormComponent } from './components/sampleform/samplefrom.component';
 
 
 import {
@@ -30,6 +29,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TitleCasePipe } from './pipes/titleCase.pipe';
 import { HiddenDirective } from './directives/hidden.directive';
 import { LoggingService } from './services/logging.service';
+import { ThemeService } from './services/theme.service';
 
 let materialModules = [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
@@ -44,7 +44,6 @@ let materialModules = [
     declarations: [
         AppComponent,
         NavMenuComponent,
-        CounterComponent,
         FetchDataComponent,
         ExampleTableComponent,
         HomeComponent,
@@ -65,15 +64,14 @@ let materialModules = [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'sampleForm', component: SampleFormComponent },
-            { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'ex-table', component: ExampleTableComponent },
             { path: 'linechart', component: LineChartComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
-    entryComponents:[CounterComponent],
-    providers:[InitializationService, LoggingService]
+    entryComponents:[SampleFormComponent],
+    providers:[InitializationService, LoggingService, ThemeService]
     // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModuleShared {

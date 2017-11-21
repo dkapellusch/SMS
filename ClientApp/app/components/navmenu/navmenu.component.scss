@@ -1,3 +1,32 @@
+
+
+
+/*
+for side nav
+*/
+
+@media (max-width: 700px) {
+    mat-sidenav-container {
+        margin: 0;
+        padding-left: -25px;
+        height: 105vh;
+        
+    }
+    mat-sidenav {
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        width: 38vw;
+        margin:0;
+        // background-color:#3f51b5;
+        background-color:#673ab7;
+    }
+}
+
+/*
+for
+*/
 .toolbarItem {
     padding-right: 2%;
 }
@@ -7,7 +36,6 @@ mat-toolbar {
     top: 0;
     left: 0;
     z-index: 2;
-    width: 100% !important;
 }
 
 .block {
@@ -22,7 +50,7 @@ mat-toolbar {
 }
 
 .toolBarContainer {
-    margin-bottom: 75px;
+    margin-bottom: 2.5vh;
 }
 
 .toolBarLinkText {
@@ -38,20 +66,4 @@ a {
 a:active {
     color: #FFc;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-
-/*
-for side nav
-*/
-
-@media (max-width: 700px) {
-    mat-sidenav-container {
-        margin: 0;
-        padding-left: -25px;
-        height: 105vh;
-    }
-    mat-sidenav {
-        width: 38vw;
-    }
 }

@@ -1,20 +1,20 @@
 (async function () {
-
-  let w = self as any;
-  w.addEventListener('install', function (event: any) {
-    event.waitUntil(w.skipWaiting()); // Activate worker immediately
+  let workerSelf = self as any;
+  
+  workerSelf.addEventListener('install', function (event: any) {
+    event.waitUntil(workerSelf.skipWaiting()); // Activate worker immediately
     console.log("installed");
   });
 
-  w.addEventListener('activate', function (event: any) {
-    event.waitUntil(w.clients.claim()); // Become available to all pages
+  workerSelf.addEventListener('activate', function (event: any) {
+    event.waitUntil(workerSelf.clients.claim()); // Become available to all pages
     console.log('activated');
     // fetch('/index.html').then(r => console.log(r.body));
   });
 
-  w.addEventListener('message', async function (event) {
+  workerSelf.addEventListener('message', async function (event) {
     console.log(`Got message from client:${JSON.stringify(event, null, '\t')} ${event.data.message}`);
-    let myClients = await w.clients.matchAll();
+    let myClients = await workerSelf.clients.matchAll();
     console.log(myClients);
     let windowClient = myClients.find(i => true);
     windowClient.postMessage("hello client");

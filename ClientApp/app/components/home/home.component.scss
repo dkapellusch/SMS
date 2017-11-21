@@ -44,21 +44,21 @@
 }
 
 // ----------------- Variables -----------------
-$normal-margin:42.3%;
-$shrunk-margin:15%;
+$contracted-margin:40.3%;
+$expanded-margin:10.5%;
 //  --------------- End Variables ---------------
 @-webkit-keyframes tracking-in-expand {
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
-    margin-left: $normal-margin;
+    margin-left: $contracted-margin;
   }
   40% {
     opacity: 0.6;
   }
   100% {
     opacity: 1;
-    margin-left: $shrunk-margin;
+    margin-left: $expanded-margin;
   }
 }
 
@@ -66,14 +66,14 @@ $shrunk-margin:15%;
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
-    margin-left: $normal-margin;
+    margin-left: $contracted-margin;
   }
   40% {
     opacity: 0.6;
   }
   100% {
     opacity: 1;
-    margin-left: $shrunk-margin;
+    margin-left: $expanded-margin;
     letter-spacing: -0.01em;
   }
 }
@@ -87,12 +87,12 @@ $shrunk-margin:15%;
   0% {
     opacity: 1;
     letter-spacing: 1.6em;
-    margin-left: $shrunk-margin;
+    margin-left: $expanded-margin;
   }
   100% {
     letter-spacing: 0em;
     opacity: 1;
-    margin-left: $normal-margin;
+    margin-left: $contracted-margin;
   }
 }
 
@@ -100,11 +100,11 @@ $shrunk-margin:15%;
   0% {
     opacity: 1;
     letter-spacing: 1.6em;
-    margin-left: $shrunk-margin
+    margin-left: $expanded-margin
   }
   100% {
     letter-spacing: 0em;
     opacity: 1;
-    margin-left: $normal-margin;
+    margin-left: $contracted-margin;
   }
 }

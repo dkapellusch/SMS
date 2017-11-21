@@ -26,8 +26,6 @@ namespace SMS.Controllers
         public async Task<IActionResult> Index()
         {
             await Samples.AddThingAsync(new Thing { Name = "Something" });
-            var addedSample = Samples.GetAllThings().LastOrDefault();
-            _logger.LogWarning($"Just added a new sample with name {addedSample?.Name}, and id {addedSample?.Id}");
             return View();
         }
 

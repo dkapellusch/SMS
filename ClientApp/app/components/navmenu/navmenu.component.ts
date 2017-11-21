@@ -21,10 +21,10 @@ export class NavMenuComponent {
         },
         {
             AnchorClasses: ["toolBarLinkText"],
-            Link: "/counter",
+            Link: "/sampleForm",
             Icon: "description",
             ItemClasses: ["toolbarItem"],
-            LinkText: "Counter"
+            LinkText: "Sample"
         },
         {
             AnchorClasses: ["toolBarLinkText"],

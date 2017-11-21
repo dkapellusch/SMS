@@ -1,3 +1,17 @@
-<h1>Testing</h1>
+<ngForm #sampleForm>
+    <mat-input-container [style.margin-left]="'20%'">
+        <input color="primary" style="display:inline; color:rgb(110, 100, 100);" matInput placeholder="Search Samples">
+    </mat-input-container>
+    <mat-form-field [style.float]="'right'" [style.margin-right]="'20%'">
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="SelectedTime=$event.value">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-input-container style="align-center;" [style.display]="'inline-block'" [style.margin-left]="'20%'">
+        <input color="primary" style="display:inline; color:rgb(110, 100, 100);" matInput placeholder="Search Samples">
+    </mat-input-container>
 
-<p #test>This is a thing...</p>
+    <div [ngStyle.md]="{color:'blue'}" [ngStyle.sm]="{'font-size': '16px', color: '#a63db8', 'text-align': 'center'}">
+            Test
+        </div>
+</ngForm>

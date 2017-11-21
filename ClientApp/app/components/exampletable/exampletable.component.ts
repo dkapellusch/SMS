@@ -4,15 +4,9 @@ import {
     ViewChild,
     ElementRef
 } from '@angular/core';
-import {
-    DataSource
-} from '@angular/cdk/collections';
-import {
-    BehaviorSubject
-} from 'rxjs/BehaviorSubject';
-import {
-    Observable
-} from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/collections';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
 import {
     MatDialog,
     MatSnackBar,
@@ -20,10 +14,8 @@ import {
     MatPaginator,
     MatSort
 } from "@angular/material";
-import {
-    CounterComponent
-} from "../counter/counter.component";
 
+import { SampleFormComponent } from "../sampleform/samplefrom.component";
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
@@ -45,7 +37,7 @@ export class ExampleTableComponent {
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild('filter') filter: ElementRef;
 
-    constructor(private dialog: MatDialog, public snackBar: MatSnackBar) {}
+    constructor(private dialog: MatDialog, public snackBar: MatSnackBar) { }
 
     ngOnInit() {
         this.dataSource = new ExampleDataSource(this.exampleDatabase, this.paginator, this.sort);
@@ -61,13 +53,13 @@ export class ExampleTableComponent {
     }
 
     public rowClickedHandler(x: UserData): void {
-        const counter = this.dialog.open(CounterComponent, {
+        const counter = this.dialog.open(SampleFormComponent, {
             height: '650px',
             width: '650px'
         });
-        counter.componentInstance.currentCount = +x.id;
+        // counter.componentInstance.currentCount = +x.id;
         counter.afterClosed().subscribe(result => {
-            if (!counter.componentInstance.checked) {
+            if (true) {
                 const s = this.snackBar.open("Bad Dog!", "Banish?", {
                     duration: 2000,
                     extraClasses: ['test'],
@@ -98,7 +90,7 @@ export interface UserData {
 /** An example database that the data source uses to retrieve data for the table. */
 export class ExampleDatabase {
     /** Stream that emits whenever the data has been modified. */
-    dataChange: BehaviorSubject < UserData[] > = new BehaviorSubject < UserData[] > ([]);
+    dataChange: BehaviorSubject<UserData[]> = new BehaviorSubject<UserData[]>([]);
 
     get data(): UserData[] {
         return this.dataChange.value;
@@ -140,7 +132,7 @@ export class ExampleDatabase {
  * the underlying data. Instead, it only needs to take the data and send the table exactly what
  * should be rendered.
  */
-export class ExampleDataSource extends DataSource < any > {
+export class ExampleDataSource extends DataSource<any> {
     _filterChange = new BehaviorSubject('');
     get filter(): string {
         return this._filterChange.value;
@@ -185,7 +177,7 @@ export class ExampleDataSource extends DataSource < any > {
         });
     }
     /** Connect function called by the table to retrieve one stream containing the data to render. */
-    connect(): Observable < UserData[] > {
+    connect(): Observable<UserData[]> {
         const displayDataChanges = [
             this._exampleDatabase.dataChange,
             this._paginator.page,
@@ -199,12 +191,12 @@ export class ExampleDataSource extends DataSource < any > {
             // Grab the page's slice of data.
             const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
             return data.splice(startIndex, this._paginator.pageSize).filter((item: UserData) => {
-                let searchStr = (item.name + item.color + item.id + item.progress+"%").toLowerCase();
+                let searchStr = (item.name + item.color + item.id + item.progress + "%").toLowerCase();
                 return searchStr.indexOf(this.filter.toLowerCase()) != -1;
             });;
         });
     }
 
-    disconnect() {}
+    disconnect() { }
 
 }

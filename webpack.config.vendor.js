@@ -28,7 +28,10 @@ const nonTreeShakableModules = [
     'event-source-polyfill',
     'hammerjs',
     'reflect-metadata',
-    '@angular/material/prebuilt-themes/purple-green.css',
+    '@angular/material/prebuilt-themes/deeppurple-amber.css',
+    // '@angular/material/prebuilt-themes/purple-green.css',
+    // '@angular/material/prebuilt-themes/indigo-pink.css',
+    // '@angular/material/prebuilt-themes/pink-bluegrey.css',
     "./wwwroot/styles/css/material-icons.css",
     'rxjs',
     

@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f69150aec5aa0b803cd3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5659b2b1e8c2f074697f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -2919,28 +2919,28 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 (function () {
     return __awaiter(this, void 0, void 0, function () {
-        var w, manifest;
+        var workerSelf, manifest;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    w = self;
-                    w.addEventListener('install', function (event) {
-                        event.waitUntil(w.skipWaiting()); // Activate worker immediately
+                    workerSelf = self;
+                    workerSelf.addEventListener('install', function (event) {
+                        event.waitUntil(workerSelf.skipWaiting()); // Activate worker immediately
                         console.log("installed");
                     });
-                    w.addEventListener('activate', function (event) {
-                        event.waitUntil(w.clients.claim()); // Become available to all pages
+                    workerSelf.addEventListener('activate', function (event) {
+                        event.waitUntil(workerSelf.clients.claim()); // Become available to all pages
                         console.log('activated');
                         // fetch('/index.html').then(r => console.log(r.body));
                     });
-                    w.addEventListener('message', function (event) {
+                    workerSelf.addEventListener('message', function (event) {
                         return __awaiter(this, void 0, void 0, function () {
                             var myClients, windowClient;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
                                         console.log("Got message from client:" + JSON.stringify(event, null, '\t') + " " + event.data.message);
-                                        return [4 /*yield*/, w.clients.matchAll()];
+                                        return [4 /*yield*/, workerSelf.clients.matchAll()];
                                     case 1:
                                         myClients = _a.sent();
                                         console.log(myClients);

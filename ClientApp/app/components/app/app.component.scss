@@ -1,8 +1,4 @@
-body{
-    background-color: rgb(64, 77, 112)
+body
+{
+    background-color:#3f51b5;
 }
-.fill-remaining-space {
-    /*This fills the remaining space, by using flexbox.  
-   Every toolbar row uses a flexbox row layout. */
-   flex: 1 1 auto;
- }
