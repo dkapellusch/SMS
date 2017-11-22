@@ -19,11 +19,15 @@ import { ObservableMedia } from "@angular/flex-layout";
 export class SampleFormComponent {
     
   Animals : string[] = ["Rat","Monkey","Human","Other"]
+  AnimalType : string;
   NumericRegex: RegExp = /^\d+$/.compile();
   validateNumber(e: KeyboardEvent) {
+      let a = this.AnimalType === 'Monkey';
+      
       let valid = this.NumericRegex.test(e.key);
       if((e.keyCode < 48 || e.keyCode > 57) && e.keyCode != 8 && e.keyCode != 127 ){
           e.preventDefault();
       }
   }
 }
+
