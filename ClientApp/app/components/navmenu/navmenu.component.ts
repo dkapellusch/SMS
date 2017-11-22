@@ -30,8 +30,15 @@ export class NavMenuComponent {
             AnchorClasses: ["toolBarLinkText"],
             Link: "/ex-table",
             Icon: "description",
-            ItemClasses: ["toolbarItem","fill-remaining-space"],
+            ItemClasses: ["toolbarItem"],
             LinkText: "Samples"
+        },
+        {
+            AnchorClasses: ["toolBarLinkText"],
+            Link: "/animal-table",
+            Icon: "description",
+            ItemClasses: ["toolbarItem", "fill-remaining-space"],
+            LinkText: "Animals"
         },
         {
             AnchorClasses: ["toolBarLinkText"],
@@ -41,16 +48,18 @@ export class NavMenuComponent {
             LinkText: "Login"
         }
     ];
-    @ViewChild('sidenav') public SideNav : MatSidenav;
-    constructor(public media:ObservableMedia, @Inject(PLATFORM_ID) platformId: any, private router:Router){
+    
+    @ViewChild('sidenav') public SideNav: MatSidenav;
+    constructor(public media: ObservableMedia, @Inject(PLATFORM_ID) platformId: any, private router: Router) {
         router.events.subscribe((val) => {
-            this.SideNav.close();             
-        });
-        media.asObservable().subscribe(e =>{
-            if(this.SideNav != null || this.SideNav != undefined && e.mqAlias != 'xs'  && e.mqAlias !== 'sm')
             this.SideNav.close();
+        });
+        media.asObservable().subscribe(mChange => {
+            if (this.SideNav != null || this.SideNav != undefined && mChange.mqAlias != 'xs' && mChange.mqAlias !== 'sm')
+                this.SideNav.close();
         })
     }
+
     get NavLinks(): NavLink[] {
         return this._navLinks;
     }

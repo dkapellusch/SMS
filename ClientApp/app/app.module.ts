@@ -23,13 +23,14 @@ import {
     MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
     MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
     MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule, MatPaginatorModule,
-    MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,MatExpansionModule
+    MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,MatExpansionModule,MatSelectModule
 } from  "@angular/material";
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { TitleCasePipe } from './pipes/titleCase.pipe';
 import { HiddenDirective } from './directives/hidden.directive';
 import { LoggingService } from './services/logging.service';
 import { ThemeService } from './services/theme.service';
+import { AnimalTableComponent } from './components/animals/animals.component';
 
 let materialModules = [
     MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
@@ -37,7 +38,7 @@ let materialModules = [
     MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
     MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule, MatPaginatorModule,
     MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule, MatProgressSpinnerModule,
-    CdkTableModule,MatExpansionModule
+    CdkTableModule,MatExpansionModule,MatSelectModule
 ];
 
 @NgModule({
@@ -49,6 +50,7 @@ let materialModules = [
         HomeComponent,
         SampleFormComponent,
         LineChartComponent,
+        AnimalTableComponent,
         CapitalizePipe,
         TitleCasePipe,
         HiddenDirective
@@ -66,6 +68,7 @@ let materialModules = [
             { path: 'sampleForm', component: SampleFormComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'ex-table', component: ExampleTableComponent },
+            { path: 'animal-table', component: AnimalTableComponent },
             { path: 'linechart', component: LineChartComponent },
             { path: '**', redirectTo: 'home' }
         ])

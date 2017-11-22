@@ -9,12 +9,16 @@ import {isNullOrUndefined} from 'util';
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit {
+
 	public Hovered: boolean = true;
 	private _originalText: string = 'S.M.S.';
 	private _transitionText = 'Sample. Management. System.';
+
 	public SmsText = this._transitionText;
+
 	@ViewChild('banner') private _banner :ElementRef;
 	@ViewChild('graph') private _graph :LineChartComponent;
+
 	constructor(private _initializationService: InitializationService, private _changeDetector: ChangeDetectorRef) {}
 
 	public SmsHovered(eventData: Event): void {
@@ -34,13 +38,13 @@ export class HomeComponent implements AfterViewInit {
 	ngAfterViewInit(): void {
 		setTimeout(()=>{
 			if(!isNullOrUndefined(this) && ! isNullOrUndefined(this._changeDetector)){
-			this._initializationService.Initialized = true;
+			   this._initializationService.Initialized = true;
 			
-			this._changeDetector.detectChanges();
+			   this._changeDetector.detectChanges();
 
-			this._banner.nativeElement.style.display = 'block';
-			this._graph.ChartElement.nativeElement.style.display = 'block';
-			this.onLoad(null);
+			   this._banner.nativeElement.style.display = 'block';
+			   this._graph.ChartElement.nativeElement.style.display = 'block';
+			   this.onLoad(null);
 			}
 		}, 1);
 	}

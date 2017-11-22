@@ -13,7 +13,7 @@
 
 <router-outlet fxShow.lt-sm="false"></router-outlet>
 
-<mat-sidenav-container  fxShow.lt-sm="true">
+<mat-sidenav-container fxShow.lt-sm="true">
     <mat-sidenav #sidenav mode="over">
         <button mat-icon-button (click)="sidenav.close()">
             <mat-icon aria-label="Menu Icon">view_headline</mat-icon>
@@ -30,12 +30,10 @@
             </a>
         </div>
     </mat-sidenav>
-    <div  class="toolBarContainer"
-        [ngStyle.xl]="{paddingBottom:'4vh'}"
-        [ngStyle.xs] ="{paddingBottom:'8vh'}"
-        [ngStyle] ="{paddingBottom:'8vh'}"
-        [ngStyle.md]="{paddingBottom:'9vh'}">
-        <mat-toolbar  color="primary">
+
+    <div class="toolBarContainer" [ngStyle.xl]="{paddingBottom:'8vh'}" [ngStyle.lg]="{paddingBottom:'8vh'}" [ngStyle.xs]="{paddingBottom:'10vh'}"
+        [ngStyle]="{paddingBottom:'8vh'}" [ngStyle.md]="{paddingBottom:'9vh'}">
+        <mat-toolbar color="primary">
             <button type="button" mat-icon-button (click)="sidenav.open()">
                 <mat-icon aria-label="Menu Icon">view_headline</mat-icon>
             </button>

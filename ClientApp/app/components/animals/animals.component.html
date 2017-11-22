@@ -1,0 +1,47 @@
+<mat-expansion-panel color="primary">
+    <mat-expansion-panel-header color="primary">
+        <mat-panel-title style="text-align:right">
+            <mat-icon>menu</mat-icon>
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description color="primary" style="margin-left:1.2%;">
+        <mat-icon color="primary" style="margin-top: 1%; margin-right:.6%" color="accent">find_in_page</mat-icon>
+        <mat-form-field color="primary" style="width:30%;display:inline-block" floatPlaceholder="never">
+            <input color="primary" style="display:inline;" matInput #filter placeholder="Search Samples">
+        </mat-form-field>
+    </mat-panel-description>
+    <button style="margin-left:.6%;" color="accent" selected="true" type="button" mat-icon-button>
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-expansion-panel>
+
+<div class="example-container mat-elevation-z4">
+    <mat-table #table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="userId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="progress">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Progress </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.progress}}% </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="userName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="color">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Color</mat-header-cell>
+            <mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowClickedHandler(row)"></mat-row>
+    </mat-table>
+    <span>
+        <mat-paginator color="primary" #paginator [length]="exampleDatabase.data.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 15, 25, 50]">
+        </mat-paginator>
+    </span>
+</div>

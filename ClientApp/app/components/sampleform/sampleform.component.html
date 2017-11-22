@@ -1,17 +1,22 @@
-<ngForm #sampleForm>
-    <mat-input-container [style.margin-left]="'20%'">
-        <input color="primary" style="display:inline; color:rgb(110, 100, 100);" matInput placeholder="Search Samples">
-    </mat-input-container>
-    <mat-form-field [style.float]="'right'" [style.margin-right]="'20%'">
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="SelectedTime=$event.value">
+<ngForm #sampleForm [ngStyle]="{'font-size': '2.4vh'}">
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto; margin-top:2%;" [style.display]="'block'"
+        [style.float]="'center'">
+        <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary" (keydown)="validateNumber($event)"
+            placeholder="Animal Number" />
+    </mat-form-field>
+
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
+        <input style="text-align: center;" matInput type="text" [maxLength]="3" color="primary" (keydown)="validateNumber($event)"
+            placeholder="Age In Months" />
+    </mat-form-field>
+
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
+        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Collection Date" (dateChange)="SelectedTime=$event.value">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-    <mat-input-container style="align-center;" [style.display]="'inline-block'" [style.margin-left]="'20%'">
-        <input color="primary" style="display:inline; color:rgb(110, 100, 100);" matInput placeholder="Search Samples">
-    </mat-input-container>
 
-    <div [ngStyle.md]="{color:'blue'}" [ngStyle.sm]="{'font-size': '16px', color: '#a63db8', 'text-align': 'center'}">
-            Test
-        </div>
+    <div [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.float]="'center'">
+        <button mat-button color="primary">Submit</button>
+    </div>
 </ngForm>

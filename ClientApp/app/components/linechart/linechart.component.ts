@@ -4,7 +4,7 @@ import { Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild } 
 @Component({
     selector: 'linechart',
     template:`
-<div style="width:80vw;height:90vh; margin:auto; display:none;"  #chartElement>
+<div [ngStyle.sm]="{'width':'90vw'}" style="width:80vw;height:90vh; margin:auto; display:none;"  #chartElement>
     <div>
         <canvas baseChart  [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
             [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="chartHovered($event)"
