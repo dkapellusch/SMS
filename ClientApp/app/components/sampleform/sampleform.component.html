@@ -1,5 +1,12 @@
 <ngForm #sampleForm [ngStyle]="{'font-size': '2.4vh'}">
-    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto; margin-top:2%;" [style.display]="'block'"
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
+        <mat-select placeholder="Animal Type">
+            <mat-option *ngFor="let animal of Animals" [value]="animal">
+                {{ animal }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
         [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary" (keydown)="validateNumber($event)"
             placeholder="Animal Number" />

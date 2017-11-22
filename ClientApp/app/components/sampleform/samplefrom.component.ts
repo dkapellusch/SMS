@@ -18,7 +18,7 @@ import { ObservableMedia } from "@angular/flex-layout";
 })
 export class SampleFormComponent {
     
-  Animals : string[] = ["Rat","Monkey",""]
+  Animals : string[] = ["Rat","Monkey","Human","Other"]
   NumericRegex: RegExp = /^\d+$/.compile();
   validateNumber(e: KeyboardEvent) {
       let valid = this.NumericRegex.test(e.key);
