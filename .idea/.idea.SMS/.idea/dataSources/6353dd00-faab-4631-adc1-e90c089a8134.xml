@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="localdb@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.4">
+    <root id="1"/>
+    <database id="2" parent="1" name="localdb">
+      <ObjectId>16387</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="postgres">
+      <ObjectId>12669</ObjectId>
+    </database>
+    <database id="4" parent="1" name="testdb">
+      <ObjectId>16386</ObjectId>
+    </database>
+    <schema id="5" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-11-25.10:54:36.932</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3141</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="6" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="information_schema">
+      <ObjectId>12381</ObjectId>
+    </schema>
+    <sequence id="11" parent="5" name="Animals_Id_seq">
+      <ObjectId>16487</ObjectId>
+      <StateNumber>2958</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="12" parent="5" name="Samples_SubjectNumber_seq">
+      <ObjectId>16531</ObjectId>
+      <StateNumber>3139</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="13" parent="5" name="Things_Id_seq">
+      <ObjectId>16475</ObjectId>
+      <StateNumber>2953</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="14" parent="5" name="job_id_seq">
+      <ObjectId>16452</ObjectId>
+      <StateNumber>889</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="15" parent="5" name="people_id_seq">
+      <ObjectId>16441</ObjectId>
+      <StateNumber>887</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="16" parent="5" name="Animals">
+      <ObjectId>16489</ObjectId>
+      <StateNumber>2958</StateNumber>
+    </table>
+    <table id="17" parent="5" name="Samples">
+      <ObjectId>16533</ObjectId>
+      <StateNumber>3139</StateNumber>
+    </table>
+    <table id="18" parent="5" name="Things">
+      <ObjectId>16477</ObjectId>
+      <StateNumber>2953</StateNumber>
+    </table>
+    <table id="19" parent="5" name="__EFMigrationsHistory">
+      <ObjectId>16470</ObjectId>
+      <StateNumber>2952</StateNumber>
+    </table>
+    <table id="20" parent="5" name="job">
+      <ObjectId>16418</ObjectId>
+      <StateNumber>891</StateNumber>
+    </table>
+    <table id="21" parent="5" name="people">
+      <ObjectId>16388</ObjectId>
+      <StateNumber>891</StateNumber>
+    </table>
+    <table id="22" parent="5" name="test">
+      <ObjectId>24723</ObjectId>
+      <StateNumber>3141</StateNumber>
+    </table>
+    <column id="23" parent="16" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2958</StateNumber>
+      <SequenceName>Animals_Id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;&quot;Animals_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="24" parent="16" name="Experiment">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>2958</StateNumber>
+    </column>
+    <column id="25" parent="16" name="LastUpdateTime">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2958</StateNumber>
+    </column>
+    <column id="26" parent="16" name="Name">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>2958</StateNumber>
+    </column>
+    <column id="27" parent="16" name="RecordStatus">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2958</StateNumber>
+    </column>
+    <index id="28" parent="16" name="PK_Animals">
+      <ObjectId>16496</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="29" parent="16" name="PK_Animals">
+      <ObjectId>16497</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_Animals</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="30" parent="17" name="SubjectNumber">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3139</StateNumber>
+      <SequenceName>Samples_SubjectNumber_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;&quot;Samples_SubjectNumber_seq&quot;&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="31" parent="17" name="AgeInMonths">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3139</StateNumber>
+    </column>
+    <column id="32" parent="17" name="LastUpdateTime">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3139</StateNumber>
+    </column>
+    <index id="33" parent="17" name="PK_Samples">
+      <ObjectId>16537</ObjectId>
+      <ColNames>SubjectNumber</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="17" name="PK_Samples">
+      <ObjectId>16538</ObjectId>
+      <ColNames>SubjectNumber</ColNames>
+      <UnderlyingIndexName>PK_Samples</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="35" parent="18" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2953</StateNumber>
+      <SequenceName>Things_Id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;&quot;Things_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="36" parent="18" name="Name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>2953</StateNumber>
+    </column>
+    <index id="37" parent="18" name="PK_Things">
+      <ObjectId>16484</ObjectId>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="18" name="PK_Things">
+      <ObjectId>16485</ObjectId>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>PK_Things</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="19" name="MigrationId">
+      <Position>1</Position>
+      <DataType>varchar(150)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2952</StateNumber>
+    </column>
+    <column id="40" parent="19" name="ProductVersion">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2952</StateNumber>
+    </column>
+    <index id="41" parent="19" name="PK___EFMigrationsHistory">
+      <ObjectId>16473</ObjectId>
+      <ColNames>MigrationId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="19" name="PK___EFMigrationsHistory">
+      <ObjectId>16474</ObjectId>
+      <ColNames>MigrationId</ColNames>
+      <UnderlyingIndexName>PK___EFMigrationsHistory</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="20" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>876</StateNumber>
+    </column>
+    <column id="44" parent="20" name="id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>889</StateNumber>
+      <SequenceName>job_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;job_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <index id="45" parent="20" name="job_pkey">
+      <ObjectId>16461</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="20" name="job_pkey">
+      <ObjectId>16462</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>job_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="21" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>870</StateNumber>
+    </column>
+    <column id="48" parent="21" name="age">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>870</StateNumber>
+    </column>
+    <column id="49" parent="21" name="salary">
+      <Position>4</Position>
+      <DataType>double precision|0</DataType>
+      <StateNumber>870</StateNumber>
+    </column>
+    <column id="50" parent="21" name="id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>887</StateNumber>
+      <SequenceName>people_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;people_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="51" parent="21" name="job">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>891</StateNumber>
+    </column>
+    <index id="52" parent="21" name="people_pkey">
+      <ObjectId>16450</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="21" name="people_pkey">
+      <ObjectId>16451</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>people_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="21" name="people_job_fkey">
+      <ObjectId>16463</ObjectId>
+      <ColNames>job</ColNames>
+      <RefTableId>16418</RefTableId>
+      <RefColPositions>4</RefColPositions>
+      <RefTableName>job</RefTableName>
+      <RefKeyName>job_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="55" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>3141</StateNumber>
+    </column>
+    <column id="56" parent="22" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>3141</StateNumber>
+    </column>
+  </database-model>
+</dataSource>

@@ -1,8 +1,8 @@
 <ngForm #sampleForm [ngStyle]="{'font-size': '2.4vh'}">
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <mat-select style="text-align: center;" placeholder="Sample Type" name="SampleType"  [(ngModel)]="SampleType">
-            <mat-option style="font-size:2.1vh;" *ngFor="let sample of SampleTypes" [value]="sample">
-                {{ sample }}
+        <mat-select placeholder="Animal Type" name="AnimalType"  [(ngModel)]="AnimalType">
+            <mat-option *ngFor="let animal of Animals" [value]="animal">
+                {{ animal }}
             </mat-option>
         </mat-select>
     </mat-form-field>
@@ -11,7 +11,7 @@
         <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary" (keydown)="validateNumber($event)"
             placeholder="Animal Number" />
     </mat-form-field>
-    <mat-form-field *ngIf="SampleType == 'Monkey' || SampleType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
+    <mat-form-field *ngIf="AnimalType == 'Monkey' || AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
         [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="50" color="primary"
             placeholder="Name" />

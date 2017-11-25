@@ -186,14 +186,14 @@ export class ExampleDataSource extends DataSource<any> {
         ];
 
         return Observable.merge(...displayDataChanges).map(() => {
-            const data = this.SortedData //this._exampleDatabase.data.slice();
+            const data = this.SortedData; //this._exampleDatabase.data.slice();
 
             // Grab the page's slice of data.
             const startIndex = this._paginator.pageIndex * this._paginator.pageSize;
             return data.splice(startIndex, this._paginator.pageSize).filter((item: UserData) => {
                 let searchStr = (item.name + item.color + item.id + item.progress + "%").toLowerCase();
                 return searchStr.indexOf(this.filter.toLowerCase()) != -1;
-            });;
+            });
         });
     }
 

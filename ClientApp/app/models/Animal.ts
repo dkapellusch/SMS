@@ -1,4 +1,4 @@
-﻿export public class Animal {
+﻿export class Animal {
 	constructor() {
     	
 	}

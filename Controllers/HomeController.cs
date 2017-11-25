@@ -23,7 +23,7 @@ namespace SMS.Controllers
 
         private ISampleRespository Samples { get; }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }

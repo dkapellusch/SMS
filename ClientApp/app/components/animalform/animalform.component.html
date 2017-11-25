@@ -1,0 +1,50 @@
+Form Binding: {{FormValue}}
+<hr> <br>
+<form [ngStyle]="{'font-size': '2.4vh'}" #animalForm="ngForm">
+
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'"
+                    [style.float]="'center'">
+        <mat-select style="text-align: center;" placeholder="Animal Type" name="animalType" [(ngModel)]="model.type">
+            <mat-option *ngFor="let animal of Animals" [value]="animal">
+                {{ animal }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
+                    [style.float]="'center'">
+        <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary"
+               (keydown)="validateNumber($event)"
+               name="subjectNumber" [(ngModel)]="model.number"/>
+        <mat-placeholder><mat-icon>favorite</mat-icon> Subject Number</mat-placeholder>
+
+    </mat-form-field>
+
+    <mat-form-field *ngIf="model.type == 'Monkey' || model.type == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}"
+                    style="width:20vw; margin:auto;" [style.display]="'block'"
+                    [style.float]="'center'">
+        <input name="name" style="text-align: center;" matInput type="text" [maxLength]="50"
+               color="primary"
+               placeholder="Name" [(ngModel)]="model.name"/>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="model.type != 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
+                    [style.display]="'block'" [style.float]="'center'">
+        <input style="text-align: center;" matInput type="text" [maxLength]="3" color="primary"
+               (keydown)="validateNumber($event)"
+               placeholder="Age In Months" name="age" [(ngModel)]="model.age"/>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="model.type == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
+                    [style.display]="'block'" [style.float]="'center'">
+        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Birthday"
+               (dateChange)="SelectedTime=$event.value" name="birthday" [(ngModel)]="model.birthday">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.float]="'center'">
+        <button mat-button color="primary">Submit</button>
+    </div>
+    
+</form>

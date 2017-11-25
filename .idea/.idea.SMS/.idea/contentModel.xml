@@ -92,6 +92,7 @@
         <e p="dist" t="Include">
           <e p="main-server.js" t="Include" />
           <e p="vendor.js" t="Include" />
+          <e p="vendor.js.gz" t="Include" />
         </e>
         <e p="test" t="Include">
           <e p="boot-tests.ts" t="Include" />
@@ -114,6 +115,7 @@
         <e p="nlog-all-2017-11-22.log" t="Include" />
         <e p="nlog-all-2017-11-23.log" t="Include" />
         <e p="nlog-all-2017-11-24.log" t="Include" />
+        <e p="nlog-all-2017-11-25.log" t="Include" />
         <e p="nlog-own-2017-11-15.log" t="Include" />
         <e p="nlog-own-2017-11-16.log" t="Include" />
         <e p="nlog-own-2017-11-17.log" t="Include" />
@@ -123,6 +125,8 @@
         <e p="nlog-own-2017-11-21.log" t="Include" />
         <e p="nlog-own-2017-11-22.log" t="Include" />
         <e p="nlog-own-2017-11-23.log" t="Include" />
+        <e p="nlog-own-2017-11-24.log" t="Include" />
+        <e p="nlog-own-2017-11-25.log" t="Include" />
       </e>
       <e p="Migrations" t="Include">
         <e p="20171026164138_WorkInit.cs" t="Include" />
@@ -195,11 +199,13 @@
       <e p="wwwroot" t="Include">
         <e p="dist" t="Include">
           <e p="main-client.js" t="Include" />
+          <e p="main-client.js.gz" t="Include" />
           <e p="main-client.js.map" t="Include" />
-          <e p="manifest.json" t="Include" />
           <e p="vendor-manifest.json" t="Include" />
           <e p="vendor.css" t="Include" />
+          <e p="vendor.css.gz" t="Include" />
           <e p="vendor.js" t="Include" />
+          <e p="vendor.js.gz" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
         <e p="service-worker.js" t="Include" />

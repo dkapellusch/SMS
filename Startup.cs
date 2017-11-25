@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using SMS.Persistence;
-using SMS.Persistence.Repositories;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,8 +8,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.ResponseCompression;
+
 using NLog.Extensions.Logging;
 using NLog.Web;
+
+using SMS.Persistence;
+using SMS.Persistence.Repositories;
+
+
+//    ResponseCompression
 
 namespace SMS
 {
@@ -26,13 +33,14 @@ namespace SMS
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRespository, SamplesRepository>();
             services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
 
             services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddMvc();
+            services.AddResponseCompression();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,10 +59,10 @@ namespace SMS
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true,
-                    HotModuleReplacementClientOptions = new Dictionary<string, string> { 
-                        { "reload", "true" }, 
-                        { "overlay", "true" }
-                       
+                    HotModuleReplacementClientOptions = new Dictionary<string, string>
+                    {
+                        {"reload", "true"},
+                        {"overlay", "true"}
                     },
                 });
             }
@@ -62,9 +70,21 @@ namespace SMS
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-            app.UseStaticFiles();
+             
             app.UseSession();
+            app.UseResponseCompression();
+            
+            app.UseStaticFiles(new StaticFileOptions {
+                OnPrepareResponse = content =>
+                {
+                    if(content.File.Name.EndsWith(".js.gz"))
+                    {
+                        content.Context.Response.Headers["Content-Type"] = "text/javascript";
+                        content.Context.Response.Headers["Content-Encoding"] = "gzip";
+                    }
+                }
+            });
+           
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -73,8 +93,9 @@ namespace SMS
 
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
-                    defaults: new { controller = "Home", action = "Index" });
+                    defaults: new {controller = "Home", action = "Index"});
             });
+            
         }
     }
 }

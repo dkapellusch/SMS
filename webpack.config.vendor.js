@@ -63,7 +63,29 @@ module.exports = (env) => {
             new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
             new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
             new webpack.IgnorePlugin(/^vertx$/), // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
-        ]
+        ].concat(isDevBuild ? [] : [
+            new webpack.optimize.UglifyJsPlugin({
+                mangle: true,
+                compress: {
+                    warnings: false, // Suppress uglification warnings
+                    pure_getters: true,
+                    unsafe: true,
+                    unsafe_comps: true,
+                    screw_ie8: true
+                },
+                output: {
+                    comments: false,
+                },
+                exclude: [/\.min\.js$/gi] // skip pre-minified libs
+            }),
+            new CompressionPlugin({
+                asset: "[path].gz[query]",
+                algorithm: "gzip",
+                test: /\.js$|\.css$|\.html$/,
+                threshold: 10240,
+                minRatio: 0
+            })
+        ])
     };
 
     const clientBundleConfig = merge(sharedConfig, {
@@ -89,12 +111,7 @@ module.exports = (env) => {
                 path: path.join(__dirname, 'wwwroot', 'dist', '[name]-manifest.json'),
                 name: '[name]_[hash]'
             })
-        ].concat(isDevBuild ? [] : [
-            new webpack.optimize.UglifyJsPlugin(),
-            new CompressionPlugin({
-                asset: '[path].gz[query]'
-            })
-        ])
+        ]
     });
 
     const serverBundleConfig = merge(sharedConfig, {
@@ -124,4 +141,4 @@ module.exports = (env) => {
     });
 
     return [clientBundleConfig, serverBundleConfig];
-}
+};
