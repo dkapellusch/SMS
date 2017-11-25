@@ -14,7 +14,6 @@ import {
     BrowserAnimationsModule
 } from '@angular/platform-browser/animations';
 import "hammerjs";
-import { SampleFormComponent } from '../components/sampleform/samplefrom.component';
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -23,7 +22,7 @@ import { SampleFormComponent } from '../components/sampleform/samplefrom.compone
         BrowserModule.withServerTransition({appId:"SMS"}),
         AppModuleShared
     ],
-    entryComponents: [SampleFormComponent],
+    entryComponents: [],
     providers: [{
         provide: 'BASE_URL',
         useFactory: getBaseUrl

@@ -25,7 +25,6 @@ namespace SMS.Controllers
 
         public async Task<IActionResult> Index()
         {
-            await Samples.AddThingAsync(new Thing { Name = "Something" });
             return View();
         }
 

@@ -15,7 +15,7 @@ import {
     MatSort
 } from "@angular/material";
 
-import { SampleFormComponent } from "../sampleform/samplefrom.component";
+import { SampleFormComponent } from "../sampleform/sampleform.component";
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';

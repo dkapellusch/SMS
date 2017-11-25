@@ -19,8 +19,7 @@ const treeShakableModules = [
     '@angular/material',
     'zone.js',
     'ng2-charts',
-    "isomorphic-fetch",
-    
+    "isomorphic-fetch"
 ];
 const nonTreeShakableModules = [
     'es6-promise',

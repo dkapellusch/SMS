@@ -26,12 +26,11 @@
     <mat-chip color="primary" selected="true">Primary</mat-chip>
     <mat-chip color="accent" selected="true">Accent</mat-chip>
     <mat-chip color="warn" selected="true">Warn</mat-chip>
-    <mat-chip color="secondary" selected="true">Secondary</mat-chip>
-    <mat-chip color="danger" selected="true">Danger</mat-chip>
 </mat-chip-list>
 <mat-form-field>
     <input matInput [matDatepicker]="picker"placeholder="Choose a date" (dateChange)="SelectedTime=$event.value" (dateChange)="onChange($event)">
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
-<button (click)="send()" mat-button color="primary">Test</button>
+<button (click)="send()" mat-button color="primary">Log</button>
+<button (click)="fetchWeather()" mat-button color="primary">Fetch Weather</button>

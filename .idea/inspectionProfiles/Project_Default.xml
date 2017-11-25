@@ -1,0 +1,79 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="38">
+            <item index="0" class="java.lang.String" itemvalue="matinput" />
+            <item index="1" class="java.lang.String" itemvalue="(datechange)" />
+            <item index="2" class="java.lang.String" itemvalue="[ngstyle.lt-md]" />
+            <item index="3" class="java.lang.String" itemvalue="mat-button" />
+            <item index="4" class="java.lang.String" itemvalue="color" />
+            <item index="5" class="java.lang.String" itemvalue="[style.float]" />
+            <item index="6" class="java.lang.String" itemvalue="[matdatepicker]" />
+            <item index="7" class="java.lang.String" itemvalue="[maxlength]" />
+            <item index="8" class="java.lang.String" itemvalue="(keydown)" />
+            <item index="9" class="java.lang.String" itemvalue="(click)" />
+            <item index="10" class="java.lang.String" itemvalue="mat-icon-button" />
+            <item index="11" class="java.lang.String" itemvalue="[ngstyle.md]" />
+            <item index="12" class="java.lang.String" itemvalue="[ngstyle]" />
+            <item index="13" class="java.lang.String" itemvalue="[ngstyle.xs]" />
+            <item index="14" class="java.lang.String" itemvalue="[ngstyle.lg]" />
+            <item index="15" class="java.lang.String" itemvalue="[ngstyle.xl]" />
+            <item index="16" class="java.lang.String" itemvalue="[routerlink]" />
+            <item index="17" class="java.lang.String" itemvalue="*ngfor" />
+            <item index="18" class="java.lang.String" itemvalue="#links" />
+            <item index="19" class="java.lang.String" itemvalue="fxshow.lt-sm" />
+            <item index="20" class="java.lang.String" itemvalue="*ngif" />
+            <item index="21" class="java.lang.String" itemvalue="(chartclick)" />
+            <item index="22" class="java.lang.String" itemvalue="(charthover)" />
+            <item index="23" class="java.lang.String" itemvalue="[charttype]" />
+            <item index="24" class="java.lang.String" itemvalue="[legend]" />
+            <item index="25" class="java.lang.String" itemvalue="[colors]" />
+            <item index="26" class="java.lang.String" itemvalue="[options]" />
+            <item index="27" class="java.lang.String" itemvalue="[labels]" />
+            <item index="28" class="java.lang.String" itemvalue="[datasets]" />
+            <item index="29" class="java.lang.String" itemvalue="basechart" />
+            <item index="30" class="java.lang.String" itemvalue="#chartelement" />
+            <item index="31" class="java.lang.String" itemvalue="[ngstyle.sm]" />
+            <item index="32" class="java.lang.String" itemvalue="#banner" />
+            <item index="33" class="java.lang.String" itemvalue="(mouseout)" />
+            <item index="34" class="java.lang.String" itemvalue="(mouseover)" />
+            <item index="35" class="java.lang.String" itemvalue="[class.tracking-out-contract]" />
+            <item index="36" class="java.lang.String" itemvalue="[class.tracking-in-expand]" />
+            <item index="37" class="java.lang.String" itemvalue="#animalform" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="18">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="ngform" />
+            <item index="7" class="java.lang.String" itemvalue="mat-form-field" />
+            <item index="8" class="java.lang.String" itemvalue="mat-datepicker" />
+            <item index="9" class="java.lang.String" itemvalue="mat-datepicker-toggle" />
+            <item index="10" class="java.lang.String" itemvalue="mat-select" />
+            <item index="11" class="java.lang.String" itemvalue="mat-option" />
+            <item index="12" class="java.lang.String" itemvalue="mat-sidenav-container" />
+            <item index="13" class="java.lang.String" itemvalue="router-outlet" />
+            <item index="14" class="java.lang.String" itemvalue="mat-toolbar" />
+            <item index="15" class="java.lang.String" itemvalue="mat-icon" />
+            <item index="16" class="java.lang.String" itemvalue="mat-sidenav" />
+            <item index="17" class="java.lang.String" itemvalue="linechart" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

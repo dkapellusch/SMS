@@ -21,7 +21,7 @@ namespace SMS.Migrations
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
-            modelBuilder.Entity("SMS.Models.Animal", b =>
+            modelBuilder.Entity("SMS.Models.Animals.Animal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -37,6 +37,20 @@ namespace SMS.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Animals");
+                });
+
+            modelBuilder.Entity("SMS.Models.Samples.Sample", b =>
+                {
+                    b.Property<int>("SubjectNumber")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AgeInMonths");
+
+                    b.Property<DateTime>("LastUpdateTime");
+
+                    b.HasKey("SubjectNumber");
+
+                    b.ToTable("Samples");
                 });
 
             modelBuilder.Entity("SMS.Models.Thing", b =>

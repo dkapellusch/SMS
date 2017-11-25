@@ -1,6 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SMS.Models;
+using SMS.Models.Samples;
+using System.Linq;
+using System;
+using System.Reactive;
+using System.Reactive.Linq;
 
 namespace SMS.Persistence.Repositories
 {
@@ -13,9 +18,10 @@ namespace SMS.Persistence.Repositories
 
         private PostgresqlContext Context { get; }
 
-        public IEnumerable<Thing> GetAllThings()
+
+        public Sample GetSampleByNumber(int subjectNumber)
         {
-            return Context.Things;
+            return Context.Samples.FirstOrDefault(s => s.SubjectNumber == subjectNumber);
         }
 
         public async Task AddThingAsync(Thing thing)
@@ -29,5 +35,16 @@ namespace SMS.Persistence.Repositories
             Context.Things.RemoveRange(Context.Things);
             Context.SaveChanges();
         }
+
+        public async Task<Sample> GetSampleByNumberAsync(int subjectNumber)
+        {
+            return (Sample)await Context.FindAsync(typeof(Sample), subjectNumber);
+        }
+
+        IObservable<Sample> ISampleRespository.GetObservableSampleByNumber(int subjectNumber)
+        {
+            return Context.Samples.ToObservable();
+        }
+
     }
 }

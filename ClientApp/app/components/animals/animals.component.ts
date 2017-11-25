@@ -15,13 +15,13 @@ import {
     MatSort
 } from "@angular/material";
 
-import { SampleFormComponent } from "../sampleform/samplefrom.component";
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/observable/fromEvent';
+import { AnimalFormComponent } from '../animalform/animalform.component';
 
 @Component({
     selector: 'animal-table',
@@ -53,7 +53,7 @@ export class AnimalTableComponent {
     }
 
     public rowClickedHandler(x: UserData): void {
-        const counter = this.dialog.open(SampleFormComponent, {
+        const counter = this.dialog.open(AnimalFormComponent, {
             height: '650px',
             width: '650px'
         });

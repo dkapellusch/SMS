@@ -24,7 +24,14 @@ export class NavMenuComponent {
             Link: "/sampleForm",
             Icon: "description",
             ItemClasses: ["toolbarItem"],
-            LinkText: "Sample"
+            LinkText: "Sample Form"
+        },
+        {
+            AnchorClasses: ["toolBarLinkText"],
+            Link: "/animalForm",
+            Icon: "description",
+            ItemClasses: ["toolbarItem"],
+            LinkText: "Animal Form"
         },
         {
             AnchorClasses: ["toolBarLinkText"],
