@@ -219,7 +219,6 @@
           <e p="vendor.js.gz" t="Include" />
         </e>
         <e p="favicon.ico" t="Include" />
-        <e p="service-worker.js" t="Include" />
         <e p="styles" t="Include">
           <e p="css" t="Include">
             <e p="material-icons.css" t="Include" />
