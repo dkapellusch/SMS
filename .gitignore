@@ -237,3 +237,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/ClientApp/app/service-workers/
+.idea/.idea.SMS/.idea/dataSources/6353dd00-faab-4631-adc1-e90c089a8134/_src_/
+.idea/.idea.SMS/.idea/dataSources/6353dd00-faab-4631-adc1-e90c089a8134/_staging_/
