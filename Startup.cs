@@ -35,6 +35,7 @@ namespace SMS
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRespository, SamplesRepository>();
+            services.AddTransient<IAnimalRepository, AnimalRepository>();
             services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
 
             services.AddDistributedMemoryCache();

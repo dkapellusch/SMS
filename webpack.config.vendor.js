@@ -22,6 +22,7 @@ const treeShakableModules = [
     "isomorphic-fetch"
 ];
 const nonTreeShakableModules = [
+
     'es6-promise',
     'es6-shim',
     'event-source-polyfill',
@@ -33,9 +34,8 @@ const nonTreeShakableModules = [
     // '@angular/material/prebuilt-themes/pink-bluegrey.css',
     "./wwwroot/styles/css/material-icons.css",
     'rxjs',
-    
-
 ];
+
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
 module.exports = (env) => {
@@ -61,7 +61,7 @@ module.exports = (env) => {
         },
         plugins: [
             new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
-            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
+            // new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
             new webpack.IgnorePlugin(/^vertx$/), // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
         ].concat(isDevBuild ? [] : [
             new webpack.optimize.UglifyJsPlugin({

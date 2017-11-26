@@ -15,8 +15,8 @@
     </database>
     <schema id="5" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-11-25.10:54:36.932</IntrospectionTimestamp>
-      <IntrospectionStateNumber>3141</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-11-25.18:33:50.783</IntrospectionTimestamp>
+      <IntrospectionStateNumber>3142</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -67,7 +67,7 @@
     </sequence>
     <table id="16" parent="5" name="Animals">
       <ObjectId>16489</ObjectId>
-      <StateNumber>2958</StateNumber>
+      <StateNumber>3142</StateNumber>
     </table>
     <table id="17" parent="5" name="Samples">
       <ObjectId>16533</ObjectId>
@@ -123,18 +123,25 @@
       <NotNull>1</NotNull>
       <StateNumber>2958</StateNumber>
     </column>
-    <index id="28" parent="16" name="PK_Animals">
+    <column id="28" parent="16" name="AnimalType">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>3142</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+    </column>
+    <index id="29" parent="16" name="PK_Animals">
       <ObjectId>16496</ObjectId>
       <ColNames>Id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="29" parent="16" name="PK_Animals">
+    <key id="30" parent="16" name="PK_Animals">
       <ObjectId>16497</ObjectId>
       <ColNames>Id</ColNames>
       <UnderlyingIndexName>PK_Animals</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="30" parent="17" name="SubjectNumber">
+    <column id="31" parent="17" name="SubjectNumber">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -142,30 +149,30 @@
       <SequenceName>Samples_SubjectNumber_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;Samples_SubjectNumber_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="31" parent="17" name="AgeInMonths">
+    <column id="32" parent="17" name="AgeInMonths">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3139</StateNumber>
     </column>
-    <column id="32" parent="17" name="LastUpdateTime">
+    <column id="33" parent="17" name="LastUpdateTime">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>3139</StateNumber>
     </column>
-    <index id="33" parent="17" name="PK_Samples">
+    <index id="34" parent="17" name="PK_Samples">
       <ObjectId>16537</ObjectId>
       <ColNames>SubjectNumber</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="34" parent="17" name="PK_Samples">
+    <key id="35" parent="17" name="PK_Samples">
       <ObjectId>16538</ObjectId>
       <ColNames>SubjectNumber</ColNames>
       <UnderlyingIndexName>PK_Samples</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="18" name="Id">
+    <column id="36" parent="18" name="Id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -173,51 +180,51 @@
       <SequenceName>Things_Id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;&quot;Things_Id_seq&quot;&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="36" parent="18" name="Name">
+    <column id="37" parent="18" name="Name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <StateNumber>2953</StateNumber>
     </column>
-    <index id="37" parent="18" name="PK_Things">
+    <index id="38" parent="18" name="PK_Things">
       <ObjectId>16484</ObjectId>
       <ColNames>Id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="38" parent="18" name="PK_Things">
+    <key id="39" parent="18" name="PK_Things">
       <ObjectId>16485</ObjectId>
       <ColNames>Id</ColNames>
       <UnderlyingIndexName>PK_Things</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="39" parent="19" name="MigrationId">
+    <column id="40" parent="19" name="MigrationId">
       <Position>1</Position>
       <DataType>varchar(150)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>2952</StateNumber>
     </column>
-    <column id="40" parent="19" name="ProductVersion">
+    <column id="41" parent="19" name="ProductVersion">
       <Position>2</Position>
       <DataType>varchar(32)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>2952</StateNumber>
     </column>
-    <index id="41" parent="19" name="PK___EFMigrationsHistory">
+    <index id="42" parent="19" name="PK___EFMigrationsHistory">
       <ObjectId>16473</ObjectId>
       <ColNames>MigrationId</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="19" name="PK___EFMigrationsHistory">
+    <key id="43" parent="19" name="PK___EFMigrationsHistory">
       <ObjectId>16474</ObjectId>
       <ColNames>MigrationId</ColNames>
       <UnderlyingIndexName>PK___EFMigrationsHistory</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="20" name="name">
+    <column id="44" parent="20" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <StateNumber>876</StateNumber>
     </column>
-    <column id="44" parent="20" name="id">
+    <column id="45" parent="20" name="id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -225,33 +232,33 @@
       <SequenceName>job_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;job_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <index id="45" parent="20" name="job_pkey">
+    <index id="46" parent="20" name="job_pkey">
       <ObjectId>16461</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="46" parent="20" name="job_pkey">
+    <key id="47" parent="20" name="job_pkey">
       <ObjectId>16462</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>job_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="47" parent="21" name="name">
+    <column id="48" parent="21" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <StateNumber>870</StateNumber>
     </column>
-    <column id="48" parent="21" name="age">
+    <column id="49" parent="21" name="age">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <StateNumber>870</StateNumber>
     </column>
-    <column id="49" parent="21" name="salary">
+    <column id="50" parent="21" name="salary">
       <Position>4</Position>
       <DataType>double precision|0</DataType>
       <StateNumber>870</StateNumber>
     </column>
-    <column id="50" parent="21" name="id">
+    <column id="51" parent="21" name="id">
       <Position>7</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -259,23 +266,23 @@
       <SequenceName>people_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;people_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="51" parent="21" name="job">
+    <column id="52" parent="21" name="job">
       <Position>8</Position>
       <DataType>integer|0</DataType>
       <StateNumber>891</StateNumber>
     </column>
-    <index id="52" parent="21" name="people_pkey">
+    <index id="53" parent="21" name="people_pkey">
       <ObjectId>16450</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="53" parent="21" name="people_pkey">
+    <key id="54" parent="21" name="people_pkey">
       <ObjectId>16451</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>people_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="54" parent="21" name="people_job_fkey">
+    <foreign-key id="55" parent="21" name="people_job_fkey">
       <ObjectId>16463</ObjectId>
       <ColNames>job</ColNames>
       <RefTableId>16418</RefTableId>
@@ -284,12 +291,12 @@
       <RefKeyName>job_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="55" parent="22" name="id">
+    <column id="56" parent="22" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <StateNumber>3141</StateNumber>
     </column>
-    <column id="56" parent="22" name="name">
+    <column id="57" parent="22" name="name">
       <Position>2</Position>
       <DataType>text|0</DataType>
       <StateNumber>3141</StateNumber>

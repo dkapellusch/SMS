@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="38">
+          <list size="39">
             <item index="0" class="java.lang.String" itemvalue="matinput" />
             <item index="1" class="java.lang.String" itemvalue="(datechange)" />
             <item index="2" class="java.lang.String" itemvalue="[ngstyle.lt-md]" />
@@ -43,6 +43,7 @@
             <item index="35" class="java.lang.String" itemvalue="[class.tracking-out-contract]" />
             <item index="36" class="java.lang.String" itemvalue="[class.tracking-in-expand]" />
             <item index="37" class="java.lang.String" itemvalue="#animalform" />
+            <item index="38" class="java.lang.String" itemvalue="[(ngmodel)]" />
           </list>
         </value>
       </option>
@@ -51,7 +52,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="18">
+          <list size="19">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -70,6 +71,7 @@
             <item index="15" class="java.lang.String" itemvalue="mat-icon" />
             <item index="16" class="java.lang.String" itemvalue="mat-sidenav" />
             <item index="17" class="java.lang.String" itemvalue="linechart" />
+            <item index="18" class="java.lang.String" itemvalue="mat-placeholder" />
           </list>
         </value>
       </option>

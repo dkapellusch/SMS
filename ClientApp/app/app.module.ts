@@ -24,6 +24,7 @@ import {SampleFormComponent} from './components/sampleform/sampleform.component'
 import {CapitalizePipe} from './pipes/capitalize.pipe';
 import {TitleCasePipe} from './pipes/titleCase.pipe';
 import {HiddenDirective} from './directives/hidden.directive';
+import {RouteService} from "./services/route.service";
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import {HiddenDirective} from './directives/hidden.directive';
 		])
 	],
 	entryComponents: [SampleFormComponent],
-	providers: [InitializationService, LoggingService, ThemeService, HttpClient]
+	providers: [InitializationService, LoggingService, ThemeService, RouteService, HttpClient]
 	// schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModuleShared {

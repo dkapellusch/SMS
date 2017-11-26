@@ -4,6 +4,9 @@ import {
 } from "@angular/core";
 import {NgForm} from "@angular/forms";
 import {DatePipe} from "@angular/common";
+import {HttpClient} from "@angular/common/http";
+import {RouteService} from "../../services/route.service";
+import {Animal} from "../../models/Animal";
 
 @Component({
 	selector: "animal-form",
@@ -20,28 +23,30 @@ export class AnimalFormComponent {
 	@ViewChild('animalForm')
 	public formObject: NgForm;
 
-	constructor(private datePipe: DatePipe) {
+	constructor(private datePipe: DatePipe, private http: HttpClient, private routes: RouteService) {
 	}
-	
-	model: { name: string, type: string, number: number, age: number, birthday: Date } = {
-		name: "",
-		type: "",
-		number: null,
-		age: null,
-		birthday: null
+
+	model: Partial<Animal> = {
+		Name: "",
+		AnimalType: "",
+		Id: null,
+		Age: null,
+		Birthday: null
 	};
 
-	get diagnostic() {
-		return JSON.stringify(this.model);
-	}
-
-	get FormValue() {
-		return JSON.stringify(this.formObject.form.value);
-	}
-	
 	validateNumber(e: KeyboardEvent) {
 		if (!this.NumericRegex.test(e.key) && e.keyCode != 8 && e.keyCode != 127) {
 			e.preventDefault();
+		}
+	}
+
+	submit() {
+		if (this.formObject.valid && this.formObject.touched) {
+			this.http.post(this.routes.Animal, this.model)
+				.subscribe(result => {
+					},
+					error => console.error(error)
+				);
 		}
 	}
 }

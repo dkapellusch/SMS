@@ -1,41 +1,62 @@
-Form Binding: {{FormValue}}
-<hr> <br>
 <form [ngStyle]="{'font-size': '2.4vh'}" #animalForm="ngForm">
-
+    
+    <!--ANIMAL TYPE-->
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'"
                     [style.float]="'center'">
-        <mat-select style="text-align: center;" placeholder="Animal Type" name="animalType" [(ngModel)]="model.type">
+        <mat-select style="text-align: center;" name="animalType" [(ngModel)]="model.AnimalType">
             <mat-option *ngFor="let animal of Animals" [value]="animal">
                 {{ animal }}
             </mat-option>
-        </mat-select>
-    </mat-form-field>
 
+        </mat-select>
+        <mat-placeholder>
+            <mat-icon>view_list</mat-icon>
+            Animal Type
+        </mat-placeholder>
+    </mat-form-field>
+    
+    <!--SUBJECT NUMBER-->
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
                     [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary"
                (keydown)="validateNumber($event)"
-               name="subjectNumber" [(ngModel)]="model.number"/>
-        <mat-placeholder><mat-icon>favorite</mat-icon> Subject Number</mat-placeholder>
+               name="subjectNumber" [(ngModel)]="model.Id"/>
+        <mat-placeholder>
+            <i style="padding-right:5px;" class="fa fa-tag" aria-hidden="true"></i>
+            Subject Number
+        </mat-placeholder>
 
     </mat-form-field>
 
-    <mat-form-field *ngIf="model.type == 'Monkey' || model.type == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}"
+    <!--//NAME-->
+    <mat-form-field *ngIf="model.AnimalType == 'Monkey' || model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}"
                     style="width:20vw; margin:auto;" [style.display]="'block'"
                     [style.float]="'center'">
         <input name="name" style="text-align: center;" matInput type="text" [maxLength]="50"
                color="primary"
-               placeholder="Name" [(ngModel)]="model.name"/>
+               [(ngModel)]="model.Name"/>
+        <mat-placeholder>
+            <mat-icon>account_box</mat-icon>
+            Name
+        </mat-placeholder>
     </mat-form-field>
-
-    <mat-form-field *ngIf="model.type != 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
+    
+    <!--AGE IN MONTHS-->
+    <mat-form-field *ngIf="model.AnimalType != 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
                     [style.display]="'block'" [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="3" color="primary"
                (keydown)="validateNumber($event)"
-               placeholder="Age In Months" name="age" [(ngModel)]="model.age"/>
+               name="age" [(ngModel)]="model.Age"/>
+        <mat-placeholder>
+            <mat-icon>date_range</mat-icon>
+            Age In Months
+        </mat-placeholder>
     </mat-form-field>
-
-    <mat-form-field *ngIf="model.type == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
+    
+    <!--EXPERIMENT-->
+  
+    <!--BIRTHDAY-->
+    <mat-form-field *ngIf="model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
                     [style.display]="'block'" [style.float]="'center'">
         <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Birthday"
                (dateChange)="SelectedTime=$event.value" name="birthday" [(ngModel)]="model.birthday">
@@ -43,8 +64,9 @@ Form Binding: {{FormValue}}
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
+    <!--SUBMIT-->
     <div [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.float]="'center'">
-        <button mat-button color="primary">Submit</button>
+        <button mat-button color="primary" (click)="submit()">Submit</button>
     </div>
-    
+
 </form>

@@ -26,6 +26,8 @@ namespace SMS.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AnimalType");
+
                     b.Property<string>("Experiment");
 
                     b.Property<DateTime>("LastUpdateTime");
