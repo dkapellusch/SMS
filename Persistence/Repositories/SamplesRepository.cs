@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using SMS.Models;
 using SMS.Models.Samples;
 using System.Linq;
 using System;
-using System.Reactive;
 using System.Reactive.Linq;
 
 namespace SMS.Persistence.Repositories
@@ -45,6 +43,5 @@ namespace SMS.Persistence.Repositories
         {
             return Context.Samples.ToObservable();
         }
-
     }
 }

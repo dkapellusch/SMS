@@ -1,6 +1,6 @@
 <ngForm #sampleForm [ngStyle]="{'font-size': '2.4vh'}">
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <mat-select style="text-align: center;" placeholder="Sample Type" name="SampleType"  [(ngModel)]="SampleType">
+        <mat-select style="text-align: center;" placeholder="Sample Type" name="SampleType"  [(ngModel)]="SampleType" tabindex=1>
             <mat-option style="font-size:2.1vh;" *ngFor="let sample of SampleTypes" [value]="sample">
                 {{ sample }}
             </mat-option>
@@ -9,7 +9,7 @@
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
         [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary" (keydown)="validateNumber($event)"
-            placeholder="Animal Number" />
+            placeholder="Animal Number" tabindex=2 />
     </mat-form-field>
     <mat-form-field *ngIf="SampleType == 'Monkey' || SampleType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
         [style.float]="'center'">
@@ -19,11 +19,11 @@
 
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="3" color="primary" (keydown)="validateNumber($event)"
-            placeholder="Age In Months" />
+            placeholder="Age In Months" tabindex=3 />
     </mat-form-field>
 
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Collection Date" (dateChange)="SelectedTime=$event.value">
+        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Collection Date" (dateChange)="SelectedTime=$event.value" tabindex=4>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

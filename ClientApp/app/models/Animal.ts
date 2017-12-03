@@ -3,6 +3,6 @@
 	public Name?: string;
 	public AnimalType?: string;
 	public Experiment?: string;
-	public Age?: number;
+	public AgeInMonths?: number;
 	public Birthday?: Date;
 }  

@@ -21,7 +21,7 @@ export class SampleFormComponent {
   SampleType: string;
   NumericRegex: RegExp = /^\d+$/;
   validateNumber(e: KeyboardEvent) {
-    if (!this.NumericRegex.test(e.key) && e.keyCode != 8 && e.keyCode != 127) {
+    if (!this.NumericRegex.test(e.key) && e.keyCode != 8 && e.keyCode != 127 && e.keyCode != 9) {
       e.preventDefault();
     }
   }

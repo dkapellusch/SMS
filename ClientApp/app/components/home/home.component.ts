@@ -17,7 +17,7 @@ export class HomeComponent implements AfterViewInit {
 	public SmsText = this._transitionText;
 
 	@ViewChild('banner') private _banner :ElementRef;
-	@ViewChild('graph') private _graph :LineChartComponent;
+	// @ViewChild('graph') private _graph :LineChartComponent;
 
 	constructor(private _initializationService: InitializationService, private _changeDetector: ChangeDetectorRef) {}
 
@@ -43,7 +43,7 @@ export class HomeComponent implements AfterViewInit {
 			   this._changeDetector.detectChanges();
 
 			   this._banner.nativeElement.style.display = 'block';
-			   this._graph.ChartElement.nativeElement.style.display = 'block';
+			   // this._graph.ChartElement.nativeElement.style.display = 'block';
 			   this.onLoad(null);
 			}
 		}, 1);

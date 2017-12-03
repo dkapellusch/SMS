@@ -15,20 +15,20 @@ namespace SMS.Models.Animals
         private string _experiment;
         private DateTime _lastUpdateTime;
         private RecordStatus _recordStatus;
+        private DateTime _birthDate;
+        private int _ageInMonths;
+        
         public event PropertyChangedEventHandler _PropertyChanged;
 
         public Animal()
         {
             _PropertyChanged += (sender, args) => LastUpdateTime = DateTime.Now;
         }
-        
+
         [Key]
         public int Id
         {
-            get
-            {
-                return _id;
-            }
+            get { return _id; }
             set
             {
                 _id = value;
@@ -78,6 +78,26 @@ namespace SMS.Models.Animals
             set
             {
                 _recordStatus = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime BirthDate
+        {
+            get { return _birthDate; }
+            set
+            {
+                _birthDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int AgeInMonths
+        {
+            get { return _ageInMonths; }
+            set
+            {
+                _ageInMonths = value;
                 OnPropertyChanged();
             }
         }

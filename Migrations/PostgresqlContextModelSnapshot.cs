@@ -26,7 +26,11 @@ namespace SMS.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("AgeInMonths");
+
                     b.Property<int>("AnimalType");
+
+                    b.Property<DateTime>("BirthDate");
 
                     b.Property<string>("Experiment");
 
