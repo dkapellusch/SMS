@@ -1,12 +1,11 @@
-import {Injectable, Inject} from "@angular/core";
-import {Http} from "@angular/http";
+import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {RouteService} from "./route.service";
 
 
 @Injectable()
 export class LoggingService {
-	constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private routes: RouteService) {
+	constructor(private http: HttpClient, private routes: RouteService) {
 
 	}
 

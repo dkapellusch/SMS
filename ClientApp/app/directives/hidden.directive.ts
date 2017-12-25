@@ -8,7 +8,7 @@ export class HiddenDirective {
     @Input() myHidden: boolean;
 
     ngOnInit(){
-        // Use renderer to render the emelemt with styles
+        // Use renderer to render the element with styles
         if(this.myHidden) {
             this.renderer.setStyle(this.el.nativeElement, 'display', 'none');
         }

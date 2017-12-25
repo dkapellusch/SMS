@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {isNullOrUndefined} from "util";
+
 @Injectable()
 export class InitializationService{
     private _initialized :boolean = false;

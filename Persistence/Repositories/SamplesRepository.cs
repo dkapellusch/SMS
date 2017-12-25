@@ -7,9 +7,9 @@ using System.Reactive.Linq;
 
 namespace SMS.Persistence.Repositories
 {
-    public class SamplesRepository : ISampleRespository
+    public class SamplesRepository : AbstractRepository, ISampleRespository
     {
-        public SamplesRepository(PostgresqlContext context)
+        public SamplesRepository(PostgresqlContext context) : base(context)
         {
             Context = context;
         }
@@ -36,10 +36,10 @@ namespace SMS.Persistence.Repositories
 
         public async Task<Sample> GetSampleByNumberAsync(int subjectNumber)
         {
-            return (Sample)await Context.FindAsync(typeof(Sample), subjectNumber);
+            return (Sample) await Context.FindAsync(typeof(Sample), subjectNumber);
         }
 
-        IObservable<Sample> ISampleRespository.GetObservableSampleByNumber(int subjectNumber)
+        public IObservable<Sample> GetObservableSampleByNumber(int subjectNumber)
         {
             return Context.Samples.ToObservable();
         }

@@ -5,9 +5,9 @@ using SMS.Models.Enums;
 
 namespace SMS.Persistence.Repositories
 {
-    public class AnimalRepository : IAnimalRepository
+    public class AnimalRepository : AbstractRepository, IAnimalRepository
     {
-        public AnimalRepository(PostgresqlContext context)
+        public AnimalRepository(PostgresqlContext context) : base(context)
         {
             Context = context;
         }
@@ -19,13 +19,12 @@ namespace SMS.Persistence.Repositories
             if (!await Context.Animals.AnyAsync(a => a.Id == animal.Id))
             {
                 await Context.Animals.AddAsync(animal);
-
             }
             else
             {
                 var existingAnimal = await Context.Animals.FirstAsync(a => a.Id == animal.Id);
-                existingAnimal.RecordStatus = RecordStatus.Modified;
-                existingAnimal = animal;
+                animal.RecordStatus = RecordStatus.Modified;
+                Context.Entry(existingAnimal).CurrentValues.SetValues(animal);
             }
             await Context.SaveChangesAsync();
         }

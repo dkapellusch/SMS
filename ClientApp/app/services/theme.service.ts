@@ -1,6 +1,4 @@
 import { Injectable, Inject } from "@angular/core";
-import { Http } from "@angular/http";
-
 
 
 @Injectable()

@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using SMS.Models;
+﻿using System.Threading.Tasks;
 using SMS.Models.Samples;
-using System.Reactive;
 using System;
 
 namespace SMS.Persistence.Repositories
 {
-    public interface ISampleRespository
+    public interface ISampleRespository : IAbstractRepository
     {
         Sample GetSampleByNumber(int subjectNumber);
         Task<Sample> GetSampleByNumberAsync(int subjectNumber);

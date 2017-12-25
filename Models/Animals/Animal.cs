@@ -69,7 +69,7 @@ namespace SMS.Models.Animals
         public DateTime LastUpdateTime
         {
             get { return _lastUpdateTime; }
-            private set { _lastUpdateTime = value; }
+            set { _lastUpdateTime = value; }
         }
 
         public RecordStatus RecordStatus

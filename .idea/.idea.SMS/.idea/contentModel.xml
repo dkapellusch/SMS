@@ -73,11 +73,6 @@
             <e p="capitalize.pipe.ts" t="Include" />
             <e p="titleCase.pipe.ts" t="Include" />
           </e>
-          <e p="sampleform" t="Include">
-            <e p="sampleform.component.html" t="Include" />
-            <e p="sampleform.component.scss" t="Include" />
-            <e p="samplefrom.component.ts" t="Include" />
-          </e>
           <e p="service-workers" t="Include">
             <e p="service-worker.ts" t="Include" />
           </e>
@@ -124,6 +119,7 @@
         <e p="nlog-all-2017-12-01.log" t="Include" />
         <e p="nlog-all-2017-12-02.log" t="Include" />
         <e p="nlog-all-2017-12-03.log" t="Include" />
+        <e p="nlog-all-2017-12-06.log" t="Include" />
         <e p="nlog-own-2017-11-15.log" t="Include" />
         <e p="nlog-own-2017-11-16.log" t="Include" />
         <e p="nlog-own-2017-11-17.log" t="Include" />
@@ -137,6 +133,7 @@
         <e p="nlog-own-2017-11-25.log" t="Include" />
         <e p="nlog-own-2017-12-01.log" t="Include" />
         <e p="nlog-own-2017-12-02.log" t="Include" />
+        <e p="nlog-own-2017-12-06.log" t="Include" />
       </e>
       <e p="Migrations" t="Include">
         <e p="20171026164138_WorkInit.cs" t="Include" />
@@ -188,7 +185,9 @@
       <e p="Persistence" t="Include">
         <e p="PostgresContext.cs" t="Include" />
         <e p="Repositories" t="Include">
+          <e p="AbstractRepository.cs" t="Include" />
           <e p="AnimalRepository.cs" t="Include" />
+          <e p="IAbstractRepository.cs" t="Include" />
           <e p="IAnimalRepository.cs" t="Include" />
           <e p="ISampleRespository.cs" t="Include" />
           <e p="SamplesRepository.cs" t="Include" />
