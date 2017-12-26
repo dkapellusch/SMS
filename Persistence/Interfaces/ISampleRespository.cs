@@ -2,7 +2,7 @@
 using SMS.Models.Samples;
 using System;
 
-namespace SMS.Persistence.Repositories
+namespace SMS.Persistence.Interfaces
 {
     public interface ISampleRespository : IAbstractRepository
     {

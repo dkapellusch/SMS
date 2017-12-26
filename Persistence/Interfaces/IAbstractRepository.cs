@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace SMS.Persistence.Repositories
+namespace SMS.Persistence.Interfaces
 {
     public interface IAbstractRepository
     {

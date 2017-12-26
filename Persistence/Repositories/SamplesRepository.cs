@@ -4,6 +4,7 @@ using SMS.Models.Samples;
 using System.Linq;
 using System;
 using System.Reactive.Linq;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Persistence.Repositories
 {

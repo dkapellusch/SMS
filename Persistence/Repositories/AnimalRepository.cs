@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Reactive.Threading.Tasks;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SMS.Models.Animals;
 using SMS.Models.Enums;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Persistence.Repositories
 {
@@ -27,6 +30,16 @@ namespace SMS.Persistence.Repositories
                 Context.Entry(existingAnimal).CurrentValues.SetValues(animal);
             }
             await Context.SaveChangesAsync();
+        }
+
+        public async Task<Animal> GetAnimalAsync(int animalNumber)
+        {
+            return await _postgresContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber);
+        }
+
+        public IObservable<Animal> GetAnimalObservable(int animalNumber)
+        {
+            return _postgresContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber).ToObservable();
         }
     }
 }

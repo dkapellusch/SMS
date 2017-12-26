@@ -38,7 +38,6 @@ export class AnimalFormComponent {
 			e.preventDefault();
 		}
 	}
-
 	submit() {
 		if (this.formObject.valid && this.formObject.touched) {
 			this.http.post(this.routes.Animal, this.Model)

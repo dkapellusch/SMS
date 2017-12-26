@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SMS.Models;
 using SMS.Persistence.Repositories;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Controllers
 {

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using SMS.Models.Internal;
 using SMS.Models.Samples;
 using SMS.Persistence.Repositories;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Controllers
 {

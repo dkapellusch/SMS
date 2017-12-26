@@ -15,6 +15,7 @@ using NLog.Web;
 
 using SMS.Persistence;
 using SMS.Persistence.Repositories;
+using SMS.Persistence.Interfaces;
 
 
 //    ResponseCompression

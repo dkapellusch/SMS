@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SMS.Models.Animals;
 using SMS.Persistence.Repositories;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Controllers
 {
@@ -22,11 +23,18 @@ namespace SMS.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddAnimal([FromBody] Animal animal)
         {
-//            await AnimalRepo.AddAnimal(animal);
             await AnimalRepo.CreateOrUpdate(animal, animal.Id);
             _logger.LogInformation($"Added new animal with id {animal.Id} and name: {animal.Name}");
             
             return Ok();
+        }
+
+        [HttpGet("find/{animalNumber}")]
+        public async Task<Animal> GetAnimalAsync(int animalNumber) 
+        {
+            var animal = await AnimalRepo.GetAnimalAsync(animalNumber);
+            _logger.LogInformation($"Got animal with number {animalNumber} with name {animal.Name}");
+            return animal;
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Reactive.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SMS.Persistence.Interfaces;
 
 namespace SMS.Persistence.Repositories
 {
@@ -39,11 +40,11 @@ namespace SMS.Persistence.Repositories
         public DbSet<TEntity> GetEntity<TEntity>() where TEntity : class
         {
             return _postgresContext.GetType()
-                .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                .Where(p => p.PropertyType.GetGenericArguments()
-                .FirstOrDefault() == typeof(TEntity))
-                .Select(p => p.GetValue(_postgresContext))
-                .FirstOrDefault() as DbSet<TEntity>;
+                                   .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                                   .Where(p => p.PropertyType.GetGenericArguments()
+                                   .FirstOrDefault() == typeof(TEntity))
+                                   .Select(p => p.GetValue(_postgresContext))
+                                   .FirstOrDefault() as DbSet<TEntity>;
         }
 
         public Task<TEntity> GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
@@ -145,7 +146,9 @@ namespace SMS.Persistence.Repositories
         public void UpdateObject<TEntity>(TEntity destination, TEntity source) where TEntity : class
         {
             foreach (var property in typeof(TEntity).GetProperties())
+            {
                 property.SetValue(destination, property.GetValue(source, null), null);
+            }
         }
     }
 }
