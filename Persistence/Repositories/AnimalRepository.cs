@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,11 @@ namespace SMS.Persistence.Repositories
                 Context.Entry(existingAnimal).CurrentValues.SetValues(animal);
             }
             await Context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Animal>> GetAllAnimalsAsync()
+        {
+            return await _postgresContext.Animals.ToListAsync();
         }
 
         public async Task<Animal> GetAnimalAsync(int animalNumber)

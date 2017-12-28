@@ -28,7 +28,8 @@
     <mat-chip color="warn" selected="true">Warn</mat-chip>
 </mat-chip-list>
 <mat-form-field>
-    <input matInput [matDatepicker]="picker"placeholder="Choose a date" (dateChange)="SelectedTime=$event.value" (dateChange)="onChange($event)">
+    <input matInput [matDatepicker]="picker"placeholder="Choose a date" (dateChange)="SelectedTime=$event.value">
+    <!-- (dateChange)="onChange($event)" -->
     <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>

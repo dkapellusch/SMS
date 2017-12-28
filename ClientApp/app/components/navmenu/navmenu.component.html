@@ -1,4 +1,4 @@
-<div fxShow.lt-sm="false" class="toolBarContainer" #links>
+<div fxShow.lt-md="false" class="toolBarContainer" #links>
     <mat-toolbar color="primary">
         <span class="{{navLink.ItemClasses.join(' ')}}" *ngFor="let navLink of NavLinks">
             <a class="{{navLink.AnchorClasses.join(' ')}}" [routerLink]="navLink.Link">
@@ -11,9 +11,9 @@
     </mat-toolbar>
 </div>
 
-<router-outlet fxShow.lt-sm="false"></router-outlet>
+<router-outlet fxShow.lt-md="false"></router-outlet>
 
-<mat-sidenav-container fxShow.lt-sm="true">
+<mat-sidenav-container fxShow.lt-md="true">
     <mat-sidenav #sidenav mode="over">
         <button mat-icon-button (click)="sidenav.close()">
             <mat-icon aria-label="Menu Icon">view_headline</mat-icon>

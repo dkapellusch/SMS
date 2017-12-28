@@ -11,6 +11,7 @@ import {MaterialModule} from "./modules/material.module";
 import {InitializationService} from "./services/initialization.service";
 import {LoggingService} from './services/logging.service';
 import {ThemeService} from './services/theme.service';
+import {RouteService} from "./services/route.service";
 
 import {AnimalTableComponent} from './components/animals/animals.component';
 import {AnimalFormComponent} from './components/animalform/animalform.component';
@@ -21,10 +22,12 @@ import {FetchDataComponent} from './components/fetchdata/fetchdata.component';
 import {ExampleTableComponent} from './components/exampletable/exampletable.component';
 import {LineChartComponent} from "./components/linechart/linechart.component";
 import {SampleFormComponent} from './components/sampleform/sampleform.component';
+
 import {CapitalizePipe} from './pipes/capitalize.pipe';
 import {TitleCasePipe} from './pipes/titleCase.pipe';
+
 import {HiddenDirective} from './directives/hidden.directive';
-import {RouteService} from "./services/route.service";
+import { AnimalService } from './services/animal.service';
 
 
 @NgModule({
@@ -63,7 +66,7 @@ import {RouteService} from "./services/route.service";
 		])
 	],
 	entryComponents: [SampleFormComponent],
-	providers: [InitializationService, LoggingService, ThemeService, RouteService, HttpClient]
+	providers: [InitializationService, LoggingService, ThemeService, RouteService, AnimalService, HttpClient]
 	// schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModuleShared {

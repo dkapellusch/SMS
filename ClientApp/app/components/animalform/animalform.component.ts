@@ -7,6 +7,7 @@ import {DatePipe} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 import {RouteService} from "../../services/route.service";
 import {Animal} from "../../models/Animal";
+import { AnimalService } from "../../services/animal.service";
 
 @Component({
 	selector: "animal-form",
@@ -30,7 +31,7 @@ export class AnimalFormComponent {
 	@ViewChild('animalForm')
 	public formObject: NgForm;
 
-	constructor(private datePipe: DatePipe, private http: HttpClient, private routes: RouteService) {
+	constructor(private datePipe: DatePipe, private http: HttpClient, private routes: RouteService, private _animals : AnimalService) {
 	}
 
 	validateNumber(e: KeyboardEvent) {
@@ -40,11 +41,12 @@ export class AnimalFormComponent {
 	}
 	submit() {
 		if (this.formObject.valid && this.formObject.touched) {
-			this.http.post(this.routes.Animal, this.Model)
+			this.http.post(this.routes.AddAnimal, this.Model)
 				.subscribe(result => {
 					},
 					error => console.error(error)
 				);
+			this._animals.AddAnimal(this.Model);
 		}
 	}
 }

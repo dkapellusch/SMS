@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SMS.Models.Animals;
@@ -35,6 +36,12 @@ namespace SMS.Controllers
             var animal = await AnimalRepo.GetAnimalAsync(animalNumber);
             _logger.LogInformation($"Got animal with number {animalNumber} with name {animal.Name}");
             return animal;
+        }
+
+        [HttpGet("find/all")]
+        public async Task<IEnumerable<Animal>> GetAllAnimalsAsync() 
+        {
+            return await AnimalRepo.GetAllAnimalsAsync();
         }
     }
 }

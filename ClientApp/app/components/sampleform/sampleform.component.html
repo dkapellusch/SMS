@@ -23,7 +23,8 @@
     </mat-form-field>
 
     <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Collection Date" (dateChange)="SelectedTime=$event.value" tabindex=4>
+        <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Collection Date" tabindex=4>
+        <!-- (dateChange)="SelectedTime=$event.value" -->
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>

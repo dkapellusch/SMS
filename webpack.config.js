@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const AotPlugin = require('@ngtools/webpack').AotPlugin;
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const ManifestPlugin = require('webpack-manifest-plugin');
 const WebpackShellPlugin = require('./WebpackPlugins/WebpackShellPlugin');
@@ -10,10 +10,11 @@ const ForkTsCheckerNotifierWebpackPlugin = require('fork-ts-checker-notifier-web
 
 module.exports = (env) => {
     // Configuration in common to both client-side and server-side bundles
-    const isDevBuild = !(env && env.prod);
+    const isDevBuild = false; //!(env && env.prod);
     const sharedConfig = {
         stats: {
-            modules: false
+            modules: false,
+            errorDetails: true
         },
         context: __dirname,
         resolve: {
@@ -49,7 +50,7 @@ module.exports = (env) => {
                 }
             ]
         },
-        plugins: [new ForkTsCheckerWebpackPlugin(), new ForkTsCheckerNotifierWebpackPlugin()]
+        plugins: isDevBuild ? [new ForkTsCheckerWebpackPlugin(), new ForkTsCheckerNotifierWebpackPlugin()] : []
     };
 
     // Configuration for client-side bundle suitable for running in browsers
@@ -75,10 +76,10 @@ module.exports = (env) => {
             })
         ] : [
             // Plugins that apply in production builds only
-            new webpack.optimize.UglifyJsPlugin(),
-            new AotPlugin({
+            // new webpack.optimize.UglifyJsPlugin(),
+            new AngularCompilerPlugin({
                 tsConfigPath: './tsconfig.json',
-                entryModule: path.join(__dirname, 'ClientApp/app/app.module.browser#AppModule'),
+                entryModule: path.join(__dirname, 'ClientApp/app/app.module.browser'),
                 exclude: ['./**/*.server.ts']
             })
         ])
@@ -132,7 +133,7 @@ module.exports = (env) => {
             //    })
         ].concat(isDevBuild ? [] : [
             // Plugins that apply in production builds only
-            new AotPlugin({
+            new AngularCompilerPlugin({
                 tsConfigPath: './tsconfig.json',
                 entryModule: path.join(__dirname, 'ClientApp/app/app.module.server#AppModule'),
                 exclude: ['./**/*.browser.ts']
@@ -145,5 +146,5 @@ module.exports = (env) => {
         target: 'node',
         devtool: 'eval-cheap-module-source-map'
     });
-    return [clientBundleConfig, serverBundleConfig, serviceWorkerBundle];
+    return [clientBundleConfig];
 };
