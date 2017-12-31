@@ -3,9 +3,9 @@
     "tasks": [
         {
             "label": "testTask",
-            "command": "echo",
+            "command": "dotnet",
             "args": [
-                "testing"
+                "build"
             ]
         },
         {

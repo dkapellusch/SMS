@@ -4,5 +4,5 @@
 	public AnimalType?: string;
 	public Experiment?: string;
 	public AgeInMonths?: number;
-	public Birthday?: Date;
+	public BirthDate?: Date;
 }  

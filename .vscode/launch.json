@@ -8,6 +8,7 @@
        "program": "${workspaceRoot}/bin/Debug/netcoreapp2.0/SMS.dll",
        "args": [],
        "cwd": "${workspaceRoot}",
+       "preLaunchTask": "testTask",
        "stopAtEntry": false,
        "launchBrowser": {
            "enabled": false,

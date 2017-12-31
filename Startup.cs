@@ -51,7 +51,6 @@ namespace SMS
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             env.ConfigureNLog("nlog.Config");
-
             env.EnvironmentName = EnvironmentName.Development;
             if (env.IsDevelopment())
             {
@@ -70,21 +69,22 @@ namespace SMS
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-             
+
             app.UseSession();
             app.UseResponseCompression();
-            
-            app.UseStaticFiles(new StaticFileOptions {
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
                 OnPrepareResponse = content =>
                 {
-                    if(content.File.Name.EndsWith(".js.gz"))
+                    if (content.File.Name.EndsWith(".js.gz"))
                     {
                         content.Context.Response.Headers["Content-Type"] = "text/javascript";
                         content.Context.Response.Headers["Content-Encoding"] = "gzip";
                     }
                 }
             });
-           
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -93,9 +93,9 @@ namespace SMS
 
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
-                    defaults: new {controller = "Home", action = "Index"});
+                    defaults: new { controller = "Home", action = "Index" });
             });
-            
+
         }
     }
 }

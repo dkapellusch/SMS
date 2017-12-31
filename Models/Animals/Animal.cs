@@ -15,8 +15,8 @@ namespace SMS.Models.Animals
         private string _experiment;
         private DateTime _lastUpdateTime;
         private RecordStatus _recordStatus;
-        private DateTime _birthDate;
-        private int _ageInMonths;
+        private DateTime? _birthDate;
+        private int? _ageInMonths;
         
         public event PropertyChangedEventHandler _PropertyChanged;
 
@@ -82,7 +82,7 @@ namespace SMS.Models.Animals
             }
         }
 
-        public DateTime BirthDate
+        public DateTime? BirthDate
         {
             get { return _birthDate; }
             set
@@ -92,7 +92,7 @@ namespace SMS.Models.Animals
             }
         }
 
-        public int AgeInMonths
+        public int? AgeInMonths
         {
             get { return _ageInMonths; }
             set

@@ -4,8 +4,6 @@ namespace SMS.Extensions
 {
     public static class ObjectExtensions
     {
-        public static string MethodName(this object caller, [CallerMemberName] string name = null) {
-            return name;
-        }  
+        public static string MethodName(this object caller, [CallerMemberName] string name = null) => name;
     }
 }

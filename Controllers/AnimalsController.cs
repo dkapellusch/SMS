@@ -24,7 +24,7 @@ namespace SMS.Controllers
         [HttpPost("add")]
         public async Task<IActionResult> AddAnimal([FromBody] Animal animal)
         {
-            await AnimalRepo.CreateOrUpdate(animal, animal.Id);
+            await AnimalRepo.AddAnimal(animal);
             _logger.LogInformation($"Added new animal with id {animal.Id} and name: {animal.Name}");
             
             return Ok();

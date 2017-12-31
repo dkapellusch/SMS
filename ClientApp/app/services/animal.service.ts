@@ -18,6 +18,6 @@ export class AnimalService {
   ): void {
     this._httpClient
       .post(this._routes.AddAnimal, animal)
-      .subscribe(o => {}, e => console.log(e));
+      .subscribe(subscription, e => console.log(e));
   }
 }
