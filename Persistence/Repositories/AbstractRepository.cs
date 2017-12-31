@@ -39,15 +39,16 @@ namespace SMS.Persistence.Repositories
 
         public DbSet<TEntity> GetEntity<TEntity>() where TEntity : class
         {
-            return _postgresContext.GetType()
-                                   .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                                   .Where(p => p.PropertyType.GetGenericArguments()
-                                   .FirstOrDefault() == typeof(TEntity))
-                                   .Select(p => p.GetValue(_postgresContext))
-                                   .FirstOrDefault() as DbSet<TEntity>;
+            return _postgresContext.Set<TEntity>();
+            // return _postgresContext.GetType()
+            //                        .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+            //                        .Where(p => p.PropertyType.GetGenericArguments()
+            //                        .FirstOrDefault() == typeof(TEntity))
+            //                        .Select(p => p.GetValue(_postgresContext))
+            //                        .FirstOrDefault() as DbSet<TEntity>;
         }
 
-        public Task<TEntity> GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
+        public Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class
         {
             return _postgresContext.FindAsync<TEntity>(primaryKey);
         }

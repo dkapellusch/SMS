@@ -20,15 +20,15 @@ namespace SMS.Persistence.Repositories
 
         public async Task AddAnimal(Animal animal)
         {
+            var test = (await GetEntityByPrimaryKeyAsync<Animal>(animal.Id)).Name;
             if (!await Context.Animals.AnyAsync(a => a.Id == animal.Id))
             {
                 await Context.Animals.AddAsync(animal);
             }
             else
             {
-                var existingAnimal = await Context.Animals.FirstAsync(a => a.Id == animal.Id);
                 animal.RecordStatus = RecordStatus.Modified;
-                Context.Entry(existingAnimal).CurrentValues.SetValues(animal);
+                Context.Entry(await Context.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
             }
             await Context.SaveChangesAsync();
         }

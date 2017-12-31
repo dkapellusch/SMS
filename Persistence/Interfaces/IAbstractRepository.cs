@@ -10,7 +10,7 @@ namespace SMS.Persistence.Interfaces
         Task Create<TEntity>(TEntity entity) where TEntity : class;
         Task Update<TEntity>(TEntity entity) where TEntity : class;
         DbSet<TEntity> GetEntity<TEntity>() where TEntity : class;
-        Task<TEntity> GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class;
+        Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class;
 
         IObservable<TEntity> GetObservableEntityByPrimaryKey<TEntity>(params object[] primaryKey)
             where TEntity : class;
