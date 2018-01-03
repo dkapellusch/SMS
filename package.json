@@ -40,7 +40,7 @@
   "devDependencies": {
     "@angular/cli": "^1.6.3",
     "@angular/compiler-cli": "5.1.2",
-    "@ngtools/webpack": "1.9.3",
+    "@ngtools/webpack": "^1.9.3",
     "@types/chai": "4.0.10",
     "@types/jasmine": "2.8.3",
     "@types/node": "8.5.2",

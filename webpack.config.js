@@ -10,7 +10,7 @@ const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-web
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = env => {
-  const isDevBuild = true; //!(env && env.prod);
+  const isDevBuild = false; //!(env && env.prod);
   const sharedConfig = {
     stats: {
       modules: false,
@@ -36,7 +36,6 @@ module.exports = env => {
             "@ngtools/webpack",
           ]
         },
-        // Could also use awesome-typescript-loader?slient=true&cache=true
         {
           test: /\.html$/,
           use: "html-loader?minimize=false"

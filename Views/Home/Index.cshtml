@@ -2,13 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 
-<app asp-prerender-module="ClientApp/dist/main-server"  
- asp-prerender-data='new {
-            UserName = "John Doe"
-        }'>Loading...</app>
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
 
 @section scripts {
-    <script src="~/dist/vendor.js" asp-append-version="true"></script>
+    <script src="~/dist/vendor.js" asp-append-version="true"></script> 
     <script src="~/dist/main-client.js" asp-append-version="true"></script>
     <script src="https://use.fontawesome.com/712b0620e0.js" async></script>
 @*    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" async></script>*@

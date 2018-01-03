@@ -5,6 +5,7 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/modules/app.module.browser';
 import { log } from 'util';
 
+declare const module:any;
 
 async function getServiceWorker(serviceWorkerUrl:string) : Promise<ServiceWorker> {
 	let registration = await navigator.serviceWorker.register(serviceWorkerUrl);
