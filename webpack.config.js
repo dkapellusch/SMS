@@ -10,7 +10,7 @@ const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-web
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = env => {
-  const isDevBuild = false; //!(env && env.prod);
+  const isDevBuild = true; //!(env && env.prod);
   const sharedConfig = {
     stats: {
       modules: false,
@@ -187,5 +187,5 @@ module.exports = env => {
     target: "node",
     devtool: "eval-cheap-module-source-map"
   });
-  return [clientBundleConfig, serverBundleConfig, serviceWorkerBundle];
+  return [clientBundleConfig, serverBundleConfig].concat(isDevBuild ? []: [serviceWorkerBundle]);
 };
