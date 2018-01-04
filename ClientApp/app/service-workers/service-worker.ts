@@ -19,14 +19,19 @@
               "/fetch-data",
               "/dist/vendor.css",
               "/dist/vendor.js",
-              "/dist/main-client.js"
-            ])
+              "/dist/main-client.js",
+              "/dist/vendor.js.gz",
+              "/dist/main-client.js.gz",
+              
+            ]).catch(e => e)
         )
     );
     console.log("installed");
+    event.waitUntil(workerSelf.skipWaiting());
   });
   workerSelf.addEventListener("fetch", function(event) {
     console.log("Fetch event for ", event.request.url);
+    if (navigator.onLine) return;
     event.respondWith(
       caches
         .match(event.request)
@@ -37,10 +42,8 @@
           }
           console.log("Network request for ", event.request.url);
           return fetch(event.request);
-
         })
-        .catch(function(error) {
-        })
+        .catch(function(error) {})
     );
   });
 
@@ -56,14 +59,18 @@
         event.data.message
       }`
     );
-    if(!claimed){
     let myClients = await workerSelf.clients.matchAll();
     console.log(myClients);
     let windowClient = myClients.find(i => true);
     windowClient.postMessage("hello client");
-    }
   });
 
+  if (claimed) {
+    let myClients = await workerSelf.clients.matchAll();
+    console.log(myClients);
+    let windowClient = myClients.find(i => true);
+    windowClient.postMessage("hello client");
+  }
   // let manifest = await (await fetch("/dist/vendor-manifest.json")).json();
   // if (manifest !== undefined)
   //   console.log(`I got the manifest  ${JSON.stringify(manifest, null, "\t")}`);

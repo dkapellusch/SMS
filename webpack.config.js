@@ -10,7 +10,7 @@ const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-web
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = env => {
-  const isDevBuild = false; //!(env && env.prod);
+  const isDevBuild = true;
   const sharedConfig = {
     stats: {
       modules: false,
@@ -25,16 +25,17 @@ module.exports = env => {
       publicPath: "dist/"
     },
     module: {
-      rules: [{
+      rules: [
+        {
           test: /\.ts$/,
           include: /ClientApp/,
-          use: isDevBuild ? [
-            "ts-loader?happyPackMode=true",
-            "angular2-template-loader",
-            "angular2-router-loader"
-          ] : [
-            "@ngtools/webpack",
-          ]
+          use: isDevBuild
+            ? [
+                "ts-loader?happyPackMode=true",
+                "angular2-template-loader",
+                "angular2-router-loader"
+              ]
+            : ["@ngtools/webpack"]
         },
         {
           test: /\.html$/,
@@ -57,10 +58,12 @@ module.exports = env => {
         }
       ]
     },
-    plugins: isDevBuild ? [
-      new ForkTsCheckerWebpackPlugin(),
-      new ForkTsCheckerNotifierWebpackPlugin()
-    ] : []
+    plugins: isDevBuild
+      ? [
+          new ForkTsCheckerWebpackPlugin(),
+          new ForkTsCheckerNotifierWebpackPlugin()
+        ]
+      : []
   };
 
   const clientBundleOutputDir = "./wwwroot/dist";
@@ -76,46 +79,47 @@ module.exports = env => {
         context: __dirname,
         manifest: require("./wwwroot/dist/vendor-manifest.json")
       })
-      // new ManifestPlugin({path:clientBundleOutputDir})
     ].concat(
-      isDevBuild ? [
-        new webpack.SourceMapDevToolPlugin({
-          filename: "[file].map", // Remove this line if you prefer inline source maps
-          moduleFilenameTemplate: path.relative(
-            clientBundleOutputDir,
-            "[resourcePath]"
-          ) // Point sourcemap entries to the original file locations on disk
-        })
-      ] : [
-        new webpack.optimize.UglifyJsPlugin({
-          mangle: true,
-          compress: {
-            warnings: false,
-            pure_getters: true,
-            unsafe: true,
-            unsafe_comps: true,
-            screw_ie8: true
-          },
-          output: {
-            comments: false
-          },
-        }),
-        new CompressionPlugin({
-          asset: "[path].gz[query]",
-          algorithm: "gzip",
-          test: /\.js$|\.css$|\.html$/,
-          threshold: 10240,
-          minRatio: 0
-        }),
-        new AngularCompilerPlugin({
-          tsConfigPath: "./tsconfig.json",
-          entryModule: path.join(
-            __dirname,
-            "ClientApp/app/modules/app.module.browser#AppModule"
-          ),
-          exclude: ["./**/*.server.ts"]
-        })
-      ]
+      isDevBuild
+        ? [
+            new webpack.SourceMapDevToolPlugin({
+              filename: "[file].map",
+              moduleFilenameTemplate: path.relative(
+                clientBundleOutputDir,
+                "[resourcePath]"
+              )
+            })
+          ]
+        : [
+            new webpack.optimize.UglifyJsPlugin({
+              mangle: true,
+              compress: {
+                warnings: false,
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                screw_ie8: true
+              },
+              output: {
+                comments: false
+              }
+            }),
+            new AngularCompilerPlugin({
+              tsConfigPath: "./tsconfig.json",
+              entryModule: path.join(
+                __dirname,
+                "ClientApp/app/modules/app.module.browser#AppModule"
+              ),
+              exclude: ["./**/*.server.ts"]
+            }),
+            new CompressionPlugin({
+              asset: "[path].gz[query]",
+              algorithm: "gzip",
+              test: /\.js$|\.css$|\.html$/,
+              threshold: 10240,
+              minRatio: 0
+            })
+          ]
     )
   });
 
@@ -137,15 +141,17 @@ module.exports = env => {
       publicPath: "dist/"
     },
     module: {
-      rules: [{
-        test: /\.ts$/,
-        include: path.resolve(__dirname, "ClientApp/app/service-workers"),
-        use: [
-          "ts-loader?happyPackMode=true",
-          "angular2-template-loader",
-          "angular2-router-loader"
-        ]
-      }]
+      rules: [
+        {
+          test: /\.ts$/,
+          include: path.resolve(__dirname, "ClientApp/app/service-workers"),
+          use: [
+            "ts-loader?happyPackMode=true",
+            "angular2-template-loader",
+            "angular2-router-loader"
+          ]
+        }
+      ]
     },
     plugins: []
   };
@@ -164,21 +170,19 @@ module.exports = env => {
         sourceType: "commonjs2",
         name: "./vendor"
       })
-      //     ,new WebpackShellPlugin({
-      //         onBuildStart: [],
-      //         onBuildEnd: ['del ' + path.join(__dirname,"ClientApp/service-worker.js")]
-      //    })
     ].concat(
-      isDevBuild ? [] : [
-        new AngularCompilerPlugin({
-          tsConfigPath: "./tsconfig.json",
-          entryModule: path.join(
-            __dirname,
-            "ClientApp/app/modules/app.module.server#AppModule"
-          ),
-          exclude: ["./**/*.browser.ts"]
-        })
-      ]
+      isDevBuild
+        ? []
+        : [
+            new AngularCompilerPlugin({
+              tsConfigPath: "./tsconfig.json",
+              entryModule: path.join(
+                __dirname,
+                "ClientApp/app/modules/app.module.server#AppModule"
+              ),
+              exclude: ["./**/*.browser.ts"]
+            })
+          ]
     ),
     output: {
       libraryTarget: "commonjs",
@@ -187,5 +191,7 @@ module.exports = env => {
     target: "node",
     devtool: "eval-cheap-module-source-map"
   });
-  return [clientBundleConfig, serverBundleConfig].concat(isDevBuild ? []: [serviceWorkerBundle]);
+  return [clientBundleConfig, serverBundleConfig].concat(
+    isDevBuild ? [] : [serviceWorkerBundle]
+  );
 };

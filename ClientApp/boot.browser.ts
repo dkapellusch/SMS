@@ -5,7 +5,7 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { AppModule } from "./app/modules/app.module.browser";
 import { log } from "util";
 
-async function getServiceWorker(serviceWorkerUrl: string ): Promise<ServiceWorker> {
+async function getServiceWorker( serviceWorkerUrl: string ): Promise<ServiceWorker> {
   let registration = await navigator.serviceWorker.register(serviceWorkerUrl);
   console.log("registered");
   if (registration.installing) {
@@ -23,10 +23,12 @@ async function getServiceWorker(serviceWorkerUrl: string ): Promise<ServiceWorke
 }
 
 if (module.hot) {
+  console.log(navigator.serviceWorker.getRegistrations());
   navigator.serviceWorker.getRegistrations().then(function(registrations) {
-    for(let registration of registrations) {
-     registration.unregister();
-   } });
+    for (let registration of registrations) {
+      registration.unregister();
+    }
+  });
 
   module.hot.accept();
   module.hot.dispose(() => {
@@ -48,20 +50,19 @@ if (module.hot) {
         }
       });
   });
-  
 } else {
+
   enableProdMode();
-  
+
   if ("serviceWorker" in navigator) {
     getServiceWorker("/service-worker.js").then(sw => {
       sw.postMessage({ message: "hello friend" });
+     
     });
-  
+
     navigator.serviceWorker.addEventListener("message", e => {
       console.log("I got a message from my friend the worker");
     });
-}
-
+  }
 }
 platformBrowserDynamic().bootstrapModule(AppModule);
-

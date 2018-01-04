@@ -28,9 +28,6 @@ const nonTreeShakableModules = [
     'hammerjs',
     'reflect-metadata',
     '@angular/material/prebuilt-themes/deeppurple-amber.css',
-    // '@angular/material/prebuilt-themes/purple-green.css',
-    // '@angular/material/prebuilt-themes/indigo-pink.css',
-    // '@angular/material/prebuilt-themes/pink-bluegrey.css',
     "./wwwroot/styles/css/material-icons.css",
     'rxjs',
 ];
@@ -39,7 +36,7 @@ const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
 module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin('vendor.css');
-    const isDevBuild = false; //  !(env && env.prod);
+    const isDevBuild = true; 
     const sharedConfig = {
         stats: {
             modules: false
@@ -59,14 +56,14 @@ module.exports = (env) => {
             library: '[name]_[hash]'
         },
         plugins: [
-            new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/11580
-            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), // Workaround for https://github.com/angular/angular/issues/14898
-            new webpack.IgnorePlugin(/^vertx$/), // Workaround for https://github.com/stefanpenner/es6-promise/issues/100
+            new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), 
+            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), 
+            new webpack.IgnorePlugin(/^vertx$/), 
         ].concat(isDevBuild ? [] : [
             new webpack.optimize.UglifyJsPlugin({
                 mangle: true,
                 compress: {
-                    warnings: false, // Suppress uglification warnings
+                    warnings: false, 
                     pure_getters: true,
                     unsafe: true,
                     unsafe_comps: true,
@@ -75,7 +72,7 @@ module.exports = (env) => {
                 output: {
                     comments: false,
                 },
-                exclude: [/\.min\.js$/gi] // skip pre-minified libs
+                exclude: [/\.min\.js$/gi] 
             }),
             new CompressionPlugin({
                 asset: "[path].gz[query]",
@@ -89,8 +86,8 @@ module.exports = (env) => {
 
     const clientBundleConfig = merge(sharedConfig, {
         entry: {
-            // To keep development builds fast, include all vendor dependencies in the vendor bundle.
-            // But for production builds, leave the tree-shakable ones out so the AOT compiler can produce a smaller bundle.
+            
+            
             vendor: isDevBuild ? allModules : nonTreeShakableModules
         },
         output: {
