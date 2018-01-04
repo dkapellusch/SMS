@@ -17,7 +17,7 @@ namespace SMS.Models.Animals
         private RecordStatus _recordStatus;
         private DateTime? _birthDate;
         private int? _ageInMonths;
-        
+
         public event PropertyChangedEventHandler _PropertyChanged;
 
         public Animal()
