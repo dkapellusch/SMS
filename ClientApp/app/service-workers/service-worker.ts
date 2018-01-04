@@ -10,7 +10,6 @@
           async c =>
             await c.addAll([
               "/",
-              "/index.html",
               "/service-worker.js",
               "/home",
               "/sampleForm",
@@ -18,7 +17,6 @@
               "/ex-table",
               "/animal-table",
               "/fetch-data",
-              "/styles/css/site.css",
               "/dist/vendor.css",
               "/dist/vendor.js",
               "/dist/main-client.js"
