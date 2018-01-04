@@ -25,9 +25,9 @@ async function getServiceWorker(serviceWorkerUrl: string ): Promise<ServiceWorke
 if (module.hot) {
   navigator.serviceWorker.getRegistrations().then(function(registrations) {
     for(let registration of registrations) {
-     registration.unregister()
-   } })
-   
+     registration.unregister();
+   } });
+
   module.hot.accept();
   module.hot.dispose(() => {
     const oldRootElem = document.querySelector("app");

@@ -51,7 +51,7 @@ namespace SMS
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             env.ConfigureNLog("nlog.Config");
-            env.EnvironmentName = EnvironmentName.Development;
+            env.EnvironmentName = EnvironmentName.Production;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

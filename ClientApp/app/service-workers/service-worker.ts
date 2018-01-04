@@ -1,8 +1,8 @@
 (async function() {
   let workerSelf = self as any;
+  let claimed = false;
 
   workerSelf.addEventListener("install", function(event: any) {
-    event.waitUntil(workerSelf.skipWaiting());
     event.waitUntil(
       caches
         .open("SMS")
@@ -49,6 +49,7 @@
   workerSelf.addEventListener("activate", function(event: any) {
     event.waitUntil(workerSelf.clients.claim());
     console.log("activated");
+    claimed = true;
   });
 
   workerSelf.addEventListener("message", async function(event) {
@@ -57,10 +58,12 @@
         event.data.message
       }`
     );
+    if(!claimed){
     let myClients = await workerSelf.clients.matchAll();
     console.log(myClients);
     let windowClient = myClients.find(i => true);
     windowClient.postMessage("hello client");
+    }
   });
 
   // let manifest = await (await fetch("/dist/vendor-manifest.json")).json();
