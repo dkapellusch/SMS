@@ -51,7 +51,7 @@ namespace SMS
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             env.ConfigureNLog("nlog.Config");
-            env.EnvironmentName = EnvironmentName.Production;
+            env.EnvironmentName = EnvironmentName.Development;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -80,6 +80,11 @@ namespace SMS
                     if (content.File.Name.EndsWith(".js.gz"))
                     {
                         content.Context.Response.Headers["Content-Type"] = "text/javascript";
+                        content.Context.Response.Headers["Content-Encoding"] = "gzip";
+                    }
+                    if (content.File.Name.EndsWith(".css.gz"))
+                    {
+                        content.Context.Response.Headers["Content-Type"] = "text/css";
                         content.Context.Response.Headers["Content-Encoding"] = "gzip";
                     }
                 }

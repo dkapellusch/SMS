@@ -2,18 +2,16 @@ import {LineChartComponent} from '../linechart/linechart.component';
 import { Component, HostListener, AfterViewInit, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
 import { InitializationService } from '../../services/initialization.service';
 import {isNullOrUndefined} from 'util';
-
 @Component({
 	selector: 'home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit {
-
-	public Hovered: boolean = true;
 	private _originalText: string = 'S.M.S.';
 	private _transitionText = 'Sample. Management. System.';
 
+	public Hovered: boolean = true;
 	public SmsText = this._transitionText;
 
 	@ViewChild('banner') private _banner :ElementRef;
@@ -34,7 +32,7 @@ export class HomeComponent implements AfterViewInit {
 	public get Initialized$(): boolean {
 		return this._initializationService.Initialized;
 	}
-
+	
 	ngAfterViewInit(): void {
 		setTimeout(()=>{
 			if(!isNullOrUndefined(this) && ! isNullOrUndefined(this._changeDetector)){

@@ -18,6 +18,7 @@ const treeShakableModules = [
     '@angular/cdk',
     '@angular/material',
     'zone.js',
+    "lodash-es",
     'ng2-charts'
 ];
 const nonTreeShakableModules = [
@@ -36,7 +37,7 @@ const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
 module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin('vendor.css');
-    const isDevBuild = false; 
+    const isDevBuild = true; 
     const sharedConfig = {
         stats: {
             modules: false
@@ -57,7 +58,7 @@ module.exports = (env) => {
         },
         plugins: [
             new webpack.ContextReplacementPlugin(/\@angular\b.*\b(bundles|linker)/, path.join(__dirname, './ClientApp')), 
-            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)@angular/, path.join(__dirname, './ClientApp')), 
+            new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)(@angular|esm5)/, path.join(__dirname, './ClientApp')), 
             new webpack.IgnorePlugin(/^vertx$/), 
         ].concat(isDevBuild ? [] : [
             new webpack.optimize.UglifyJsPlugin({

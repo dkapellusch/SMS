@@ -10,6 +10,7 @@
           async c =>
             await c.addAll([
               "/",
+              "/index.html",
               "/service-worker.js",
               "/home",
               "/sampleForm",
@@ -19,31 +20,34 @@
               "/fetch-data",
               "/dist/vendor.css",
               "/dist/vendor.js",
+              "/styles/css/site.css",
               "/dist/main-client.js",
+              "/dist/vendor.css.gz",
               "/dist/vendor.js.gz",
+              "/styles/css/site.css.gz",
               "/dist/main-client.js.gz",
               
             ]).catch(e => e)
         )
     );
     console.log("installed");
-    event.waitUntil(workerSelf.skipWaiting());
   });
   workerSelf.addEventListener("fetch", function(event) {
     console.log("Fetch event for ", event.request.url);
-    if (navigator.onLine) return;
     event.respondWith(
       caches
         .match(event.request)
         .then(function(response) {
-          if (response) {
+          if (response && !navigator.onLine) {
             console.log("Found ", event.request.url, " in cache");
             return response;
           }
           console.log("Network request for ", event.request.url);
           return fetch(event.request);
         })
-        .catch(function(error) {})
+        .catch(function(error) {
+          console.log(`Couldn't get ${event.request}, network is down and it does not exist in the cache. [${error}]`);
+        })
     );
   });
 
