@@ -10,7 +10,7 @@ const ForkTsCheckerNotifierWebpackPlugin = require("fork-ts-checker-notifier-web
 const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = env => {
-  const isDevBuild = true;
+  const isDevBuild = false;
   const sharedConfig = {
     stats: {
       modules: false,

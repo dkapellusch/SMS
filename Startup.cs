@@ -36,7 +36,7 @@ namespace SMS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRespository, SamplesRepository>();
             services.AddTransient<IAnimalRepository, AnimalRepository>();
-            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreSQL")));
+            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreWorkSQL")));
 
             services.AddDistributedMemoryCache();
             services.AddSession();
@@ -51,7 +51,7 @@ namespace SMS
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
             env.ConfigureNLog("nlog.Config");
-            env.EnvironmentName = EnvironmentName.Development;
+            env.EnvironmentName = EnvironmentName.Production;
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
