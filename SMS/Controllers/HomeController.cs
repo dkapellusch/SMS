@@ -11,13 +11,13 @@ namespace SMS.Controllers
     {
         private ILogger _logger;
 
-        public HomeController(ILogger<HomeController> logger, ISampleRespository samples)
+        public HomeController(ILogger<HomeController> logger, ISampleRepository samples)
         {
             _logger = logger;
             Samples = samples;
         }
 
-        private ISampleRespository Samples { get; }
+        private ISampleRepository Samples { get; }
 
         public IActionResult Error()
         {

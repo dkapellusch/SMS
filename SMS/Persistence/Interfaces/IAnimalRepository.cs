@@ -6,7 +6,7 @@ using SMS.Models.Animals;
 
 namespace SMS.Persistence.Interfaces
 {
-    public interface IAnimalRepository : IAbstractRepository
+    public interface IAnimalRepository
     {
         Task AddAnimal(Animal animal);
 

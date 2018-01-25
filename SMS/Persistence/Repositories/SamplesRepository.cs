@@ -9,7 +9,7 @@ using SMS.Persistence.Interfaces;
 
 namespace SMS.Persistence.Repositories
 {
-    public class SamplesRepository : AbstractRepository, ISampleRespository
+    public class SamplesRepository : AbstractRepository, ISampleRepository
     {
         public SamplesRepository(PostgresqlContext context) : base(context)
         {

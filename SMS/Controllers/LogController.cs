@@ -16,15 +16,15 @@ namespace SMS.Controllers
     [Route("logging")]
     public class LogController : Controller
     {
-        public LogController(ILogger<LogController> _logger, ISampleRespository samples)
+        public LogController(ILogger<LogController> logger, ISampleRepository samples)
         {
-            Logger = _logger;
+            Logger = logger;
             Samples = samples;
         }
 
         private ILogger<LogController> Logger { get; }
 
-        private ISampleRespository Samples { get; }
+        private ISampleRepository Samples { get; }
 
         [HttpGet("observe/")]
         public async Task<TimeSpan> SampleFromObservable()

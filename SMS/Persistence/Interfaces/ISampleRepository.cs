@@ -5,7 +5,7 @@ using SMS.Models.Samples;
 
 namespace SMS.Persistence.Interfaces
 {
-    public interface ISampleRespository : IAbstractRepository
+    public interface ISampleRepository
     {
         IObservable<Sample> GetObservableSampleByNumber(int subjectNumber);
 

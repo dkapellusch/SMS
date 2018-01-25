@@ -87,7 +87,7 @@ namespace SMS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddTransient<ISampleRespository, SamplesRepository>();
+            services.AddTransient<ISampleRepository, SamplesRepository>();
             services.AddTransient<IAnimalRepository, AnimalRepository>();
             services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreWorkSQL")));
 

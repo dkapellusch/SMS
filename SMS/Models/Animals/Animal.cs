@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 
 using SMS.Models.Enums;
+using SMS.Models.Interfaces;
 using SMS.Models.Samples;
 
 namespace SMS.Models.Animals
 {
-    public class Animal
+    public class Animal : IModel
     {
         private int? _ageInMonths;
 
