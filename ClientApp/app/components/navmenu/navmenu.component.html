@@ -21,8 +21,7 @@
         </button>
         <button type="button" mat-button (click)="sidenav.open()">
         </button>
-        <div style="margin-left:10%; margin-top:5%; margin-bottom:8%;
-        " class="{{navLink.ItemClasses.join(' ')}}" *ngFor="let navLink of NavLinks">
+        <div style="margin-bottom: 8%; margin-left: 10%; margin-top: 5%;" class="{{navLink.ItemClasses.join(' ')}}" *ngFor="let navLink of NavLinks">
             <a class="{{navLink.AnchorClasses.join(' ')}}" [routerLink]="navLink.Link">
                 <span>
                     <mat-icon>{{navLink.Icon}}</mat-icon>
@@ -33,7 +32,7 @@
     </mat-sidenav>
 
     <div class="toolBarContainer" [ngStyle.xl]="{paddingBottom:'8vh'}" [ngStyle.lg]="{paddingBottom:'8vh'}" [ngStyle.xs]="{paddingBottom:'10vh'}"
-        [ngStyle]="{paddingBottom:'8vh'}" [ngStyle.md]="{paddingBottom:'9vh'}">
+         [ngStyle]="{paddingBottom:'8vh'}" [ngStyle.md]="{paddingBottom:'9vh'}">
         <mat-toolbar color="primary">
             <button type="button" mat-icon-button (click)="sidenav.open()">
                 <mat-icon aria-label="Menu Icon">view_headline</mat-icon>

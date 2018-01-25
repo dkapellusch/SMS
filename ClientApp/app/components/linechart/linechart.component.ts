@@ -1,9 +1,9 @@
-import {InitializationService} from './../../services/initialization.service';
-import {Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild} from "@angular/core";
+import {InitializationService} from "./../../services/initialization.service";
+import {Component, AfterViewInit, Input, ElementRef, ViewChild} from "@angular/core";
 
 @Component({
-	selector: 'linechart',
-	template: `
+    selector: "linechart",
+    template: `
 <div [ngStyle.sm]="{'width':'90vw'}" style="width:80vw;height:30vh; margin:auto; display:block;"  #chartElement>
     <div>
         <canvas baseChart  [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
@@ -17,111 +17,124 @@ import {Component, HostListener, AfterViewInit, Input, ElementRef, ViewChild} fr
 </div>
 `
 })
-export class LineChartComponent implements AfterViewInit {
+export class LineChartComponent implements AfterViewInit
+{
+    constructor(private _initializationService: InitializationService)
+    {
+    }
 
-	constructor(private _initializationService: InitializationService) {
-	}
+    @Input()
+    public ShowButton = true;
+    @ViewChild("chartElement")
+    public ChartElement: ElementRef;
+    public _value = 5000;
 
-	@Input() public ShowButton: boolean = true;
-	@ViewChild('chartElement') public ChartElement: ElementRef;
-	_value = 5000;
+    public get Value()
+    {
+        return this._value;
+    }
 
-	get Value() {
-		return this._value;
-	}
+    public test(e: any)
+    {
+        const previousValue = this._value;
+        this._value = e.value;
+        if (previousValue == 0) this.RandomizeOnInterval();
+    }
 
-	test(e: any) {
-		let previousValue = this._value;
-		this._value = e.value;
-		if (previousValue == 0) this.RandomizeOnInterval();
-	}
+    public RandomizeOnInterval()
+    {
+        if (this.Value > 0)
+        {
+            setTimeout(function()
+            {
+                this.randomize();
+                this.RandomizeOnInterval();
+            }.bind(this), this.Value);
+        }
+    }
 
-	RandomizeOnInterval() {
-		if (this.Value > 0) {
-			setTimeout(function () {
-				this.randomize();
-				this.RandomizeOnInterval()
-			}.bind(this), this.Value)
-		}
-	}
+    public ngAfterViewInit(): void
+    {
+        //Only for development with HMR should not survive to production
+        if (this._initializationService.Development)
+        {
+            // window.dispatchEvent(new Event('load'));
+            this.RandomizeOnInterval();
+        }
+    }
 
-	ngAfterViewInit(): void {
-		//Only for development with HMR should not survive to production
-		if (this._initializationService.Development) {
-			// window.dispatchEvent(new Event('load'));
-			this.RandomizeOnInterval();
-		}
-	}
+    public lineChartData: Array<any> = [
+        {
+            data: [65, 59, 80, 81, 56, 55, 40],
+            label: "Series A"
+        },
+        {
+            data: [28, 48, 40, 19, 86, 27, 90],
+            label: "Series B"
+        },
+        {
+            data: [18, 48, 77, 9, 100, 27, 40],
+            label: "Series C"
+        }
+    ];
 
-	public lineChartData: Array<any> = [{
-		data: [65, 59, 80, 81, 56, 55, 40],
-		label: 'Series A'
-	},
-		{
-			data: [28, 48, 40, 19, 86, 27, 90],
-			label: 'Series B'
-		},
-		{
-			data: [18, 48, 77, 9, 100, 27, 40],
-			label: 'Series C'
-		}
-	];
+    public lineChartLabels: Array<any> = ["January", "February", "March", "April", "May", "June", "July"];
+    public lineChartOptions: any = {
+        responsive: true
+    };
 
-	public lineChartLabels: Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-	public lineChartOptions: any = {
-		responsive: true
-	};
-  
-	public lineChartColors: Array<any> = [{ // grey
-		backgroundColor: 'rgba(148,159,177,0.2)',
-		borderColor: 'rgba(148,159,177,1)',
-		pointBackgroundColor: 'rgba(148,159,177,1)',
-		pointBorderColor: '#fff',
-		pointHoverBackgroundColor: '#fff',
-		pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-	},
-		{ // dark grey
-			backgroundColor: 'rgba(77,83,96,0.2)',
-			borderColor: 'rgba(77,83,96,1)',
-			pointBackgroundColor: 'rgba(77,83,96,1)',
-			pointBorderColor: '#fff',
-			pointHoverBackgroundColor: '#fff',
-			pointHoverBorderColor: 'rgba(77,83,96,1)'
-		},
-		{ // grey
-			backgroundColor: 'rgba(148,159,177,0.2)',
-			borderColor: 'rgba(148,159,177,1)',
-			pointBackgroundColor: 'rgba(148,159,177,1)',
-			pointBorderColor: '#fff',
-			pointHoverBackgroundColor: '#fff',
-			pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-		}
-	];
-	
-	public lineChartLegend: boolean = true;
-	public lineChartType: string = 'line';
+    public lineChartColors: Array<any> = [
+        { // grey
+            backgroundColor: "rgba(148,159,177,0.2)",
+            borderColor: "rgba(148,159,177,1)",
+            pointBackgroundColor: "rgba(148,159,177,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(148,159,177,0.8)"
+        },
+        { // dark grey
+            backgroundColor: "rgba(77,83,96,0.2)",
+            borderColor: "rgba(77,83,96,1)",
+            pointBackgroundColor: "rgba(77,83,96,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(77,83,96,1)"
+        },
+        { // grey
+            backgroundColor: "rgba(148,159,177,0.2)",
+            borderColor: "rgba(148,159,177,1)",
+            pointBackgroundColor: "rgba(148,159,177,1)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(148,159,177,0.8)"
+        }
+    ];
 
-	public randomize(): void {
-		let _lineChartData: Array<any> = new Array(this.lineChartData.length);
-		for (let i = 0; i < this.lineChartData.length; i++) {
-			_lineChartData[i] = {
-				data: new Array(this.lineChartData[i].data.length),
-				label: this.lineChartData[i].label
-			};
-			for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-				_lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-			}
-		}
-		this.lineChartData = _lineChartData;
-	}
+    public lineChartLegend = true;
+    public lineChartType = "line";
 
-	// events
-	public chartClicked(e: any): void {
+    public randomize(): void
+    {
+        const _lineChartData = new Array(this.lineChartData.length);
+        for (let i = 0; i < this.lineChartData.length; i++)
+        {
+            _lineChartData[i] = {
+                data: new Array(this.lineChartData[i].data.length),
+                label: this.lineChartData[i].label
+            };
+            for (let j = 0; j < this.lineChartData[i].data.length; j++)
+                _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
+        }
+        this.lineChartData = _lineChartData;
+    }
 
-	}
+    // events
+    public chartClicked(e: any): void
+    {
+    }
 
-	public chartHovered(e: any): void {
-
-		let x = 2;
-	}
+    public chartHovered(e: any): void
+    {
+        const x = 2;
+    }
 }

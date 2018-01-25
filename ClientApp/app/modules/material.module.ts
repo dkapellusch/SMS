@@ -2,47 +2,47 @@
 import {CdkTableModule} from "@angular/cdk/table";
 
 import {
-	MatButtonModule,
-	MatCheckboxModule,
-	MatInputModule,
-	MatChipsModule,
-	MatSlideToggleModule,
-	MatRadioModule,
-	MatTabsModule,
-	MatCardModule,
-	MatButtonToggleModule,
-	MatProgressBarModule,
-	MatSidenavModule,
-	MatToolbarModule,
-	MatIconModule,
-	MatTableModule,
-	MatCommonModule,
-	MatMenuModule,
-	MatDatepickerModule,
-	MatNativeDateModule,
-	MatSnackBarModule,
-	MatSliderModule,
-	MatListModule,
-	MatOptionModule,
-	MatRippleModule,
-	MatGridListModule,
-	MatPaginatorModule,
-	MatAutocompleteModule,
-	MatFormFieldModule,
-	MatPseudoCheckboxModule,
-	MatSortModule,
-	MatProgressSpinnerModule,
-	MatExpansionModule,
-	MatSelectModule
-} from "@angular/material";
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatChipsModule,
+    MatSlideToggleModule,
+    MatRadioModule,
+    MatTabsModule,
+    MatCardModule,
+    MatButtonToggleModule,
+    MatProgressBarModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatCommonModule,
+    MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatSliderModule,
+    MatListModule,
+    MatOptionModule,
+    MatRippleModule,
+    MatGridListModule,
+    MatPaginatorModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatPseudoCheckboxModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    MatSelectModule
+    } from "@angular/material";
 
 let materialModules = [
-	MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
-	MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
-	MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
-	MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule,
-	MatPaginatorModule, MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule,
-	MatProgressSpinnerModule, CdkTableModule, MatExpansionModule, MatSelectModule
+    MatButtonModule, MatCheckboxModule, MatInputModule, MatChipsModule, MatSlideToggleModule, MatRadioModule,
+    MatTabsModule, MatCardModule, MatButtonToggleModule, MatProgressBarModule, MatSidenavModule, MatToolbarModule,
+    MatIconModule, MatTableModule, MatCommonModule, MatMenuModule, MatDatepickerModule, MatNativeDateModule,
+    MatSnackBarModule, MatSliderModule, MatListModule, MatOptionModule, MatRippleModule, MatGridListModule,
+    MatPaginatorModule, MatAutocompleteModule, MatFormFieldModule, MatPseudoCheckboxModule, MatSortModule,
+    MatProgressSpinnerModule, CdkTableModule, MatExpansionModule, MatSelectModule
 ];
 
 @NgModule({
@@ -52,5 +52,3 @@ let materialModules = [
 export class MaterialModule
 {
 }
-
-

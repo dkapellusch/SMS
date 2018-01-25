@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Linq;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
+
 using SMS.Models;
 using SMS.Models.Samples;
-using System.Linq;
-using System;
-using System.Reactive.Linq;
 using SMS.Persistence.Interfaces;
 
 namespace SMS.Persistence.Repositories
@@ -17,32 +18,31 @@ namespace SMS.Persistence.Repositories
 
         private PostgresqlContext Context { get; }
 
-
-        public Sample GetSampleByNumber(int subjectNumber)
-        {
-            return Context.Samples.FirstOrDefault(s => s.SubjectNumber == subjectNumber);
-        }
-
         public async Task AddThingAsync(Thing thing)
         {
             await Context.Things.AddAsync(thing);
             await Context.SaveChangesAsync();
         }
 
-        public void RemoveAllThings()
+        public IObservable<Sample> GetObservableSampleByNumber(int subjectNumber)
         {
-            Context.Things.RemoveRange(Context.Things);
-            Context.SaveChanges();
+            return Context.Samples.ToObservable();
+        }
+
+        public Sample GetSampleByNumber(int subjectNumber)
+        {
+            return Context.Samples.FirstOrDefault(s => s.Id == subjectNumber);
         }
 
         public async Task<Sample> GetSampleByNumberAsync(int subjectNumber)
         {
-            return (Sample) await Context.FindAsync(typeof(Sample), subjectNumber);
+            return (Sample)await Context.FindAsync(typeof(Sample), subjectNumber);
         }
 
-        public IObservable<Sample> GetObservableSampleByNumber(int subjectNumber)
+        public void RemoveAllThings()
         {
-            return Context.Samples.ToObservable();
+            Context.Things.RemoveRange(Context.Things);
+            Context.SaveChanges();
         }
     }
 }

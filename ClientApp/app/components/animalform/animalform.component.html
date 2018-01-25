@@ -1,8 +1,8 @@
 <form [ngStyle]="{'font-size': '2.4vh'}" #animalForm="ngForm">
     <!-- todo: consollidate styles -->
     <!--ANIMAL TYPE-->
-    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style=" width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <mat-select style="text-align: center;" name="animalType" [(ngModel)]="Model.AnimalType" tabindex=1>
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.display]="'block'" [style.float]="'center'">
+        <mat-select style="text-align: center;" name="animalType" [(ngModel)]="Model.AnimalType" tabindex="1">
             <mat-option *ngFor="let animal of Animals" [value]="animal">
                 {{ animal }}
             </mat-option>
@@ -15,21 +15,21 @@
     </mat-form-field>
 
     <!--SUBJECT NUMBER-->
-    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.display]="'block'" [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="7" color="primary" (keydown)="validateNumber($event)"
-            name="subjectNumber" [(ngModel)]="Model.Id" tabindex=2/>
+               name="subjectNumber" [(ngModel)]="Model.Id" tabindex="2"/>
         <mat-placeholder>
-            <i style="padding-right:5px;" class="fa fa-tag" aria-hidden="true"></i>
+            <i style="padding-right: 5px;" class="fa fa-tag" aria-hidden="true"></i>
             Subject Number
         </mat-placeholder>
 
     </mat-form-field>
 
     <!--NAME-->
-    <mat-form-field *ngIf="Model.AnimalType == 'Monkey' || Model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;"
-        [style.display]="'block'" [style.float]="'center'">
+    <mat-form-field *ngIf="Model.AnimalType == 'Monkey' || Model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;"
+                    [style.display]="'block'" [style.float]="'center'">
         <input name="name" style="text-align: center;" matInput type="text" [maxLength]="50" color="primary" [(ngModel)]="Model.Name"
-            tabindex=3/>
+               tabindex="3"/>
         <mat-placeholder>
             <mat-icon>account_box</mat-icon>
             Name
@@ -37,10 +37,10 @@
     </mat-form-field>
 
     <!--AGE IN MONTHS-->
-    <mat-form-field *ngIf="Model.AnimalType != 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
-        [style.float]="'center'">
+    <mat-form-field *ngIf="Model.AnimalType != 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.display]="'block'"
+                    [style.float]="'center'">
         <input style="text-align: center;" matInput type="text" [maxLength]="3" color="primary" (keydown)="validateNumber($event)"
-            name="age" [(ngModel)]="Model.AgeInMonths" tabindex=4/>
+               name="age" [(ngModel)]="Model.AgeInMonths" tabindex="4"/>
         <mat-placeholder>
             <mat-icon>date_range</mat-icon>
             Age In Months
@@ -48,8 +48,8 @@
     </mat-form-field>
 
     <!--EXPERIMENT-->
-    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'" [style.float]="'center'">
-        <input matInput placeholder="State" [matAutocomplete]="auto" (input)=optionChanged($event)>
+    <mat-form-field [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.display]="'block'" [style.float]="'center'">
+        <input matInput placeholder="State" [matAutocomplete]="auto" (input)="optionChanged($event)">
         <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let option of filteredOptions" [value]="option">
                 <span> {{option}}</span>
@@ -58,16 +58,16 @@
     </mat-form-field>
 
     <!--BIRTHDAY-->
-    <mat-form-field *ngIf="Model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.display]="'block'"
-        [style.float]="'center'">
+    <mat-form-field *ngIf="Model.AnimalType == 'Human'" [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.display]="'block'"
+                    [style.float]="'center'">
         <input style="text-align: center;" matInput [matDatepicker]="picker" placeholder="Birthday" (dateChange)="SelectedTime=$event.value"
-            name="birthday" [(ngModel)]="Model.BirthDate" tabindex=5>
+               name="birthday" [(ngModel)]="Model.BirthDate" tabindex="5">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <!--SUBMIT-->
-    <div [ngStyle.lt-md]="{'width':'35vw'}" style="width:20vw; margin:auto;" [style.float]="'center'">
+    <div [ngStyle.lt-md]="{'width':'35vw'}" style="margin: auto; width: 20vw;" [style.float]="'center'">
         <button mat-button color="primary" (click)="submit()">Submit</button>
     </div>
 

@@ -1,14 +1,14 @@
-<div 
-  id="smsBanner"
-  *ngIf="Initialized$" 
-  [class.tracking-in-expand]="Hovered" 
-  [class.tracking-out-contract]="!Hovered" 
-   style="font-size:5.9vw; display:none; height:auto; width:auto; margin:auto;font-family: 'Roboto Condensed', sans-serif; color:rgb(107,131,108);"
-  (mouseover)="SmsHovered($event)" 
-  (mouseout)="SmsUnHovered($event)"
-  #banner>
+<div
+    id="smsBanner"
+    *ngIf="Initialized$"
+    [class.tracking-in-expand]="Hovered"
+    [class.tracking-out-contract]="!Hovered"
+    style="color: rgb(107, 131, 108); display: none; font-family: 'Roboto Condensed', sans-serif; font-size: 5.9vw; height: auto; margin: auto; width: auto;"
+    (mouseover)="SmsHovered($event)"
+    (mouseout)="SmsUnHovered($event)"
+    #banner>
     {{SmsText}}
 </div>
 <div>
-<linechart   style="margin-top:0;"  [ShowButton] ="false" #graph ></linechart>
+    <linechart style="margin-top: 0;" [ShowButton]="false" #graph></linechart>
 </div>

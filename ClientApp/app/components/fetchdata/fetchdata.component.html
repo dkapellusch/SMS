@@ -4,21 +4,21 @@
     <mat-spinner></mat-spinner>
 </p>
 
-<table class='table' *ngIf="forecasts"  #magic>
+<table class="table" *ngIf="forecasts" #magic>
     <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Summary</th>
-        </tr>
+    <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Summary</th>
+    </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.dateFormatted | date }}</td>
-            <td>{{ forecast.temperatureC }}</td>
-            <td>{{ forecast.temperatureF }}</td>
-            <td>{{ forecast.summary | titleCase}}</td>
-        </tr>
+    <tr *ngFor="let forecast of forecasts">
+        <td>{{ forecast.dateFormatted | date }}</td>
+        <td>{{ forecast.temperatureC }}</td>
+        <td>{{ forecast.temperatureF }}</td>
+        <td>{{ forecast.summary | titleCase}}</td>
+    </tr>
     </tbody>
 </table>
 <mat-chip color="accent" selected="true">Accent color!</mat-chip>
@@ -30,7 +30,7 @@
 <mat-form-field>
     <input matInput [matDatepicker]="picker"placeholder="Choose a date" (dateChange)="SelectedTime=$event.value">
     <!-- (dateChange)="onChange($event)" -->
-    <mat-datepicker-toggle  matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <button (click)="send()" mat-button color="primary">Log</button>

@@ -3,8 +3,11 @@
     public enum AnimalType
     {
         Rat,
+
         Monkey,
+
         Human,
+
         Other
     }
 }

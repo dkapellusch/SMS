@@ -3,11 +3,12 @@ using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using SMS.Models.Internal;
 using SMS.Models.Samples;
-using SMS.Persistence.Repositories;
 using SMS.Persistence.Interfaces;
 
 namespace SMS.Controllers
@@ -21,25 +22,18 @@ namespace SMS.Controllers
             Samples = samples;
         }
 
-        private ISampleRespository Samples { get; }
-
         private ILogger<LogController> Logger { get; }
 
-        [HttpPost("info/")]
-        public IActionResult WriteLog([FromBody] LogMessage message)
+        private ISampleRespository Samples { get; }
+
+        [HttpGet("observe/")]
+        public async Task<TimeSpan> SampleFromObservable()
         {
-            Logger.LogError(1,
-                null,
-                $@"Message from client {Request.HttpContext.Connection.RemoteIpAddress}, 
-                            {message.Message}",
-                message.Args);
-            
-            Samples.GetObservableSampleByNumber(1).Subscribe(Observer.Create<Sample>(sample =>
-            {
-                var x = sample.AgeInMonths;
-            }));
-            
-            return Ok();
+            var s = Stopwatch.StartNew();
+            Sample sam;
+            await Samples.GetObservableSampleByNumber(1).Do(i => sam = i).LastAsync();
+
+            return TimeSpan.FromMilliseconds(s.ElapsedMilliseconds);
         }
 
         [HttpGet("task/")]
@@ -50,14 +44,18 @@ namespace SMS.Controllers
             return TimeSpan.FromMilliseconds(s.ElapsedMilliseconds);
         }
 
-        [HttpGet("observe/")]
-        public async Task<TimeSpan> SampleFromObservable()
+        [HttpPost("info/")]
+        public IActionResult WriteLog([FromBody] LogMessage message)
         {
-            var s = Stopwatch.StartNew();
-            Sample sam;
-            await Samples.GetObservableSampleByNumber(1).Do(i => sam = i).LastAsync();
+            Logger.LogError(1, null, $@"Message from client {Request.HttpContext.Connection.RemoteIpAddress}, 
+                            {message.Message}", message.Args);
 
-            return TimeSpan.FromMilliseconds(s.ElapsedMilliseconds);
+            Samples.GetObservableSampleByNumber(1).Subscribe(Observer.Create<Sample>(sample =>
+            {
+                var x = sample.AgeInMonths;
+            }));
+
+            return Ok();
         }
     }
 }

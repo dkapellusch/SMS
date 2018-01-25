@@ -6,7 +6,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipDefaultLibCheck": true,
-    "lib": ["es6", "dom","es2017","esnext"],
+    "lib": ["es6", "dom", "es2017", "esnext"],
     "types": ["webpack-env", "node"]
   },
   "exclude": ["bin", "node_modules"]

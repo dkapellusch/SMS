@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
+
 using Microsoft.EntityFrameworkCore;
+
 using SMS.Models.Animals;
 using SMS.Models.Enums;
 using SMS.Persistence.Interfaces;
@@ -29,6 +31,7 @@ namespace SMS.Persistence.Repositories
                 animal.RecordStatus = RecordStatus.Modified;
                 Context.Entry(await Context.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
             }
+
             await Context.SaveChangesAsync();
         }
 

@@ -47,20 +47,22 @@ namespace SMS.Migrations
 
             modelBuilder.Entity("SMS.Models.Samples.Sample", b =>
                 {
-                    b.Property<int>("SubjectNumber")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<int>("AgeInMonths");
-
-                    b.Property<int?>("AnimalId");
 
                     b.Property<int?>("AnimalNumber");
 
                     b.Property<DateTime>("LastUpdateTime");
 
-                    b.HasKey("SubjectNumber");
+                    b.Property<int>("RecordStatus");
 
-                    b.HasIndex("AnimalId");
+                    b.Property<int>("SampleType");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnimalNumber");
 
                     b.ToTable("Samples");
                 });
@@ -80,8 +82,8 @@ namespace SMS.Migrations
             modelBuilder.Entity("SMS.Models.Samples.Sample", b =>
                 {
                     b.HasOne("SMS.Models.Animals.Animal", "Animal")
-                        .WithMany()
-                        .HasForeignKey("AnimalId");
+                        .WithMany("Samples")
+                        .HasForeignKey("AnimalNumber");
                 });
 #pragma warning restore 612, 618
         }
