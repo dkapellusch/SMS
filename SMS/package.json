@@ -8,8 +8,7 @@
     "build:vendor": "webpack --config webpack.config.vendor.js",
     "build:client": "webpack --config webpack.config.vendor.js && webpack",
     "build:all": "webpack --config webpack.config.vendor.js && webpack && dotnet build",
-    "publish":
-      "webpack --config webpack.config.vendor.js && webpack && dotnet build --configuration=Release && dotnet publish --configuration=Release",
+    "publish": "webpack --config webpack.config.vendor.js && webpack && dotnet build --configuration=Release && dotnet publish --configuration=Release",
     "prod": "dotnet ./bin/Release/netcoreapp2.0/publish/SMS.dll"
   },
   "dependencies": {

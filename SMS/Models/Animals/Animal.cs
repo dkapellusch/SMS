@@ -106,7 +106,7 @@ namespace SMS.Models.Animals
             }
         }
 
-        public ICollection<Sample> Samples { get; set; }
+        public ICollection<Sample> Samples { get; set; } = new HashSet<Sample>();
 
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
         {
