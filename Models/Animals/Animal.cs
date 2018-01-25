@@ -2,99 +2,37 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
-using SMS.Extensions;
+
 using SMS.Models.Enums;
 
 namespace SMS.Models.Animals
 {
     public class Animal
     {
-        private int _id;
-        private string _name;
-        private AnimalType _animalType;
-        private string _experiment;
-        private DateTime _lastUpdateTime;
-        private RecordStatus _recordStatus;
-        private DateTime? _birthDate;
         private int? _ageInMonths;
 
-        public event PropertyChangedEventHandler _PropertyChanged;
+        private AnimalType _animalType;
+
+        private DateTime? _birthDate;
+
+        private string _experiment;
+
+        private int _id;
+
+        private string _name;
+
+        private RecordStatus _recordStatus;
 
         public Animal()
         {
-            _PropertyChanged += (sender, args) => LastUpdateTime = DateTime.Now;
+            PropertyChanged += (sender, args) => LastUpdateTime = DateTime.Now;
         }
 
-        [Key]
-        public int Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public AnimalType AnimalType
-        {
-            get { return _animalType; }
-            set
-            {
-                _animalType = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Experiment
-        {
-            get { return _experiment; }
-            set
-            {
-                _experiment = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public DateTime LastUpdateTime
-        {
-            get { return _lastUpdateTime; }
-            set { _lastUpdateTime = value; }
-        }
-
-        public RecordStatus RecordStatus
-        {
-            get { return _recordStatus; }
-            set
-            {
-                _recordStatus = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public DateTime? BirthDate
-        {
-            get { return _birthDate; }
-            set
-            {
-                _birthDate = value;
-                OnPropertyChanged();
-            }
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public int? AgeInMonths
         {
-            get { return _ageInMonths; }
+            get => _ageInMonths;
             set
             {
                 _ageInMonths = value;
@@ -102,9 +40,72 @@ namespace SMS.Models.Animals
             }
         }
 
+        public AnimalType AnimalType
+        {
+            get => _animalType;
+            set
+            {
+                _animalType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime? BirthDate
+        {
+            get => _birthDate;
+            set
+            {
+                _birthDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Experiment
+        {
+            get => _experiment;
+            set
+            {
+                _experiment = value;
+                OnPropertyChanged();
+            }
+        }
+
+        [Key]
+        public int Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime LastUpdateTime { get; set; }
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public RecordStatus RecordStatus
+        {
+            get => _recordStatus;
+            set
+            {
+                _recordStatus = value;
+                OnPropertyChanged();
+            }
+        }
+
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
         {
-            var handler = _PropertyChanged;
+            var handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
