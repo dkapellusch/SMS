@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SMS.Models;
 using SMS.Models.Samples;
 using SMS.Persistence.Interfaces;
+using SMS.Persistence.Repositories.AbstractRepositories;
 
 namespace SMS.Persistence.Repositories
 {

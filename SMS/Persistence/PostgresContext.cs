@@ -33,15 +33,5 @@ namespace SMS.Persistence
         {
             base.OnModelCreating(builder);
         }
-
-        public TEntity Get<TEntity>(params object[] id) where TEntity : class
-        {
-            return Set<TEntity>().Find(id);
-        }
-
-        public DbSet<TEntity> GetDbSet<TEntity>() where TEntity : class
-        {
-            return Set<TEntity>();
-        }
     }
 }

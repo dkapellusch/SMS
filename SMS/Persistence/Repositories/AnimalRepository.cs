@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SMS.Models.Animals;
 using SMS.Models.Enums;
 using SMS.Persistence.Interfaces;
+using SMS.Persistence.Repositories.AbstractRepositories;
 
 namespace SMS.Persistence.Repositories
 {
