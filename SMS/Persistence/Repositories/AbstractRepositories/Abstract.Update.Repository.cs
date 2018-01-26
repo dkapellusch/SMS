@@ -11,7 +11,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
     {
         public async Task UpdateAsync<TEntity>(TEntity entity) where TEntity : class
         {
-            GetDbSet<TEntity>().Update(entity);
+            PostgresqlContext.Set<TEntity>().Update(entity);
             await SaveChangesAsync();
         }
 
@@ -23,18 +23,18 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
             }
         }
 
-        protected static object[] LoadAllRelations<T>(T entity) where T : class
+        public static object[] LoadAllRelations<TEntity>(TEntity entity) where TEntity : class
         {
-            var entityProperties = typeof(T).GetProperties();
+            var entityProperties = typeof(TEntity).GetProperties();
             var enumerableProperties = entityProperties.Where(p => p.PropertyType != typeof(string) && typeof(IEnumerable<>).IsAssignableFrom(p.PropertyType));
             var relationalProperties = enumerableProperties.SelectMany(relation => (IEnumerable<object>)relation.GetValue(entity)).ToArray();
 
             return relationalProperties;
         }
 
-        protected void UpdateExistingEntity<TEntity>(TEntity entity) where TEntity : class
+        public void UpdateExistingEntity<TEntity>(TEntity entity) where TEntity : class
         {
-            _PostgresqlContext.Entry(entity).CurrentValues.SetValues(entity);
+            PostgresqlContext.Entry(entity).CurrentValues.SetValues(entity);
             SaveChanges();
         }
     }

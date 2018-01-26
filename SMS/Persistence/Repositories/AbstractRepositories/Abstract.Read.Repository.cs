@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 
+using SMS.Models.Interfaces;
+
 namespace SMS.Persistence.Repositories.AbstractRepositories
 {
     /*
@@ -12,34 +14,26 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
      */
     public abstract partial class AbstractRepository
     {
-        public bool Exists<T>(T entity) where T : class
+        public bool Exists<TEntity>(TEntity entity) where TEntity : class => PostgresqlContext.Set<TEntity>().Contains(entity);
+
+        public IQueryable<TEntity> GetAll<TEntity>() where TEntity : class => PostgresqlContext.Set<TEntity>().AsNoTracking();
+
+        public virtual TEntity GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class => PostgresqlContext.Set<TEntity>().Find(primaryKey);
+
+        public Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class => PostgresqlContext.FindAsync<TEntity>(primaryKey);
+
+        public IObservable<TEntity> GetObservableEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class => PostgresqlContext.Set<TEntity>().ToObservable();
+
+        public (bool exists, TModel entity) ModelExists<TModel>(TModel entity) where TModel : class, IModel
         {
-            return _PostgresqlContext.Set<T>().Local.Contains(entity);
+            var existingEntity = GetEntityByPrimaryKey<TModel>(entity.Id);
+            return (exists: existingEntity != null, entity: existingEntity);
         }
 
-        public IQueryable<T> GetAll<T>() where T : class
+        public async Task<(bool exists, TModel entity)> ModelExistsAsync<TModel>(TModel entity) where TModel : class, IModel
         {
-            return _PostgresqlContext.Set<T>().AsNoTracking();
-        }
-
-        public DbSet<TEntity> GetDbSet<TEntity>() where TEntity : class
-        {
-            return _PostgresqlContext.Set<TEntity>();
-        }
-
-        public Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class
-        {
-            return _PostgresqlContext.FindAsync<TEntity>(primaryKey);
-        }
-
-        public IObservable<TEntity> GetObservableEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
-        {
-            return GetDbSet<TEntity>().ToObservable();
-        }
-
-        protected virtual TEntity GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
-        {
-            return _PostgresqlContext.Set<TEntity>().Find(primaryKey);
+            var existingEntity = await GetEntityByPrimaryKeyAsync<TModel>(entity.Id);
+            return (exists: existingEntity != null, entity: existingEntity);
         }
     }
 }

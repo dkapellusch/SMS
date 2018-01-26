@@ -20,32 +20,32 @@ namespace SMS.Persistence.Repositories
 
         public async Task AddAnimal(Animal animal)
         {
-            if (!await _PostgresqlContext.Animals.AnyAsync(a => a.Id == animal.Id))
+            if (!await PostgresqlContext.Animals.AnyAsync(a => a.Id == animal.Id))
             {
-                await _PostgresqlContext.Animals.AddAsync(animal);
+                await PostgresqlContext.Animals.AddAsync(animal);
             }
             else
             {
                 animal.RecordStatus = RecordStatus.Modified;
-                _PostgresqlContext.Entry(await _PostgresqlContext.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
+                PostgresqlContext.Entry(await PostgresqlContext.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
             }
 
-            await _PostgresqlContext.SaveChangesAsync();
+            await PostgresqlContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Animal>> GetAllAnimalsAsync()
         {
-            return await _PostgresqlContext.Animals.ToListAsync();
+            return await PostgresqlContext.Animals.ToListAsync();
         }
 
         public async Task<Animal> GetAnimalAsync(int animalNumber)
         {
-            return await _PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber);
+            return await PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber);
         }
 
         public IObservable<Animal> GetAnimalObservable(int animalNumber)
         {
-            return _PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber).ToObservable();
+            return PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber).ToObservable();
         }
     }
 }

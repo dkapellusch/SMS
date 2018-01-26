@@ -25,6 +25,8 @@ namespace SMS
     {
         public static IServiceProvider ServiceProvider;
 
+        public static string CurrentDatabaseName = "postgres";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -44,10 +46,10 @@ namespace SMS
             {
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                                            {
-                                                HotModuleReplacement = true,
-                                                HotModuleReplacementClientOptions = new Dictionary<string, string> { { "reload", "true" }, { "overlay", "true" } }
-                                            });
+                {
+                    HotModuleReplacement = true,
+                    HotModuleReplacementClientOptions = new Dictionary<string, string> { { "reload", "true" }, { "overlay", "true" } }
+                });
             }
             else
             {
@@ -58,22 +60,22 @@ namespace SMS
             app.UseResponseCompression();
 
             app.UseStaticFiles(new StaticFileOptions
-                               {
-                                   OnPrepareResponse = content =>
-                                   {
-                                       if (content.File.Name.EndsWith(".js.gz"))
-                                       {
-                                           content.Context.Response.Headers["Content-Type"] = "text/javascript";
-                                           content.Context.Response.Headers["Content-Encoding"] = "gzip";
-                                       }
+            {
+                OnPrepareResponse = content =>
+                {
+                    if (content.File.Name.EndsWith(".js.gz"))
+                    {
+                        content.Context.Response.Headers["Content-Type"] = "text/javascript";
+                        content.Context.Response.Headers["Content-Encoding"] = "gzip";
+                    }
 
-                                       if (content.File.Name.EndsWith(".css.gz"))
-                                       {
-                                           content.Context.Response.Headers["Content-Type"] = "text/css";
-                                           content.Context.Response.Headers["Content-Encoding"] = "gzip";
-                                       }
-                                   }
-                               });
+                    if (content.File.Name.EndsWith(".css.gz"))
+                    {
+                        content.Context.Response.Headers["Content-Type"] = "text/css";
+                        content.Context.Response.Headers["Content-Encoding"] = "gzip";
+                    }
+                }
+            });
 
             app.UseMvc(routes =>
             {
@@ -89,13 +91,19 @@ namespace SMS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRepository, SamplesRepository>();
             services.AddTransient<IAnimalRepository, AnimalRepository>();
-            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(Configuration.GetConnectionString("PostgreWorkSQL")));
+            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(string.Format(Configuration.GetConnectionString("PostgreWorkSQL"), CurrentDatabaseName)));
 
             services.AddDistributedMemoryCache();
             services.AddSession();
             services.AddMvc();
             services.AddResponseCompression();
             ServiceProvider = services.BuildServiceProvider();
+
+            using (var serviceScope = ServiceProvider.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<PostgresqlContext>();
+                context.Database.Migrate();
+            }
         }
     }
 }

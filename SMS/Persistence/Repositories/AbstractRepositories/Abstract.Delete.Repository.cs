@@ -5,14 +5,14 @@
      */
     public abstract partial class AbstractRepository
     {
-        protected void DeleteEntity<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
+        public void DeleteEntity<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
         {
             if (!Exists(entity))
             {
                 return;
             }
 
-            _PostgresqlContext.Set<TEntity>().Remove(entity);
+            PostgresqlContext.Set<TEntity>().Remove(entity);
 
             if (shouldSave)
             {
@@ -20,7 +20,7 @@
             }
         }
 
-        protected void DeleteEntityAndRelations<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
+        public void DeleteEntityAndRelations<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
         {
             if (!Exists(entity))
             {
@@ -28,7 +28,7 @@
             }
 
             LoadAllRelations(entity);
-            _PostgresqlContext.Set<TEntity>().Remove(entity);
+            PostgresqlContext.Set<TEntity>().Remove(entity);
 
             if (shouldSave)
             {

@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 
+using SMS.Models.Interfaces;
+
 namespace SMS.Persistence.Repositories.AbstractRepositories
 {
     /*
@@ -10,9 +12,20 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
         public async Task CreateAsync<TEntity>(TEntity entity) where TEntity : class
         {
-            await _PostgresqlContext.Set<TEntity>().AddAsync(entity);
+            await PostgresqlContext.Set<TEntity>().AddAsync(entity);
             await SaveChangesAsync();
         }
 
+        public async Task CreateOrUpdate<TModel>(TModel model) where TModel : class, IModel
+        {
+            var (exists, existingModel) = await ModelExistsAsync(model);
+            if (exists)
+            {
+                await UpdateAsync(existingModel);
+                return;
+            }
+
+            await CreateAsync(model);
+        }
     }
 }

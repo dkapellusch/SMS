@@ -4,7 +4,7 @@ using SMS.Models.Enums;
 
 namespace SMS.Models.Interfaces
 {
-    internal interface IModel
+    public interface IModel
     {
         int Id { get; set; }
 
