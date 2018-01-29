@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20180125174743_added sample type to samples table")]
     partial class addedsampletypetosamplestable
     {

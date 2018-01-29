@@ -23,7 +23,7 @@ namespace SMS.Test
 
         public static void ClearDatabase()
         {
-            var context = ServiceProvider.GetService<PostgresqlContext>();
+            var context = ServiceProvider.GetService<SamplesContext>();
 
             context.Samples.ToList().ForEach(e => context.Entry(e).State = EntityState.Deleted);
             context.Animals.ToList().ForEach(e => context.Entry(e).State = EntityState.Deleted);
@@ -39,6 +39,7 @@ namespace SMS.Test
             var startup = new Startup(configuration);
 
             Startup.CurrentDatabaseName = TestDatabaseName;
+            Startup.IsTestRun = true;
             startup.ConfigureServices(new ServiceCollection());
             ServiceProvider = Startup.ServiceProvider;
             ClearDatabase();

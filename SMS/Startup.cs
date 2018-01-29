@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using Microsoft.Data.Sqlite;
 using NLog.Extensions.Logging;
 using NLog.Web;
 
@@ -26,6 +26,9 @@ namespace SMS
         public static IServiceProvider ServiceProvider;
 
         public static string CurrentDatabaseName = "postgres";
+
+        public static bool IsTestRun = false;
+
 
         public Startup(IConfiguration configuration)
         {
@@ -91,7 +94,16 @@ namespace SMS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRepository, SamplesRepository>();
             services.AddTransient<IAnimalRepository, AnimalRepository>();
-            services.AddDbContext<PostgresqlContext>(o => o.UseNpgsql(string.Format(Configuration.GetConnectionString("PostgreWorkSQL"), CurrentDatabaseName)));
+
+            if (IsTestRun)
+            {
+                services.AddDbContext<SamplesContext>(o => o.UseSqlite($"DataSource={CurrentDatabaseName}.db"));
+            }
+            else
+            {
+                services.AddDbContext<SamplesContext>(o => o.UseNpgsql(string.Format(Configuration.GetConnectionString("PostgreWorkSQL"),CurrentDatabaseName)));
+
+            }
 
             services.AddDistributedMemoryCache();
             services.AddSession();
@@ -99,10 +111,18 @@ namespace SMS
             services.AddResponseCompression();
             ServiceProvider = services.BuildServiceProvider();
 
-            using (var serviceScope = ServiceProvider.GetService<IServiceScopeFactory>().CreateScope())
+            if (IsTestRun)
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<PostgresqlContext>();
-                context.Database.Migrate();
+                ServiceProvider.GetService<SamplesContext>().Database.EnsureCreated();
+
+            }
+            else
+            {
+                using (var serviceScope = ServiceProvider.GetService<IServiceScopeFactory>().CreateScope())
+                {
+                    var context = serviceScope.ServiceProvider.GetRequiredService<SamplesContext>();
+                    context.Database.Migrate();
+                }
             }
         }
     }

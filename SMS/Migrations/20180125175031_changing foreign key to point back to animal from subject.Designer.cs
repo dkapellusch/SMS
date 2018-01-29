@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20180125175031_changing foreign key to point back to animal from subject")]
     partial class changingforeignkeytopointbacktoanimalfromsubject
     {

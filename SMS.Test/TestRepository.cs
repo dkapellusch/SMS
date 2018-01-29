@@ -7,11 +7,11 @@ namespace SMS.Test
 {
     internal class TestRepository : AbstractRepository
     {
-        public TestRepository() : this(TestContext.ServiceProvider.GetService<PostgresqlContext>())
+        public TestRepository() : this(TestContext.ServiceProvider.GetService<SamplesContext>())
         {
         }
 
-        public TestRepository(PostgresqlContext context) : base(context)
+        public TestRepository(SamplesContext context) : base(context)
         {
         }
 

@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20180125232303_Thing has record status and update time now")]
     partial class Thinghasrecordstatusandupdatetimenow
     {

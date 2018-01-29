@@ -11,7 +11,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
     {
         public async Task UpdateAsync<TEntity>(TEntity entity) where TEntity : class
         {
-            PostgresqlContext.Set<TEntity>().Update(entity);
+            SamplesContext.Set<TEntity>().Update(entity);
             await SaveChangesAsync();
         }
 
@@ -34,7 +34,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
         public void UpdateExistingEntity<TEntity>(TEntity entity) where TEntity : class
         {
-            PostgresqlContext.Entry(entity).CurrentValues.SetValues(entity);
+            SamplesContext.Entry(entity).CurrentValues.SetValues(entity);
             SaveChanges();
         }
     }

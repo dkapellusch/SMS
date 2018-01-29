@@ -12,7 +12,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
         public async Task CreateAsync<TEntity>(TEntity entity) where TEntity : class
         {
-            await PostgresqlContext.Set<TEntity>().AddAsync(entity);
+            await SamplesContext.Set<TEntity>().AddAsync(entity);
             await SaveChangesAsync();
         }
 

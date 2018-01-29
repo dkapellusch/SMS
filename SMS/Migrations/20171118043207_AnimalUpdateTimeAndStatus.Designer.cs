@@ -10,7 +10,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20171118043207_AnimalUpdateTimeAndStatus")]
     partial class AnimalUpdateTimeAndStatus
     {

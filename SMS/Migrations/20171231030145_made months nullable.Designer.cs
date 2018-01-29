@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20171231030145_made months nullable")]
     partial class mademonthsnullable
     {

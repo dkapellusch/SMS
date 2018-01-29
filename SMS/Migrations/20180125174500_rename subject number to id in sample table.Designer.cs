@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20180125174500_rename subject number to id in sample table")]
     partial class renamesubjectnumbertoidinsampletable
     {

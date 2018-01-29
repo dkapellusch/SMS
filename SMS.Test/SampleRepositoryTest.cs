@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using SMS.Models;
 using SMS.Models.Animals;
 using SMS.Models.Enums;
 using SMS.Models.Samples;
@@ -16,7 +17,7 @@ namespace SMS.Test
     {
         public IServiceProvider ServiceProvider => TestContext.ServiceProvider;
 
-        public PostgresqlContext Context => ServiceProvider.GetService<PostgresqlContext>();
+        public SamplesContext Context => ServiceProvider.GetService<SamplesContext>();
 
         [TestMethod]
         public void MonkeyCreated_SamplesAssociated_SavedCorrectly()
@@ -40,6 +41,11 @@ namespace SMS.Test
             Assert.AreEqual(5, associatedSamples.Count);
         }
 
+        [TestMethod]
+        public void AddOneThing()
+        {
+            Context.Things.Add(new Thing { Name = "TestThing" });
+        }
         [TestMethod]
         public void SampleCreated_AnimalAssociated_SavedCorrectly()
         {

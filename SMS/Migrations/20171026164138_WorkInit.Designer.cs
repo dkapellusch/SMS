@@ -10,7 +10,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20171026164138_WorkInit")]
     partial class WorkInit
     {

@@ -12,12 +12,12 @@ namespace SMS.Persistence.Repositories
 {
     public class SamplesRepository : AbstractRepository, ISampleRepository
     {
-        public SamplesRepository(PostgresqlContext context) : base(context)
+        public SamplesRepository(SamplesContext context) : base(context)
         {
             Context = context;
         }
 
-        private PostgresqlContext Context { get; }
+        private SamplesContext Context { get; }
 
         public async Task AddThingAsync(Thing thing)
         {

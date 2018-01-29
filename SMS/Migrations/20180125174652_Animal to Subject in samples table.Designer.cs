@@ -11,7 +11,7 @@ using System;
 
 namespace SMS.Migrations
 {
-    [DbContext(typeof(PostgresqlContext))]
+    [DbContext(typeof(SamplesContext))]
     [Migration("20180125174652_Animal to Subject in samples table")]
     partial class AnimaltoSubjectinsamplestable
     {

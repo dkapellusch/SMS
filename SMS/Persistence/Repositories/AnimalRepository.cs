@@ -14,38 +14,38 @@ namespace SMS.Persistence.Repositories
 {
     public class AnimalRepository : AbstractRepository, IAnimalRepository
     {
-        public AnimalRepository(PostgresqlContext context) : base(context)
+        public AnimalRepository(SamplesContext context) : base(context)
         {
         }
 
         public async Task AddAnimal(Animal animal)
         {
-            if (!await PostgresqlContext.Animals.AnyAsync(a => a.Id == animal.Id))
+            if (!await SamplesContext.Animals.AnyAsync(a => a.Id == animal.Id))
             {
-                await PostgresqlContext.Animals.AddAsync(animal);
+                await SamplesContext.Animals.AddAsync(animal);
             }
             else
             {
                 animal.RecordStatus = RecordStatus.Modified;
-                PostgresqlContext.Entry(await PostgresqlContext.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
+                SamplesContext.Entry(await SamplesContext.Animals.FirstAsync(a => a.Id == animal.Id)).CurrentValues.SetValues(animal);
             }
 
-            await PostgresqlContext.SaveChangesAsync();
+            await SamplesContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Animal>> GetAllAnimalsAsync()
         {
-            return await PostgresqlContext.Animals.ToListAsync();
+            return await SamplesContext.Animals.ToListAsync();
         }
 
         public async Task<Animal> GetAnimalAsync(int animalNumber)
         {
-            return await PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber);
+            return await SamplesContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber);
         }
 
         public IObservable<Animal> GetAnimalObservable(int animalNumber)
         {
-            return PostgresqlContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber).ToObservable();
+            return SamplesContext.Animals.FirstOrDefaultAsync(a => a.Id == animalNumber).ToObservable();
         }
     }
 }

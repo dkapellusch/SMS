@@ -12,7 +12,7 @@
                 return;
             }
 
-            PostgresqlContext.Set<TEntity>().Remove(entity);
+            SamplesContext.Set<TEntity>().Remove(entity);
 
             if (shouldSave)
             {
@@ -28,7 +28,7 @@
             }
 
             LoadAllRelations(entity);
-            PostgresqlContext.Set<TEntity>().Remove(entity);
+            SamplesContext.Set<TEntity>().Remove(entity);
 
             if (shouldSave)
             {

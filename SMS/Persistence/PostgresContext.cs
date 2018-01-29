@@ -10,9 +10,9 @@ using SMS.Models.Samples;
 
 namespace SMS.Persistence
 {
-    public class PostgresqlContext : DbContext
+    public class SamplesContext : DbContext
     {
-        public PostgresqlContext(DbContextOptions options) : base(options)
+        public SamplesContext(DbContextOptions options) : base(options)
         {
         }
 

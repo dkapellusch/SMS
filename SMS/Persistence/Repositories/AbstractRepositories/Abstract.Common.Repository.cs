@@ -10,11 +10,11 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
      */
     public abstract partial class AbstractRepository
     {
-        public readonly PostgresqlContext PostgresqlContext;
+        public readonly SamplesContext SamplesContext;
 
-        protected AbstractRepository(PostgresqlContext context)
+        protected AbstractRepository(SamplesContext context)
         {
-            PostgresqlContext = context;
+            SamplesContext = context;
         }
 
         public int SaveChanges()
@@ -29,7 +29,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
                 try
                 {
-                    result = PostgresqlContext.SaveChanges();
+                    result = SamplesContext.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
@@ -54,7 +54,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
                 try
                 {
-                    result = await PostgresqlContext.SaveChangesAsync();
+                    result = await SamplesContext.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
