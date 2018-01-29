@@ -12,7 +12,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
     {
         public readonly PostgresqlContext PostgresqlContext;
 
-        public AbstractRepository(PostgresqlContext context)
+        protected AbstractRepository(PostgresqlContext context)
         {
             PostgresqlContext = context;
         }
