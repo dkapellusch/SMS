@@ -157,42 +157,7 @@ module.exports = env =>
         plugins: []
     };
 
-    const serverBundleConfig = merge(sharedConfig, {
-        resolve: {
-            mainFields: ["main"]
-        },
-        entry: {
-            "main-server": "./ClientApp/boot.server.ts"
-        },
-        plugins: [
-            new webpack.DllReferencePlugin({
-                context: __dirname,
-                manifest: require("./ClientApp/dist/vendor-manifest.json"),
-                sourceType: "commonjs2",
-                name: "./vendor"
-            })
-        ].concat(
-            isDevBuild
-            ? []
-            : [
-                new AngularCompilerPlugin({
-                    tsConfigPath: "./tsconfig.json",
-                    entryModule: path.join(
-                        __dirname,
-                        "ClientApp/app/modules/app.module.server#AppModule"
-                    ),
-                    exclude: ["./**/*.browser.ts"]
-                })
-            ]
-        ),
-        output: {
-            libraryTarget: "commonjs",
-            path: path.join(__dirname, "./ClientApp/dist")
-        },
-        target: "node",
-        devtool: "eval-cheap-module-source-map"
-    });
-    return [clientBundleConfig, serverBundleConfig].concat(
+    return [clientBundleConfig].concat(
         isDevBuild ? [] : [serviceWorkerBundle]
     );
 };
