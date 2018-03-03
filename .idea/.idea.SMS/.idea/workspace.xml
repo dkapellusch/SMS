@@ -5,26 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef287b79-a07e-447d-8423-75e355d9b142" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Persistence/Repositories/IAbstractRepository.cs" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClientApp/app/sampleform/sampleform.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClientApp/app/sampleform/sampleform.component.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ClientApp/app/sampleform/samplefrom.component.ts" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/contentModel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/watcherTasks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.ts" afterPath="$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/directives/hidden.directive.ts" afterPath="$PROJECT_DIR$/ClientApp/app/directives/hidden.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/services/initialization.service.ts" afterPath="$PROJECT_DIR$/ClientApp/app/services/initialization.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/services/logging.service.ts" afterPath="$PROJECT_DIR$/ClientApp/app/services/logging.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/services/route.service.ts" afterPath="$PROJECT_DIR$/ClientApp/app/services/route.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientApp/app/services/theme.service.ts" afterPath="$PROJECT_DIR$/ClientApp/app/services/theme.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/AnimalsController.cs" afterPath="$PROJECT_DIR$/Controllers/AnimalsController.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Animals/Animal.cs" afterPath="$PROJECT_DIR$/Models/Animals/Animal.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs" afterPath="$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Persistence/Repositories/IAnimalRepository.cs" afterPath="$PROJECT_DIR$/Persistence/Repositories/IAnimalRepository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Persistence/Repositories/ISampleRespository.cs" afterPath="$PROJECT_DIR$/Persistence/Repositories/ISampleRespository.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Persistence/Repositories/SamplesRepository.cs" afterPath="$PROJECT_DIR$/Persistence/Repositories/SamplesRepository.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/inspectionProfiles/Project_Default.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/runConfigurations/Default.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/contentModel.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SMS/riderModule.iml" afterPath="$PROJECT_DIR$/.idea/.idea.SMS/riderModule.iml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,6 +52,61 @@
     </expand>
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="linechart.component.ts" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/linechart/linechart.component.ts">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="207">
+                    <caret line="9" column="129" lean-forward="true" selection-start-line="9" selection-start-column="129" selection-end-line="9" selection-end-column="129" />
+                    <folding>
+                      <element signature="e#0#78#0" expanded="true" />
+                      <marker date="1520115261083" expanded="true" signature="266:317" ph="..." />
+                      <marker date="1520115261083" expanded="true" signature="333:929" ph="..." />
+                      <marker date="1520115261083" expanded="true" signature="343:661" ph="..." />
+                      <marker date="1520115261083" expanded="true" signature="454:650" ph="..." />
+                      <marker date="1520115261083" expanded="false" signature="783:810" ph="..." />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+    <window id="9">
+      <content type="file-editors">
+        <state>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="appsettings.json" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/SMS/appsettings.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="46">
+                    <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="appsettings.Development.json" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/SMS/appsettings.Development.json">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="276">
+                    <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileColors">
     <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
     <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
@@ -74,158 +114,108 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="AbstractRepository.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="boot.browser.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/ClientApp/boot.browser.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state relative-caret-position="276">
+              <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
               <folding>
-                <marker date="1512623882052" expanded="true" signature="6:152" ph="..." />
-                <marker date="1512623882052" expanded="true" signature="192:4527" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="261:4525" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="395:455" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="536:662" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="773:908" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="832:898" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="989:1096" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="1170:1543" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="1654:1742" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="1882:1958" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2028:2356" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2186:2319" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2450:2610" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2667:2756" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2854:2962" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="2996:3501" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="3150:3247" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="3303:3429" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="3552:4101" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="3706:3814" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="3870:4029" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="4159:4240" ph="{...}" />
-                <marker date="1512623882052" expanded="true" signature="4342:4519" ph="{...}" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animal.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Models/Animals/Animal.cs">
+      <file leaf-file-name="AnimalType.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SMS/Models/Enums/AnimalType.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-176">
-              <caret line="71" column="11" lean-forward="false" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+            <state relative-caret-position="92">
+              <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
               <folding>
-                <marker date="1512621870447" expanded="false" signature="6:172" ph="..." />
-                <marker date="1512621870447" expanded="true" signature="202:2573" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="228:2571" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="623:724" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="761:923" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="819:913" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="951:1117" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1011:1107" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1155:1333" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1221:1323" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1367:1545" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1433:1535" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1585:1694" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1736:1918" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1804:1908" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="1953:2129" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="2018:2119" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="2161:2341" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="2228:2331" ph="{...}" />
-                <marker date="1512621870447" expanded="true" signature="2430:2565" ph="{...}" />
+                <marker date="1520107720037" expanded="true" signature="26:130" ph="{...}" />
+                <marker date="1520107720037" expanded="true" signature="55:128" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IAbstractRepository.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/Repositories/IAbstractRepository.cs">
+      <file leaf-file-name="SampleType.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/Models/Enums/SampleType.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="23" column="97" lean-forward="false" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
+            <state relative-caret-position="184">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
-                <marker date="1512619197036" expanded="false" signature="6:99" ph="..." />
-                <marker date="1512619197036" expanded="true" signature="139:1088" ph="{...}" />
-                <marker date="1512619197036" expanded="true" signature="182:1086" ph="{...}" />
+                <marker date="1520113786526" expanded="true" signature="26:145" ph="{...}" />
+                <marker date="1520113786526" expanded="true" signature="55:143" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animals" pinned="false" current-in-tab="false">
-        <entry file="das://table:/9e2d9cc1/6353dd00-faab-4631-adc1-e90c089a8134/localdb.public.Animals">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1403">
+              <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnimalsController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/AnimalsController.cs">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state relative-caret-position="1541">
+              <caret line="67" column="28" lean-forward="false" selection-start-line="62" selection-start-column="7" selection-end-line="67" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Startup.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/Startup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="42" column="61" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="61" />
               <folding>
-                <marker date="1512619468925" expanded="false" signature="6:159" ph="..." />
-                <marker date="1512619468925" expanded="true" signature="186:973" ph="{...}" />
-                <marker date="1512619468925" expanded="true" signature="268:971" ph="{...}" />
-                <marker date="1512619468925" expanded="true" signature="440:533" ph="{...}" />
-                <marker date="1512619468925" expanded="true" signature="692:965" ph="{...}" />
+                <marker date="1520114774864" expanded="false" signature="6:503" ph="..." />
+                <marker date="1520114774864" expanded="true" signature="572:4278" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="801:864" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="1029:2911" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="1366:1735" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="1522:1719" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="1752:1836" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="1976:2643" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="2024:2629" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="2104:2329" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="2393:2611" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="2679:2899" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="2979:4272" ph="{...}" />
+                <marker date="1520114774864" expanded="true" signature="4077:4262" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="animalform.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.ts">
+        <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
+                <element signature="e#0#72#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animal.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientApp/app/models/Animal.ts">
+      <file leaf-file-name="home.component.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/home/home.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="animalform.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AnimalRepository.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <marker date="1512615077520" expanded="true" signature="6:116" ph="..." />
-                <marker date="1512615077520" expanded="true" signature="156:979" ph="{...}" />
-                <marker date="1512615077520" expanded="true" signature="232:977" ph="{...}" />
-                <marker date="1512615077520" expanded="true" signature="313:364" ph="{...}" />
-                <marker date="1512615077520" expanded="true" signature="468:971" ph="{...}" />
-                <marker date="1512615077520" expanded="true" signature="551:635" ph="{...}" />
-                <marker date="1512615077520" expanded="true" signature="652:915" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -261,45 +251,33 @@
       <find>material</find>
       <find>Anima</find>
       <find>id</find>
+      <find>awe</find>
+      <find>webpack</find>
+      <find>chun</find>
+      <find>extrac</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="dkapellusch" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/IAnimalRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/HomeController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/AnimalsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Migrations/PostgresqlContextModelSnapshot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Extensions/ObjectExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/Animals/Animal.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/Samples/Sample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Migrations/20171126013217_Added Animal Type.Designer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Migrations/20171126013217_Added Animal Type.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/ISampleRespository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/SamplesRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Models/Enums/AnimalType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EC03606D-BDEF-4B18-BD64-3F9C974F8370/68/ad44efb4/Observable.cs" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/IAbstractRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/LogController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Home/Index.cshtml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Views/Shared/_Layout.cshtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Models/Enums/SampleType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Models/Enums/AnimalType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Common.Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Delete.Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Create.Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Read.Repository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SMS/Startup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ClientApp/app/components/linechart/linechart.component.ts" />
-        <option value="$PROJECT_DIR$/Controllers/SampleDataController.cs" />
-        <option value="$PROJECT_DIR$/Models/Samples/Sample.cs" />
-        <option value="$PROJECT_DIR$/Controllers/LogController.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6353dd00-faab-4631-adc1-e90c089a8134/console_1.sql" />
-        <option value="$PROJECT_DIR$/ClientApp/boot.browser.ts" />
-        <option value="$PROJECT_DIR$/ClientApp/app/components/animals/animals.component.html" />
         <option value="$PROJECT_DIR$/Controllers/HomeController.cs" />
         <option value="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/ClientApp/boot.server.ts" />
@@ -344,13 +322,18 @@
         <option value="$PROJECT_DIR$/Controllers/AnimalsController.cs" />
         <option value="$PROJECT_DIR$/Models/Animals/Animal.cs" />
         <option value="$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs" />
+        <option value="$PROJECT_DIR$/SMS/webpack.config.vendor.js" />
+        <option value="$PROJECT_DIR$/SMS/webpack.config.js" />
+        <option value="$PROJECT_DIR$/SMS/appsettings.json" />
+        <option value="$PROJECT_DIR$/SMS/Startup.cs" />
+        <option value="$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts" />
+        <option value="$PROJECT_DIR$/SMS/ClientApp/app/components/linechart/linechart.component.ts" />
+        <option value="$PROJECT_DIR$/SMS/Models/Enums/AnimalType.cs" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -365,10 +348,29 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="878" />
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/SMS/package.json" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="-1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -388,82 +390,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ColorIdeProjectViewPane" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ClientApp" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ClientApp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="app" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ClientApp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="app" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="components" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ClientApp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="app" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="components" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="animalform" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="ClientApp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="app" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="models" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Models" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Models" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Animals" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Persistence" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SMS (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SMS" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Persistence" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Repositories" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="SMS (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -471,17 +403,18 @@
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
+      <pane id="ColorIdeProjectViewPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="typescript-compiler-editor-notification" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
-    <property name="settings.editor.selected.configurable" value="CodeInspectionSettingsId" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.quicklists" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/Logs/nlog-own-2017-11-22.log&#10;/Users/dkapellusch/Documents/Code/SMS/Logs/nlog-all-2017-12-02.log&#10;/Users/dkapellusch/Documents/Code/SMS/Logs/nlog-all-2017-11-25.log&#10;/Users/dkapellusch/Documents/Code/SMS/wwwroot/dist/main-client.js&#10;/Users/dkapellusch/Documents/Code/SMS/wwwroot/dist/vendor.js&#10;/Users/dkapellusch/Documents/Code/SMS/Logs/nlog-all-2017-12-01.log" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.8.1" />
-    <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -494,7 +427,8 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
-    <property name="SearchEverywhereHistoryKey" value="NgIf&#9;null&#9;null&#10;ngi&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="samplety&#9;null&#9;null&#10;animaltype&#9;FILE&#9;file://C:/Users/Dkapellusch/Documents/GitHub/SMS/SMS/Models/Enums/AnimalType.cs&#10;NgIf&#9;null&#9;null&#10;ngi&#9;null&#9;null" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -509,24 +443,7 @@
     </option>
   </component>
   <component name="RunManager" selected=".NET Project.Default">
-    <configuration name="Default JavaScript" type="JavascriptDebugType" factoryName="JavaScript Debug" uri="http://localhost:5000" />
-    <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/bin/Debug/netcoreapp2.0/SMS.dll" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="1" />
-      <envs>
-        <env name="ASPNETCORE_ENVIRONMENT" value="Production" />
-        <env name="ASPNETCORE_URLS" value="http://localhost:5000" />
-      </envs>
-      <option name="USE_MONO" value="0" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/SMS.csproj" />
-      <option name="PROJECT_OUTPUT_TRACKING" value="1" />
-      <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value=".NETCoreApp,Version=v2.0" />
-      <browser start="true" with-js-debugger="true" />
-    </configuration>
+    <configuration name="Default JavaScript" type="JavascriptDebugType" factoryName="JavaScript Debug" engineId="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" uri="http://localhost:5000" />
     <configuration name="animalform.component.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/SMS/ClientApp/app/components/animalform/animalform.component.html" />
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue=".NET Project.Default" />
@@ -541,6 +458,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -564,6 +484,8 @@
       <workItem from="1512190389142" duration="5132000" />
       <workItem from="1512275257463" duration="1408000" />
       <workItem from="1512519164955" duration="15043000" />
+      <workItem from="1520108293474" duration="6731000" />
+      <workItem from="1520115618103" duration="1601000" />
     </task>
     <task id="LOCAL-00001" summary="Added some forms and added to the sample repository to return tasks and observables">
       <created>1511581083910</created>
@@ -614,11 +536,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512338970508</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added tab ordering to form and completed animal form submission">
+      <created>1520117299663</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1520117299663</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62817000" />
+    <option name="totallyTimeSpent" value="71149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,67 +559,72 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21244635" sideWeight="0.5070994" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37037036" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21816881" sideWeight="0.4929006" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.50572246" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3954635" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30029154" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16354166" sideWeight="0.4929006" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.49427754" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846742" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3984221" sideWeight="0.49427754" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.49713877" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21244635" sideWeight="0.5070994" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.50572246" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.49713877" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="19" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.49713877" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39895698" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37157756" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20958512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285528" sideWeight="0.49427754" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39846742" sideWeight="0.49427754" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985657" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37771204" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21244635" sideWeight="0.5070994" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30078897" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32724902" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16354166" sideWeight="0.4929006" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822478" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="20" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -733,528 +667,274 @@
           <line>3</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts</url>
+          <line>45</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts</url>
+          <line>47</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts</url>
+          <line>48</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts</url>
+          <line>62</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs</url>
           <line>67</line>
-          <properties documentPath="$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs">
-            <startOffsets>
-              <startOffset value="2217" />
-            </startOffsets>
-            <endOffsets>
-              <endOffset value="2274" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs" />
           <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="79" />
+      <option name="time" value="88" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Migrations/PostgresqlContextModelSnapshot.cs">
+    <entry file="file://$PROJECT_DIR$/package.json" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/modules/material.module.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.scss" />
+    <entry file="file://$PROJECT_DIR$/webpack.config.vendor.js" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/app.module.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/modules/app.module.browser.ts" />
+    <entry file="file://$PROJECT_DIR$/Views/Home/Index.cshtml" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.html" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Startup.cs" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/initialization.service.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/pipes/capitalize.pipe.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/directives/hidden.directive.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.scss" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.scss" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/app/app.component.scss" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.html" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/route.service.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/logging.service.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/theme.service.ts" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/SamplesRepository.cs" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/IAnimalRepository.cs" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/ISampleRespository.cs" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.html" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/models/Animal.ts" />
+    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.ts" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/IAbstractRepository.cs" />
+    <entry file="file://$PROJECT_DIR$/Controllers/AnimalsController.cs" />
+    <entry file="das://table:/9e2d9cc1/6353dd00-faab-4631-adc1-e90c089a8134/localdb.public.Animals" />
+    <entry file="file://$PROJECT_DIR$/Models/Animals/Animal.cs" />
+    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs" />
+    <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-223">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="644">
+          <caret line="28" column="60" lean-forward="false" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Extensions/ObjectExtensions.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Common.Repository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/SampleDataController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/constants/route.constants.ts" />
-    <entry file="file://$PROJECT_DIR$/wwwroot/dist/main-client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1744" column="23" lean-forward="false" selection-start-line="1744" selection-start-column="23" selection-end-line="1744" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/LogController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/nlog-all-2017-11-25.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="349">
-          <caret line="3721" column="88" lean-forward="true" selection-start-line="3721" selection-start-column="88" selection-end-line="3721" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="239" column="0" lean-forward="false" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/.idea.SMS/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/nlog-all-2017-12-01.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="222">
-          <caret line="214" column="39" lean-forward="true" selection-start-line="214" selection-start-column="39" selection-end-line="214" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/exampletable/exampletable.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="46" column="30" lean-forward="true" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/fetchdata/fetchdata.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/nlog-all-2017-12-02.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-556">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/boot.server.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="61" lean-forward="true" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/HomeController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/sampleform/sampleform.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="158" lean-forward="false" selection-start-line="25" selection-start-column="158" selection-end-line="25" selection-end-column="158" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/sampleform/sampleform.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="92">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding>
-            <element signature="e#0#106#0" expanded="false" />
+            <marker date="1520113786748" expanded="false" signature="6:85" ph="..." />
+            <marker date="1520113786748" expanded="true" signature="153:217" ph="/* Abstract Repository Portion For Common Methods ... */" />
+            <marker date="1520113786748" expanded="true" signature="270:1682" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="393:451" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="485:1078" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="704:799" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="855:981" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="1129:1676" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="1283:1389" ph="{...}" />
+            <marker date="1520113786748" expanded="true" signature="1445:1604" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Delete.Repository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="45">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
-            <marker date="1512273820046" expanded="true" signature="0:2587" ph="{...}" />
-            <marker date="1512273820046" expanded="true" signature="73:390" ph="{...}" />
-            <marker date="1512273820046" expanded="true" signature="410:1278" ph="{...}" />
-            <marker date="1512273820046" expanded="true" signature="1301:2585" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="66:133" ph="/* Abstract Repository Portion For Deleting Entities ... */" />
+            <marker date="1520113786772" expanded="true" signature="186:785" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="296:460" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="339:347" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="435:450" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="577:779" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="620:628" ph="{...}" />
+            <marker date="1520113786772" expanded="true" signature="754:769" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/modules/material.module.ts">
+    <entry file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Read.Repository.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="68">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1520113786736" expanded="false" signature="6:156" ph="..." />
+            <marker date="1520113786736" expanded="true" signature="224:290" ph="/* Abstract Repository Portion For Getting Entities ... */" />
+            <marker date="1520113786736" expanded="true" signature="343:1882" ph="{...}" />
+            <marker date="1520113786736" expanded="true" signature="1395:1567" ph="{...}" />
+            <marker date="1520113786736" expanded="true" signature="1693:1876" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.scss">
+    <entry file="file://$PROJECT_DIR$/SMS/Persistence/Repositories/AbstractRepositories/Abstract.Create.Repository.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.vendor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="30" column="60" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1520113786763" expanded="false" signature="6:58" ph="..." />
+            <marker date="1520113786763" expanded="true" signature="126:193" ph="/* Abstract Repository Portion For Creating Entities ... */" />
+            <marker date="1520113786763" expanded="true" signature="246:818" ph="{...}" />
+            <marker date="1520113786763" expanded="true" signature="337:461" ph="{...}" />
+            <marker date="1520113786763" expanded="true" signature="554:812" ph="{...}" />
+            <marker date="1520113786763" expanded="true" signature="661:763" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/modules/app.module.browser.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="14" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Home/Index.cshtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="75" />
-          <folding>
-            <marker date="1512274067253" expanded="true" signature="0:41" ph="@..." />
-            <marker date="1512274067253" expanded="true" signature="43:188" ph="&lt;app.../&gt;" />
-            <marker date="1512274067253" expanded="true" signature="190:547" ph="@{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="58" column="5" lean-forward="false" selection-start-line="51" selection-start-column="4" selection-end-line="58" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-832">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1511661816989" expanded="true" signature="6:506" ph="..." />
-            <marker date="1511661816989" expanded="true" signature="549:3523" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="576:3521" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="635:698" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="921:1456" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="1674:3515" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2011:2471" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2167:2455" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2325:2436" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2488:2572" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2725:3109" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2773:3095" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="2852:3077" ph="{...}" />
-            <marker date="1511661816989" expanded="true" signature="3156:3490" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/initialization.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/pipes/capitalize.pipe.ts">
+    <entry file="file://$PROJECT_DIR$/SMS/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMS/webpack.config.vendor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/directives/hidden.directive.ts">
+    <entry file="file://$PROJECT_DIR$/SMS/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="1541">
+          <caret line="67" column="28" lean-forward="false" selection-start-line="62" selection-start-column="7" selection-end-line="67" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.scss">
+    <entry file="file://$PROJECT_DIR$/SMS/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="68" selection-end-column="1" />
+        <state relative-caret-position="1403">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/home/home.component.scss">
+    <entry file="file://$PROJECT_DIR$/SMS/Startup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="644">
+          <caret line="42" column="61" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="61" />
+          <folding>
+            <marker date="1520114774864" expanded="false" signature="6:503" ph="..." />
+            <marker date="1520114774864" expanded="true" signature="572:4278" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="801:864" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="1029:2911" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="1366:1735" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="1522:1719" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="1752:1836" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="1976:2643" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="2024:2629" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="2104:2329" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="2393:2611" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="2679:2899" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="2979:4272" ph="{...}" />
+            <marker date="1520114774864" expanded="true" signature="4077:4262" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/app/app.component.scss">
+    <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/animalform/animalform.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/navmenu/navmenu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1004">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        <state relative-caret-position="414">
+          <caret line="18" column="67" lean-forward="false" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/route.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/logging.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="34" lean-forward="false" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/services/theme.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="10" lean-forward="false" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/SamplesRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="83" lean-forward="false" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="83" />
-          <folding>
-            <marker date="1512615458789" expanded="false" signature="6:134" ph="..." />
-            <marker date="1512615458789" expanded="true" signature="174:1271" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="252:1269" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="334:385" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="498:608" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="662:778" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="817:928" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="1005:1109" ph="{...}" />
-            <marker date="1512615458789" expanded="true" signature="1192:1263" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/IAnimalRepository.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/home/home.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1512616612246" expanded="true" signature="6:55" ph="..." />
-            <marker date="1512616612246" expanded="true" signature="95:211" ph="{...}" />
-            <marker date="1512616612246" expanded="true" signature="158:209" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/ISampleRespository.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/appsettings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1512616627080" expanded="true" signature="6:69" ph="..." />
-            <marker date="1512616627080" expanded="true" signature="109:380" ph="{...}" />
-            <marker date="1512616627080" expanded="true" signature="173:378" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AnimalRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <marker date="1512615077520" expanded="true" signature="6:116" ph="..." />
-            <marker date="1512615077520" expanded="true" signature="156:979" ph="{...}" />
-            <marker date="1512615077520" expanded="true" signature="232:977" ph="{...}" />
-            <marker date="1512615077520" expanded="true" signature="313:364" ph="{...}" />
-            <marker date="1512615077520" expanded="true" signature="468:971" ph="{...}" />
-            <marker date="1512615077520" expanded="true" signature="551:635" ph="{...}" />
-            <marker date="1512615077520" expanded="true" signature="652:915" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="61" column="54" lean-forward="false" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/models/Animal.ts">
+    <entry file="file://$PROJECT_DIR$/SMS/appsettings.Development.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="276">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ClientApp/app/components/animalform/animalform.component.ts">
+    <entry file="file://$PROJECT_DIR$/SMS/ClientApp/boot.browser.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="276">
+          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/IAbstractRepository.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/Models/Enums/SampleType.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="97" lean-forward="false" selection-start-line="23" selection-start-column="97" selection-end-line="23" selection-end-column="97" />
+        <state relative-caret-position="184">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding>
-            <marker date="1512619197036" expanded="false" signature="6:99" ph="..." />
-            <marker date="1512619197036" expanded="true" signature="139:1088" ph="{...}" />
-            <marker date="1512619197036" expanded="true" signature="182:1086" ph="{...}" />
+            <marker date="1520113786526" expanded="true" signature="26:145" ph="{...}" />
+            <marker date="1520113786526" expanded="true" signature="55:143" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/AnimalsController.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/ClientApp/app/components/linechart/linechart.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state relative-caret-position="207">
+          <caret line="9" column="129" lean-forward="true" selection-start-line="9" selection-start-column="129" selection-end-line="9" selection-end-column="129" />
           <folding>
-            <marker date="1512619468925" expanded="false" signature="6:159" ph="..." />
-            <marker date="1512619468925" expanded="true" signature="186:973" ph="{...}" />
-            <marker date="1512619468925" expanded="true" signature="268:971" ph="{...}" />
-            <marker date="1512619468925" expanded="true" signature="440:533" ph="{...}" />
-            <marker date="1512619468925" expanded="true" signature="692:965" ph="{...}" />
+            <element signature="e#0#78#0" expanded="true" />
+            <marker date="1520115261083" expanded="true" signature="266:317" ph="..." />
+            <marker date="1520115261083" expanded="true" signature="333:929" ph="..." />
+            <marker date="1520115261083" expanded="true" signature="343:661" ph="..." />
+            <marker date="1520115261083" expanded="true" signature="454:650" ph="..." />
+            <marker date="1520115261083" expanded="false" signature="783:810" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/9e2d9cc1/6353dd00-faab-4631-adc1-e90c089a8134/localdb.public.Animals">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Animals/Animal.cs">
+    <entry file="file://$PROJECT_DIR$/SMS/Models/Enums/AnimalType.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-176">
-          <caret line="71" column="11" lean-forward="false" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
+        <state relative-caret-position="92">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding>
-            <marker date="1512621870447" expanded="false" signature="6:172" ph="..." />
-            <marker date="1512621870447" expanded="true" signature="202:2573" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="228:2571" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="623:724" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="761:923" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="819:913" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="951:1117" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1011:1107" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1155:1333" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1221:1323" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1367:1545" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1433:1535" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1585:1694" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1736:1918" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1804:1908" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="1953:2129" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="2018:2119" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="2161:2341" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="2228:2331" ph="{...}" />
-            <marker date="1512621870447" expanded="true" signature="2430:2565" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/Repositories/AbstractRepository.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
-          <folding>
-            <marker date="1512623882052" expanded="true" signature="6:152" ph="..." />
-            <marker date="1512623882052" expanded="true" signature="192:4527" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="261:4525" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="395:455" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="536:662" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="773:908" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="832:898" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="989:1096" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="1170:1543" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="1654:1742" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="1882:1958" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2028:2356" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2186:2319" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2450:2610" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2667:2756" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2854:2962" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="2996:3501" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="3150:3247" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="3303:3429" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="3552:4101" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="3706:3814" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="3870:4029" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="4159:4240" ph="{...}" />
-            <marker date="1512623882052" expanded="true" signature="4342:4519" ph="{...}" />
+            <marker date="1520107720037" expanded="true" signature="26:130" ph="{...}" />
+            <marker date="1520107720037" expanded="true" signature="55:128" ph="{...}" />
           </folding>
         </state>
       </provider>
