@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SMS.Migrations
 {
@@ -9,14 +8,14 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<DateTime>(
-                name: "LastUpdateTime",
-                table: "Things",
+                "LastUpdateTime",
+                "Things",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<int>(
-                name: "RecordStatus",
-                table: "Things",
+                "RecordStatus",
+                "Things",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -24,12 +23,12 @@ namespace SMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "LastUpdateTime",
-                table: "Things");
+                "LastUpdateTime",
+                "Things");
 
             migrationBuilder.DropColumn(
-                name: "RecordStatus",
-                table: "Things");
+                "RecordStatus",
+                "Things");
         }
     }
 }

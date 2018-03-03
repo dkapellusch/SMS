@@ -34,11 +34,20 @@ const nonTreeShakableModules = [
 
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
-module.exports = (env) =>
-{
+module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin("vendor.css");
     const isDevBuild = true;
-    const sharedConfig = {
+    const vendorBundle = {
+        mode: "development",
+
+        entry: {
+            vendor: isDevBuild ? allModules : nonTreeShakableModules
+        },
+        output: {
+            path: path.join(__dirname, "wwwroot", "dist")
+        },
+
+
         stats: {
             modules: false
         },
@@ -47,6 +56,12 @@ module.exports = (env) =>
         },
         module: {
             rules: [
+                {
+                    test: /\.css(\?|$)/,
+                    use: extractCSS.extract({
+                        use: isDevBuild ? "css-loader" : "css-loader?minimize"
+                    })
+                },
                 {
                     test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/,
                     use: "url-loader?limit=100000"
@@ -64,60 +79,38 @@ module.exports = (env) =>
             new webpack.ContextReplacementPlugin(/angular(\\|\/)core(\\|\/)(@angular|esm5)/,
                 path.join(__dirname, "./ClientApp")),
             new webpack.IgnorePlugin(/^vertx$/),
-        ].concat(isDevBuild
-                 ? []
-                 : [
-                     new webpack.optimize.UglifyJsPlugin({
-                         mangle: true,
-                         compress: {
-                             warnings: false,
-                             pure_getters: true,
-                             unsafe: true,
-                             unsafe_comps: true,
-                             screw_ie8: true
-                         },
-                         output: {
-                             comments: false,
-                         },
-                         exclude: [/\.min\.js$/gi]
-                     }),
-                     new CompressionPlugin({
-                         asset: "[path].gz[query]",
-                         algorithm: "gzip",
-                         test: /\.js$|\.css$|\.html$/,
-                         threshold: 10240,
-                         minRatio: 0
-                     })
-                 ])
-    };
-
-    const clientBundleConfig = merge(sharedConfig, {
-        entry: {
-            vendor: isDevBuild ? allModules : nonTreeShakableModules
-        },
-        output: {
-            path: path.join(__dirname, "wwwroot", "dist")
-        },
-        module: {
-            rules: [
-                {
-                    test: /\.css(\?|$)/,
-                    use: extractCSS.extract({
-                        use: isDevBuild ? "css-loader" : "css-loader?minimize"
-                    })
-                }
-            ]
-        },
-        plugins: [
             extractCSS,
             new webpack.DllPlugin({
                 path: path.join(__dirname, "wwwroot", "dist", "[name]-manifest.json"),
                 name: "[name]_[hash]"
             })
-        ]
-    });
+        ].concat(isDevBuild
+            ? []
+            : [
+                new webpack.optimize.UglifyJsPlugin({
+                    mangle: true,
+                    compress: {
+                        warnings: false,
+                        pure_getters: true,
+                        unsafe: true,
+                        unsafe_comps: true,
+                        screw_ie8: true
+                    },
+                    output: {
+                        comments: false,
+                    },
+                    exclude: [/\.min\.js$/gi]
+                }),
+                new CompressionPlugin({
+                    asset: "[path].gz[query]",
+                    algorithm: "gzip",
+                    test: /\.js$|\.css$|\.html$/,
+                    threshold: 10240,
+                    minRatio: 0
+                })
+            ])
+    };
 
 
-
-    return [clientBundleConfig];
+    return vendorBundle;
 };

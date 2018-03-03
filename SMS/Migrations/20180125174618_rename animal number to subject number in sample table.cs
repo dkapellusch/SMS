@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace SMS.Migrations
 {
@@ -9,24 +7,24 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Samples_Animals_AnimalNumber",
-                table: "Samples");
+                "FK_Samples_Animals_AnimalNumber",
+                "Samples");
 
             migrationBuilder.RenameColumn(
-                name: "AnimalNumber",
-                table: "Samples",
-                newName: "SubjectNumber");
+                "AnimalNumber",
+                "Samples",
+                "SubjectNumber");
 
             migrationBuilder.RenameIndex(
-                name: "IX_Samples_AnimalNumber",
+                "IX_Samples_AnimalNumber",
                 table: "Samples",
                 newName: "IX_Samples_SubjectNumber");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Samples_Animals_SubjectNumber",
-                table: "Samples",
-                column: "SubjectNumber",
-                principalTable: "Animals",
+                "FK_Samples_Animals_SubjectNumber",
+                "Samples",
+                "SubjectNumber",
+                "Animals",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -34,24 +32,24 @@ namespace SMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Samples_Animals_SubjectNumber",
-                table: "Samples");
+                "FK_Samples_Animals_SubjectNumber",
+                "Samples");
 
             migrationBuilder.RenameColumn(
-                name: "SubjectNumber",
-                table: "Samples",
-                newName: "AnimalNumber");
+                "SubjectNumber",
+                "Samples",
+                "AnimalNumber");
 
             migrationBuilder.RenameIndex(
-                name: "IX_Samples_SubjectNumber",
+                "IX_Samples_SubjectNumber",
                 table: "Samples",
                 newName: "IX_Samples_AnimalNumber");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Samples_Animals_AnimalNumber",
-                table: "Samples",
-                column: "AnimalNumber",
-                principalTable: "Animals",
+                "FK_Samples_Animals_AnimalNumber",
+                "Samples",
+                "AnimalNumber",
+                "Animals",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }

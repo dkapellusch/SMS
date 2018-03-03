@@ -3,10 +3,8 @@ using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using SMS.Models.Internal;
 using SMS.Models.Samples;
 using SMS.Persistence.Interfaces;

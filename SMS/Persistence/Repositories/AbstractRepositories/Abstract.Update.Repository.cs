@@ -17,17 +17,14 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
         public void UpdateObject<TEntity>(TEntity destination, TEntity source) where TEntity : class
         {
-            foreach (var property in typeof(TEntity).GetProperties())
-            {
-                property.SetValue(destination, property.GetValue(source, null), null);
-            }
+            foreach (var property in typeof(TEntity).GetProperties()) property.SetValue(destination, property.GetValue(source, null), null);
         }
 
         public static object[] LoadAllRelations<TEntity>(TEntity entity) where TEntity : class
         {
             var entityProperties = typeof(TEntity).GetProperties();
             var enumerableProperties = entityProperties.Where(p => p.PropertyType != typeof(string) && typeof(IEnumerable<>).IsAssignableFrom(p.PropertyType));
-            var relationalProperties = enumerableProperties.SelectMany(relation => (IEnumerable<object>)relation.GetValue(entity)).ToArray();
+            var relationalProperties = enumerableProperties.SelectMany(relation => (IEnumerable<object>) relation.GetValue(entity)).ToArray();
 
             return relationalProperties;
         }

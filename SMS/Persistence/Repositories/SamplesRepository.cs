@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-
 using SMS.Models;
 using SMS.Models.Samples;
 using SMS.Persistence.Interfaces;
@@ -19,12 +18,6 @@ namespace SMS.Persistence.Repositories
 
         private SamplesContext Context { get; }
 
-        public async Task AddThingAsync(Thing thing)
-        {
-            await Context.Things.AddAsync(thing);
-            await Context.SaveChangesAsync();
-        }
-
         public IObservable<Sample> GetObservableSampleByNumber(int subjectNumber)
         {
             return Context.Samples.ToObservable();
@@ -37,7 +30,13 @@ namespace SMS.Persistence.Repositories
 
         public async Task<Sample> GetSampleByNumberAsync(int subjectNumber)
         {
-            return (Sample)await Context.FindAsync(typeof(Sample), subjectNumber);
+            return (Sample) await Context.FindAsync(typeof(Sample), subjectNumber);
+        }
+
+        public async Task AddThingAsync(Thing thing)
+        {
+            await Context.Things.AddAsync(thing);
+            await Context.SaveChangesAsync();
         }
 
         public void RemoveAllThings()

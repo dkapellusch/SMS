@@ -7,33 +7,21 @@
     {
         public void DeleteEntity<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
         {
-            if (!Exists(entity))
-            {
-                return;
-            }
+            if (!Exists(entity)) return;
 
             SamplesContext.Set<TEntity>().Remove(entity);
 
-            if (shouldSave)
-            {
-                SaveChanges();
-            }
+            if (shouldSave) SaveChanges();
         }
 
         public void DeleteEntityAndRelations<TEntity>(TEntity entity, bool shouldSave = true) where TEntity : class
         {
-            if (!Exists(entity))
-            {
-                return;
-            }
+            if (!Exists(entity)) return;
 
             LoadAllRelations(entity);
             SamplesContext.Set<TEntity>().Remove(entity);
 
-            if (shouldSave)
-            {
-                SaveChanges();
-            }
+            if (shouldSave) SaveChanges();
         }
     }
 }

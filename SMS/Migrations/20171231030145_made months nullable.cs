@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SMS.Migrations
 {
@@ -9,14 +8,14 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<DateTime>(
-                name: "BirthDate",
-                table: "Animals",
+                "BirthDate",
+                "Animals",
                 nullable: true,
                 oldClrType: typeof(DateTime));
 
             migrationBuilder.AlterColumn<int>(
-                name: "AgeInMonths",
-                table: "Animals",
+                "AgeInMonths",
+                "Animals",
                 nullable: true,
                 oldClrType: typeof(int));
         }
@@ -24,15 +23,15 @@ namespace SMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<DateTime>(
-                name: "BirthDate",
-                table: "Animals",
+                "BirthDate",
+                "Animals",
                 nullable: false,
                 oldClrType: typeof(DateTime),
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<int>(
-                name: "AgeInMonths",
-                table: "Animals",
+                "AgeInMonths",
+                "Animals",
                 nullable: false,
                 oldClrType: typeof(int),
                 oldNullable: true);

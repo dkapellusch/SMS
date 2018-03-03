@@ -13,6 +13,7 @@ module.exports = env =>
 {
     const isDevBuild = true;
     const sharedConfig = {
+        mode: "development",
         stats: {
             modules: false,
             errorDetails: true
@@ -59,12 +60,12 @@ module.exports = env =>
                 }
             ]
         },
-        plugins: isDevBuild
-                     ? [
-                         new ForkTsCheckerWebpackPlugin(),
-                         new ForkTsCheckerNotifierWebpackPlugin()
-                     ]
-                     : []
+        // plugins: isDevBuild
+        //              ? [
+        //                  new ForkTsCheckerWebpackPlugin(),
+        //                  new ForkTsCheckerNotifierWebpackPlugin()
+        //              ]
+        //              : []
     };
 
     const clientBundleOutputDir = "./wwwroot/dist";

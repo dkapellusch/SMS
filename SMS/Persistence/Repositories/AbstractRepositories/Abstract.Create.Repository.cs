@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-
 using SMS.Models.Interfaces;
 
 namespace SMS.Persistence.Repositories.AbstractRepositories
@@ -9,7 +8,6 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
      */
     public abstract partial class AbstractRepository
     {
-
         public async Task CreateAsync<TEntity>(TEntity entity) where TEntity : class
         {
             await SamplesContext.Set<TEntity>().AddAsync(entity);

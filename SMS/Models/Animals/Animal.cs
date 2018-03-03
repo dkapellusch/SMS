@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
-
 using SMS.Models.Enums;
 using SMS.Models.Interfaces;
 using SMS.Models.Samples;
@@ -31,8 +30,6 @@ namespace SMS.Models.Animals
             PropertyChanged += (sender, args) => LastUpdateTime = DateTime.Now;
             RecordStatus = RecordStatus.New;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public int? AgeInMonths
         {
@@ -74,6 +71,18 @@ namespace SMS.Models.Animals
             }
         }
 
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICollection<Sample> Samples { get; set; } = new HashSet<Sample>();
+
         [Key]
         public int Id
         {
@@ -87,16 +96,6 @@ namespace SMS.Models.Animals
 
         public DateTime LastUpdateTime { get; set; }
 
-        public string Name
-        {
-            get => _name;
-            set
-            {
-                _name = value;
-                OnPropertyChanged();
-            }
-        }
-
         public RecordStatus RecordStatus
         {
             get => _recordStatus;
@@ -107,7 +106,7 @@ namespace SMS.Models.Animals
             }
         }
 
-        public ICollection<Sample> Samples { get; set; } = new HashSet<Sample>();
+        public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string name = null)
         {

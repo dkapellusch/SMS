@@ -1,8 +1,6 @@
 using System.Diagnostics;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 using SMS.Persistence.Interfaces;
 
 namespace SMS.Controllers

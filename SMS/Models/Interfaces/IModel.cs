@@ -1,5 +1,4 @@
 ﻿using System;
-
 using SMS.Models.Enums;
 
 namespace SMS.Models.Interfaces

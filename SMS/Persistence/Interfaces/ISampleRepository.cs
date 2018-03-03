@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-
 using SMS.Models.Samples;
 
 namespace SMS.Persistence.Interfaces

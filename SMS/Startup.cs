@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using NLog.Web;
-
 using SMS.Persistence;
 using SMS.Persistence.Interfaces;
 using SMS.Persistence.Repositories;
@@ -24,10 +22,9 @@ namespace SMS
     {
         public static IServiceProvider ServiceProvider;
 
-        public static string CurrentDatabaseName = "postgres";
+        public static string CurrentDatabaseName = "PostgreSQL";
 
         public static bool IsTestRun = false;
-
 
         public Startup(IConfiguration configuration)
         {
@@ -50,7 +47,7 @@ namespace SMS
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
                     HotModuleReplacement = true,
-                    HotModuleReplacementClientOptions = new Dictionary<string, string> { { "reload", "true" }, { "overlay", "true" } }
+                    HotModuleReplacementClientOptions = new Dictionary<string, string> {{"reload", "true"}, {"overlay", "true"}}
                 });
             }
             else
@@ -83,9 +80,8 @@ namespace SMS
             {
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
-                routes.MapSpaFallbackRoute("spa-fallback", new { controller = "Home", action = "Index" });
+                routes.MapSpaFallbackRoute("spa-fallback", new {controller = "Home", action = "Index"});
             });
-
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -93,16 +89,11 @@ namespace SMS
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ISampleRepository, SamplesRepository>();
             services.AddTransient<IAnimalRepository, AnimalRepository>();
-
+            var conString = Configuration.GetConnectionString("PostgreSQL");
             if (IsTestRun)
-            {
                 services.AddDbContext<SamplesContext>(o => o.UseSqlite($"DataSource={CurrentDatabaseName}.db"));
-            }
             else
-            {
-                services.AddDbContext<SamplesContext>(o => o.UseNpgsql(string.Format(Configuration.GetConnectionString("PostgreWorkSQL"),CurrentDatabaseName)));
-
-            }
+                services.AddDbContext<SamplesContext>(o => o.UseNpgsql(string.Format(Configuration.GetConnectionString("PostgreSQL"), CurrentDatabaseName)));
 
             services.AddDistributedMemoryCache();
             services.AddSession();
@@ -111,18 +102,13 @@ namespace SMS
             ServiceProvider = services.BuildServiceProvider();
 
             if (IsTestRun)
-            {
                 ServiceProvider.GetService<SamplesContext>().Database.EnsureCreated();
-
-            }
             else
-            {
                 using (var serviceScope = ServiceProvider.GetService<IServiceScopeFactory>().CreateScope())
                 {
                     var context = serviceScope.ServiceProvider.GetRequiredService<SamplesContext>();
                     context.Database.Migrate();
                 }
-            }
         }
     }
 }

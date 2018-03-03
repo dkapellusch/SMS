@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
 using SMS.Persistence;
 using SMS.Persistence.Repositories.AbstractRepositories;
 
@@ -14,6 +13,5 @@ namespace SMS.Test
         public TestRepository(SamplesContext context) : base(context)
         {
         }
-
     }
 }

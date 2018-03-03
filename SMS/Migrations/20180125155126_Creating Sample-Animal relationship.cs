@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace SMS.Migrations
 {
@@ -9,25 +7,25 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "AnimalId",
-                table: "Samples",
+                "AnimalId",
+                "Samples",
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "AnimalNumber",
-                table: "Samples",
+                "AnimalNumber",
+                "Samples",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Samples_AnimalId",
-                table: "Samples",
-                column: "AnimalId");
+                "IX_Samples_AnimalId",
+                "Samples",
+                "AnimalId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Samples_Animals_AnimalId",
-                table: "Samples",
-                column: "AnimalId",
-                principalTable: "Animals",
+                "FK_Samples_Animals_AnimalId",
+                "Samples",
+                "AnimalId",
+                "Animals",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -35,20 +33,20 @@ namespace SMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Samples_Animals_AnimalId",
-                table: "Samples");
+                "FK_Samples_Animals_AnimalId",
+                "Samples");
 
             migrationBuilder.DropIndex(
-                name: "IX_Samples_AnimalId",
-                table: "Samples");
+                "IX_Samples_AnimalId",
+                "Samples");
 
             migrationBuilder.DropColumn(
-                name: "AnimalId",
-                table: "Samples");
+                "AnimalId",
+                "Samples");
 
             migrationBuilder.DropColumn(
-                name: "AnimalNumber",
-                table: "Samples");
+                "AnimalNumber",
+                "Samples");
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace SMS.Migrations
 {
@@ -9,17 +7,17 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "SubjectNumber",
-                table: "Samples",
-                newName: "AnimalNumber");
+                "SubjectNumber",
+                "Samples",
+                "AnimalNumber");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "AnimalNumber",
-                table: "Samples",
-                newName: "SubjectNumber");
+                "AnimalNumber",
+                "Samples",
+                "SubjectNumber");
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
 
 namespace SMS.Migrations
 {
@@ -9,27 +7,27 @@ namespace SMS.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Samples_Animals_AnimalId",
-                table: "Samples");
+                "FK_Samples_Animals_AnimalId",
+                "Samples");
 
             migrationBuilder.DropIndex(
-                name: "IX_Samples_AnimalId",
-                table: "Samples");
+                "IX_Samples_AnimalId",
+                "Samples");
 
             migrationBuilder.DropColumn(
-                name: "AnimalId",
-                table: "Samples");
+                "AnimalId",
+                "Samples");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Samples_AnimalNumber",
-                table: "Samples",
-                column: "AnimalNumber");
+                "IX_Samples_AnimalNumber",
+                "Samples",
+                "AnimalNumber");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Samples_Animals_AnimalNumber",
-                table: "Samples",
-                column: "AnimalNumber",
-                principalTable: "Animals",
+                "FK_Samples_Animals_AnimalNumber",
+                "Samples",
+                "AnimalNumber",
+                "Animals",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
@@ -37,28 +35,28 @@ namespace SMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Samples_Animals_AnimalNumber",
-                table: "Samples");
+                "FK_Samples_Animals_AnimalNumber",
+                "Samples");
 
             migrationBuilder.DropIndex(
-                name: "IX_Samples_AnimalNumber",
-                table: "Samples");
+                "IX_Samples_AnimalNumber",
+                "Samples");
 
             migrationBuilder.AddColumn<int>(
-                name: "AnimalId",
-                table: "Samples",
+                "AnimalId",
+                "Samples",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Samples_AnimalId",
-                table: "Samples",
-                column: "AnimalId");
+                "IX_Samples_AnimalId",
+                "Samples",
+                "AnimalId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Samples_Animals_AnimalId",
-                table: "Samples",
-                column: "AnimalId",
-                principalTable: "Animals",
+                "FK_Samples_Animals_AnimalId",
+                "Samples",
+                "AnimalId",
+                "Animals",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }

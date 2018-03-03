@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace SMS.Persistence.Repositories.AbstractRepositories
@@ -37,8 +36,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
                     ex.Entries.Single().Reload();
                 }
-            }
-            while (saveFailed && tryCount++ < maxTries);
+            } while (saveFailed && tryCount++ < maxTries);
 
             return result;
         }
@@ -62,8 +60,7 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
 
                     await ex.Entries.Single().ReloadAsync().ConfigureAwait(false);
                 }
-            }
-            while (saveFailed);
+            } while (saveFailed);
 
             return result;
         }

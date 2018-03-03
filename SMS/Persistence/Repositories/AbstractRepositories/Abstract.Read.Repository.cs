@@ -2,9 +2,7 @@
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-
 using Microsoft.EntityFrameworkCore;
-
 using SMS.Models.Interfaces;
 
 namespace SMS.Persistence.Repositories.AbstractRepositories
@@ -14,15 +12,30 @@ namespace SMS.Persistence.Repositories.AbstractRepositories
      */
     public abstract partial class AbstractRepository
     {
-        public bool Exists<TEntity>(TEntity entity) where TEntity : class => SamplesContext.Set<TEntity>().Contains(entity);
+        public bool Exists<TEntity>(TEntity entity) where TEntity : class
+        {
+            return SamplesContext.Set<TEntity>().Contains(entity);
+        }
 
-        public IQueryable<TEntity> GetAll<TEntity>() where TEntity : class => SamplesContext.Set<TEntity>().AsNoTracking();
+        public IQueryable<TEntity> GetAll<TEntity>() where TEntity : class
+        {
+            return SamplesContext.Set<TEntity>().AsNoTracking();
+        }
 
-        public virtual TEntity GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class => SamplesContext.Set<TEntity>().Find(primaryKey);
+        public virtual TEntity GetEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
+        {
+            return SamplesContext.Set<TEntity>().Find(primaryKey);
+        }
 
-        public Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class => SamplesContext.FindAsync<TEntity>(primaryKey);
+        public Task<TEntity> GetEntityByPrimaryKeyAsync<TEntity>(params object[] primaryKey) where TEntity : class
+        {
+            return SamplesContext.FindAsync<TEntity>(primaryKey);
+        }
 
-        public IObservable<TEntity> GetObservableEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class => SamplesContext.Set<TEntity>().ToObservable();
+        public IObservable<TEntity> GetObservableEntityByPrimaryKey<TEntity>(params object[] primaryKey) where TEntity : class
+        {
+            return SamplesContext.Set<TEntity>().ToObservable();
+        }
 
         public (bool exists, TModel entity) ModelExists<TModel>(TModel entity) where TModel : class, IModel
         {

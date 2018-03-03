@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Linq;
-
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-
 using SMS.Models;
 using SMS.Models.Animals;
 using SMS.Models.Samples;
